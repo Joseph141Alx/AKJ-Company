@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RAWads.co | Digital Marketing Plans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore digital marketing plans by RAWads.co to grow your brand with tailored strategies and add-ons." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #000000;
+      --secondary: #1A1A1A;
+      --accent: #00ff9d;
+      --text: #FFFFFF;
+      --subtext: #CCCCCC;
+      --highlight: #00ff9d;
+      --social-bg: rgba(0, 0, 0, 0.85);
+      --social-hover: #00ff9d;
+      --border-color: rgba(0, 255, 157, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: var(--primary);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-color: var(--primary);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .navbar-logo {
+      height: 40px;
+      margin-right: 15px;
+      transition: transform 0.3s ease-in-out; /* Added transition for hover effect */
+    }
+
+    .navbar-logo:hover {
+      transform: scale(1.1); /* Scale up on hover */
+    }
+
+    .container {
+      padding: 100px 20px 60px;
+      max-width: 1200px;
+      margin: auto;
+      background-color: var(--secondary);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .title {
+      font-size: 42px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--subtext);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .plans-container {
+      display: flex;
+      gap: 35px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .plan {
+      background-color: var(--primary);
+      border-radius: 16px;
+      padding: 50px 40px;
+      width: 360px;
+      flex: 0 0 auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--border-color);
+      transition: transform 0.3s ease;
+      scroll-snap-align: center;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .plan:hover {
+      transform: translateY(-10px);
+    }
+
+    .best-seller-tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background-color: var(--highlight);
+      color: var(--primary);
+      padding: 8px 22px;
+      border-radius: 24px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      user-select: none;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .best-seller-tag::before,
+    .best-seller-tag::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 30px;
+      transform: skewX(-45deg);
+      animation: wave 1.5s linear infinite;
+    }
+
+    .best-seller-tag::before {
+      left: -40px;
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .best-seller-tag::after {
+      left: -80px;
+      background-color: rgba(255, 255, 255, 0.25);
+      animation-delay: 0.75s;
+    }
+
+    @keyframes wave {
+      0% { transform: skewX(-45deg) translateX(0); }
+      100% { transform: skewX(-45deg) translateX(calc(100% + 120px)); }
+    }
+
+    .plan h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    .plan h3 {
+      font-size: 16px;
+      color: var(--subtext);
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      flex-grow: 1;
+    }
+
+    .plan ul li {
+      padding: 8px 0;
+      font-size: 16px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .plan ul li::before {
+      content: "•";
+      color: var(--accent);
+      font-size: 22px;
+      margin-right: 14px;
+      line-height: 1;
+    }
+
+    /* Updated Button Styles */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      /* Adjusted gradient colors to match the image more closely */
+      background: linear-gradient(90deg, hsl(150, 100%, 50%) 0%, hsl(160, 100%, 50%) 50%, hsl(190, 100%, 50%) 100%);
+      color: var(--primary);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      margin: 0 auto;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 15px hsla(150, 100%, 50%, 0.5); /* Initial glow */
+    }
+
+    .button.starter-button {
+      animation: none;
+      box-shadow: none; /* No glow for starter button */
+    }
+
+    .button:hover {
+      box-shadow: 0 0 25px hsla(150, 100%, 50%, 0.8), 0 5px 20px hsla(150, 100%, 50%, 0.6); /* Enhanced glow on hover */
+      transform: translateY(-2px);
+      animation: none;
+      /* Slightly shifted gradient on hover */
+      background: linear-gradient(90deg, hsl(160, 100%, 50%) 0%, hsl(150, 100%, 50%) 50%, hsl(190, 100%, 50%) 100%);
+      color: var(--primary);
+    }
+
+    .button:hover::before,
+    .button:hover::after {
+      content: none; /* Ensure no content on hover if the pseudo-elements were still there */
+    }
+
+    .section-header {
+      text-align: center;
+      margin: 80px 0 40px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: var(--subtext);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .addons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .addon {
+      background-color: var(--primary);
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 4px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .addon:hover {
+      transform: translateY(-5px);
+    }
+
+    .addon h3 {
+      font-size: 20px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .addon p {
+      font-size: 15px;
+      color: var(--subtext);
+      line-height: 1.6;
+    }
+
+    .follow-us {
+      background: var(--social-bg);
+      padding: 12px 20px;
+      border-radius: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-weight: 600;
+      font-size: 14px;
+      width: fit-content;
+      margin: 60px auto 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    .follow-us span {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icons a {
+      color: var(--text);
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--social-hover);
+    }
+
+    .bottom-bar {
+      background-color: var(--primary);
+      color: var(--text);
+      text-align: center;
+      padding: 12px 0;
+      font-weight: 600;
+      font-size: 14px;
+      width: 100%;
+      margin-top: 40px;
+      box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .plan {
+        width: 280px;
+        padding: 30px 25px;
+      }
+
+      .title {
+        font-size: 30px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .follow-us {
+        font-size: 12px;
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="rawads.html">
+      <img src="images/logo1.png" alt="RAWads.co Logo" class="navbar-logo" onerror="this.onerror=null; this.src='https://placehold.co/150x40/000000/FFFFFF?text=RAWads+Logo';">
+    </a>
+  </nav>
+
+  <div class="container">
+    <div class="header">
+      <h1 class="title">Plans to Fuel Your Brand's Digital Evolution</h1>
+      <p class="subtitle">Strategic solutions tailored for businesses at every growth stage</p>
+    </div>
+
+    <div class="plans-container">
+      <div class="plan">
+        <h2>STARTER PLAN</h2>
+        <h3>Perfect for new businesses stepping into social media.</h3>
+        <ul>
+          <li>3 Reels + 10 Image Posts/Month</li>
+          <li>2 Dedicated Festival/Seasonal Posts</li>
+          <li>Platforms: Facebook & Instagram</li>
+          <li>Basic Monthly Performance Report</li>
+          <li>Community Engagement: 3 Days/Week</li>
+        </ul>
+        <a href="https://wa.link/6zixfj" class="button starter-button" target="_blank">Get Starter Plan</a>
+      </div>
+
+      <div class="plan">
+        <span class="best-seller-tag">#Best Seller</span>
+        <h2>GROWTH PLAN</h2>
+        <h3>Ideal for businesses scaling their social presence.</h3>
+        <ul>
+          <li>7 Reels and 20 Image Posts every month</li>
+          <li>4 special posts for festivals or seasonal events</li>
+          <li>Facebook, Instagram, and Google My Business</li>
+          <li>Monthly performance reports</li>
+          <li>Engagement 5 days/week</li>
+          <li>LinkedIn setup + 2 posts/month</li>
+          <li>Growth strategy for social, search, and sales</li>
+        </ul>
+        <a href="https://wa.link/qfbe19" class="button" target="_blank">Get Growth Plan</a>
+      </div>
+
+      <div class="plan">
+        <h2>PREMIUM PLAN</h2>
+        <h3>Comprehensive solutions for established brands.</h3>
+        <ul>
+          <li>14 Reels and 30 Image Posts every month</li>
+          <li>6 seasonal/festival posts</li>
+          <li>All major platforms: Facebook, Instagram, GMB, LinkedIn, YouTube</li>
+          <li>Advanced reports and competitor analysis</li>
+          <li>Daily community engagement</li>
+          <li>Priority support and quarterly strategy</li>
+          <li>Social + search + sales growth framework</li>
+        </ul>
+        <a href="https://wa.link/da617k" class="button" target="_blank">Get Premium Plan</a>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2 class="section-title">Add-Ons</h2>
+      <p class="section-subtitle">Boost your campaign with these extra services</p>
+    </div>
+
+    <div class="addons">
+      <div class="addon"><h3>Daily Posts & Reels</h3><p>Increase visibility with daily content.</p></div>
+      <div class="addon"><h3>Boosted Social Ads</h3><p>Expand reach via targeted ads.</p></div>
+      <div class="addon"><h3>Professional Website</h3><p>Modern websites for credibility & conversion.</p></div>
+      <div class="addon"><h3>Brand Reels & Testimonials</h3><p>Build trust through stories & reviews.</p></div>
+      <div class="addon"><h3>Email Automation</h3><p>Convert leads with email drip campaigns.</p></div>
+      <div class="addon"><h3>Influencer Partnerships</h3><p>Tap new audiences with trusted voices.</p></div>
+      <div class="addon"><h3>E-Commerce Engine</h3><p>Boost traffic, SEO, and conversions.</p></div>
+      <div class="addon"><h3>Branding & Identity</h3><p>Logo, style guide, tone—complete toolkit.</p></div>
+    </div>
+  </div>
+
+  <div class="follow-us">
+    <span>Follow Us</span>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/rawads.official" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/rawads.official" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/919496245832" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.linkedin.com/company/rawads/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    All rights reserved
+  </div>
+
+</body>
+</html>

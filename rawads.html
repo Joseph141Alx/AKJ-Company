@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAW ADS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        /* Define custom CSS variables from the provided palette */
+        :root {
+            --primary: #000000;
+            --secondary: #1A1A1A;
+            --accent: #00ff9d;
+            --text: #FFFFFF;
+            --subtext: #CCCCCC;
+            --highlight: #00ff9d;
+            --social-bg: rgba(0, 0, 0, 0.85);
+            --social-hover: #00ff9d;
+            --border-color: rgba(0, 255, 157, 0.3);
+        }
+
+        /* Apply background image and new palette colors to the body */
+        body {
+            background-image: url('bgr1.jpg'); /* Background image is bgr1.jpg */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-attachment: fixed; /* Keep the background fixed during scroll */
+            background-color: var(--primary); /* Fallback and primary background */
+            color: var(--text); /* Default text color */
+            font-family: 'Poppins', sans-serif; /* Changed to Poppins as per the provided CSS */
+            line-height: 1.6; /* From provided CSS */
+            opacity: 0; /* Start with opacity 0 for fade-in */
+            animation: pageLoadAnimation 1.2s ease-out forwards; /* Apply new page load animation */
+        }
+
+        /* Custom button style with gradient and hover effects */
+        .custom-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, hsl(150, 100%, 50%) 0%, hsl(160, 100%, 50%) 50%, hsl(190, 100%, 50%) 100%);
+            color: var(--primary); /* Text color for the button */
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px hsla(150, 100%, 50%, 0.5); /* Initial glow */
+        }
+
+        .custom-button:hover {
+            box-shadow: 0 0 25px hsla(150, 100%, 50%, 0.8), 0 5px 20px hsla(150, 100%, 50%, 0.6); /* Enhanced glow on hover */
+            transform: translateY(-2px);
+            background: linear-gradient(90deg, hsl(160, 100%, 50%) 0%, hsl(150, 100%, 50%) 50%, hsl(190, 100%, 50%) 100%);
+            color: var(--primary);
+        }
+
+        /* Custom twinkle animation for stars */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; } /* Start and end with moderate opacity */
+            20% { opacity: 1; } /* Brightest point */
+            40% { opacity: 0.5; }
+            60% { opacity: 0.9; }
+            80% { opacity: 0.4; }
+        }
+
+        .animate-twinkle {
+            animation: twinkle 4s ease-in-out infinite; /* Apply the twinkle animation */
+        }
+
+        /* Navbar styles from the provided CSS */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar-logo {
+            height: 40px;
+            margin-right: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .navbar-logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive adjustments from provided CSS */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 30px;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+        }
+
+        /* Gradient text style for h1 */
+        .gradient-text {
+            background: linear-gradient(90deg, hsl(150, 100%, 50%) 0%, hsl(160, 100%, 50%) 50%, hsl(190, 100%, 50%) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent; /* Fallback for browsers that don't support text-fill-color */
+        }
+
+        /* Full-page stars container */
+        .stars-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allows clicks to pass through to elements below */
+            z-index: 5; /* Lower than content, higher than body background */
+            overflow: hidden; /* Hide stars outside the viewport */
+        }
+
+        /* New page load animation */
+        @keyframes pageLoadAnimation {
+            from {
+                opacity: 0;
+                transform: translateY(20px); /* Start slightly below */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* End at original position */
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <div class="stars-background">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute top-1/5 right-[10%] w-28 h-28 opacity-60 animate-twinkle hidden md:block">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute bottom-[15%] left-[10%] w-20 h-20 opacity-50 animate-twinkle hidden md:block" style="animation-delay: 1s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute top-1/3 left-[40%] w-24 h-24 opacity-70 animate-twinkle hidden sm:block" style="animation-delay: 2s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute bottom-[20%] right-[30%] w-20 h-20 opacity-65 animate-twinkle hidden lg:block" style="animation-delay: 3s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute top-[60%] left-[20%] w-22 h-22 opacity-55 animate-twinkle hidden xl:block" style="animation-delay: 0.5s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute top-[5%] left-[50%] w-16 h-16 opacity-40 animate-twinkle hidden sm:block" style="animation-delay: 2.5s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute bottom-[5%] right-[5%] w-18 h-18 opacity-75 animate-twinkle hidden md:block" style="animation-delay: 1.5s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute top-[70%] right-[40%] w-20 h-20 opacity-50 animate-twinkle hidden lg:block" style="animation-delay: 0.8s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute top-[25%] left-[5%] w-24 h-24 opacity-60 animate-twinkle hidden xl:block" style="animation-delay: 3.2s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute bottom-[30%] left-[45%] w-16 h-16 opacity-45 animate-twinkle hidden sm:block" style="animation-delay: 1.8s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute top-[80%] right-[15%] w-20 h-20 opacity-70 animate-twinkle hidden md:block" style="animation-delay: 2.2s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute top-[10%] left-[20%] w-20 h-20 opacity-50 animate-twinkle hidden lg:block" style="animation-delay: 0.3s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute bottom-[10%] right-[20%] w-22 h-22 opacity-60 animate-twinkle hidden xl:block" style="animation-delay: 1.1s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute top-[40%] right-[5%] w-16 h-16 opacity-40 animate-twinkle hidden sm:block" style="animation-delay: 2.8s;">
+        <img src="images/star1.png" alt="Decorative Star" class="absolute bottom-[40%] left-[5%] w-18 h-18 opacity-55 animate-twinkle hidden md:block" style="animation-delay: 0.7s;">
+    </div>
+
+    <nav class="navbar">
+        <img src="images/logo2.png" alt="RAW ADS Logo" class="h-10 mr-4 transition-transform hover:scale-105 cursor-pointer navbar-logo">
+        <div class="flex flex-col sm:flex-row gap-4 items-center mt-4 sm:mt-0 ml-auto">
+            <a href="contactus.html" class="px-6 py-2 rounded-full font-semibold custom-button text-base">Get Started</a>
+        </div>
+    </nav>
+
+    <section class="relative py-20 px-4 flex flex-col items-center justify-center text-center overflow-hidden flex-grow pt-[70px]">
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight relative z-10 max-w-5xl gradient-text">
+            RAWads: 360° Marketing Mastery for Brands That Refuse to Blend In.
+        </h1>
+        <h2 class="text-xl md:text-2xl mb-2 max-w-5xl relative z-10" style="color: var(--subtext);">
+            We fuse data, creativity, and relentless hustle to turn raw ideas into viral campaigns,
+        </h2>
+        <h3 class="text-xl md:text-2xl mb-8 max-w-5xl relative z-10" style="color: var(--subtext);">
+            unstoppable SEO, and PR that trends.
+        </h3>
+        <button class="px-8 py-3 rounded-full font-bold text-lg custom-button relative z-10">
+            Book A Meeting
+        </button>
+    </section>
+
+    <section class="py-32 px-4 relative z-10" style="background-color: rgba(26, 26, 26, 0.8);">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div class="text-left">
+                <h2 class="text-sm font-semibold uppercase mb-2" style="color: var(--accent);">HOW WE WORK</h2>
+                <h3 class="text-4xl font-bold mb-4" style="color: var(--text);">
+                    Get a dedicated design team at fraction of the cost.
+                </h3>
+            </div>
+            <div class="text-left">
+                <p class="text-lg mb-4" style="color: var(--subtext);">
+                    Grow your brand with high-quality design for a flat monthly fee. Work with senior designers.
+                    Subscribe and make as many requests as you need no limits.
+                </p>
+                <a href="plans.html" class="inline-block px-6 py-2 rounded-full font-semibold custom-button text-base">
+                    Explore Our Plans 🚀
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

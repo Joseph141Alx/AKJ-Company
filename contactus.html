@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - RAWads.co</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+/* CSS Variables based on the new black/green/white palette */
+:root {
+    --primary-bg: #000000; /* Black for main background */
+    --secondary-bg: #1A1A1A; /* Slightly lighter black/dark gray for content sections */
+    --accent-green: #00ff9d; /* Vibrant green for highlights */
+    --text-light: #FFFFFF; /* White for main text */
+    --text-subtle: #CCCCCC; /* Lighter gray for secondary text */
+    --border-color: rgba(0, 255, 157, 0.3); /* Subtle border matching accent green */
+}
+
+    /* General body styling to match the new theme */
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: var(--primary-bg); /* Main black background for areas outside content */
+        color: var(--text-light);
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Navbar styling - now completely black */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: var(--primary-bg); /* Changed to primary-bg (black) */
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Stronger shadow for depth */
+        border-bottom: 1px solid var(--border-color); /* Subtle border */
+    }
+
+    .nav-logo img {
+        height: 45px;
+        width: auto;
+        transition: transform 0.3s ease-in-out; /* Added transition for hover effect */
+        pointer-events: auto; /* Ensure pointer events are active for hover */
+    }
+
+    .nav-logo img:hover { /* Apply hover directly to img for the animation */
+        transform: scale(1.1); /* Scale up on hover */
+    }
+
+    /* Main content wrapper for the contact page */
+    .main-content-wrapper {
+        flex-grow: 1;
+        padding-top: 70px; /* Space for fixed navbar */
+        background-color: var(--secondary-bg); /* This is the main grey background now */
+        display: flex;
+        flex-direction: column; /* Stack contact-heading and contact-grid vertically */
+        width: 100%;
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    .contact-heading {
+        padding: 40px 20px 0; /* Padding for the heading section */
+        max-width: 900px; /* Limit content width for readability */
+        margin: 0 auto; /* Center the content */
+        width: 100%;
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    .contact-heading h1 {
+        font-size: 36px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--accent-green);
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Default to single column on small screens */
+        gap: 40px;
+        padding: 0 20px 60px; /* Padding for the grid sections */
+        max-width: 900px; /* Limit content width for readability */
+        margin: 0 auto; /* Center the content */
+        width: 100%;
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    @media (min-width: 768px) {
+        .contact-grid {
+            grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+        }
+    }
+
+    .contact-info {
+        /* No background here, it inherits from .main-content-wrapper */
+        /* Padding is handled by .contact-grid and its direct children */
+    }
+
+    .contact-info p {
+        color: var(--text-subtle);
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .contact-detail {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: var(--text-light);
+        font-size: 16px;
+    }
+
+    .contact-detail svg {
+        min-width: 24px;
+        height: 24px;
+        color: var(--accent-green);
+    }
+
+    /* Form styling */
+    .contact-form {
+        /* No background here, it inherits from .main-content-wrapper */
+        /* Padding is handled by .contact-grid and its direct children */
+    }
+
+    .contact-form label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-subtle);
+        margin-bottom: 8px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 12px 18px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background-color: var(--primary-bg); /* Darker background for inputs */
+        color: var(--text-light);
+        font-size: 16px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--accent-green);
+        box-shadow: 0 0 0 3px rgba(0, 255, 157, 0.3);
+    }
+
+    .contact-form textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .contact-form .form-group {
+        margin-bottom: 25px;
+    }
+
+    /* --- Button Styling (Copied from digital-marketing-plans and adapted) --- */
+    .submit-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      /* Adjusted gradient colors to match the image more closely */
+      background: linear-gradient(90deg, hsl(150, 100%, 50%) 0%, hsl(160, 100%, 50%) 50%, hsl(190, 100%, 50%) 100%);
+      color: var(--primary-bg); /* Use primary-bg for text color to match the other page */
+      border: none;
+      padding: 12px 30px; /* Adjusted padding slightly to match the original button */
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px; /* Adjusted font size to match the original button */
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      width: 100%; /* Keep full width for the form submit button */
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 15px hsla(150, 100%, 50%, 0.5); /* Initial glow */
+      z-index: 1;
+    }
+
+    .submit-button:hover {
+      box-shadow: 0 0 25px hsla(150, 100%, 50%, 0.8), 0 5px 20px hsla(150, 100%, 50%, 0.6); /* Enhanced glow on hover */
+      transform: translateY(-2px);
+      animation: none; /* Stop the wave animation on hover */
+      /* Slightly shifted gradient on hover */
+      background: linear-gradient(90deg, hsl(160, 100%, 50%) 0%, hsl(150, 100%, 50%) 50%, hsl(190, 100%, 50%) 100%);
+      color: var(--primary-bg);
+    }
+
+    .submit-button:hover::before,
+    .submit-button:hover::after {
+      content: none; /* Remove wave elements on hover */
+    }
+
+    /* Footer styling - keeping it dark and consistent */
+    .bottom-bar {
+        background-color: var(--primary-bg); /* Changed to primary-bg (black) */
+        color: var(--text-subtle);
+        text-align: center;
+        padding: 12px 0;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        width: 100%;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        margin-top: auto;
+    }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-logo">
+        <a href="rawads.html">
+            <img src="images/logo1.png" alt="RAWads Logo" onerror="this.onerror=null; this.src='https://placehold.co/150x45/000000/FFFFFF?text=RAWads+Logo';" />
+        </a>
+    </div>
+</nav>
+
+<div class="main-content-wrapper">
+    <div class="contact-heading">
+        <h1>Contact Us</h1>
+    </div>
+
+    <div class="contact-grid">
+        <div class="contact-info">
+            <p>
+                Have questions, feedback, or just want to say hello? We'd love to hear from you! Reach us directly using the information below or fill out the form.
+            </p>
+            <div class="contact-detail">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Kottayam, Kerala, India</span>
+            </div>
+            <div class="contact-detail">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                <span>+91 94962 45832</span>
+            </div>
+            <div class="contact-detail">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <span>aby.alex1025@gmail.com</span>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form action="https://formspree.io/f/xpwdngll" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91 12345 67890" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                </div>
+                <input type="hidden" name="_next" value="/contact-us.html?success=true" />
+                <button type="submit" class="submit-button">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-bar">
+    All right received
+</div>
+</body>
+</html>
