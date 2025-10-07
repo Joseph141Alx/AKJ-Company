@@ -3,45 +3,64 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RAW ADS</title>
+    <title>RAW ADS - 360° Marketing Mastery</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Using Poppins font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
-        /* Define custom CSS variables from the provided palette */
+        /* Define custom CSS variables for the dark, neon green palette */
         :root {
             --primary: #000000;
             --secondary: #1A1A1A;
-            --accent: #00ff9d;
+            --accent: #00ff9d; /* Neon Green */
             --text: #FFFFFF;
             --subtext: #CCCCCC;
             --highlight: #00ff9d;
-            --social-bg: rgba(0, 0, 0, 0.85);
-            --social-hover: #00ff9d;
             --border-color: rgba(0, 255, 157, 0.3);
         }
 
-        /* Apply background image and new palette colors to the body */
+        /* Apply background styling and new palette colors to the body */
         body {
-            background-image: url('bgr1.jpg'); /* Background image is bgr1.jpg */
-            background-size: cover; /* Cover the entire viewport */
-            background-position: center; /* Center the background image */
-            background-repeat: no-repeat; /* Do not repeat the image */
-            background-attachment: fixed; /* Keep the background fixed during scroll */
-            background-color: var(--primary); /* Fallback and primary background */
-            color: var(--text); /* Default text color */
-            font-family: 'Poppins', sans-serif; /* Changed to Poppins as per the provided CSS */
-            line-height: 1.6; /* From provided CSS */
-            opacity: 0; /* Start with opacity 0 for fade-in */
-            animation: pageLoadAnimation 1.2s ease-out forwards; /* Apply new page load animation */
+            background-color: var(--primary); 
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6; 
+            opacity: 0; 
+            animation: pageLoadAnimation 1.2s ease-out forwards; 
         }
 
-        /* Custom button style with gradient and hover effects */
+        /* --- Custom Scroll Animations for reveal effect --- */
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-80px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(80px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .scroll-animate {
+            opacity: 0; 
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-animate.active-left {
+            animation: slideInLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .scroll-animate.active-right {
+            animation: slideInRight 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        /* Custom button style with neon gradient and hover effects */
         .custom-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(90deg, hsl(150, 100%, 50%) 0%, hsl(160, 100%, 50%) 50%, hsl(190, 100%, 50%) 100%);
-            color: var(--primary); /* Text color for the button */
+            color: var(--primary); 
             border: none;
             padding: 12px 30px;
             border-radius: 8px;
@@ -54,27 +73,27 @@
             text-decoration: none;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 0 15px hsla(150, 100%, 50%, 0.5); /* Initial glow */
+            box-shadow: 0 0 15px hsla(150, 100%, 50%, 0.5); 
         }
 
         .custom-button:hover {
-            box-shadow: 0 0 25px hsla(150, 100%, 50%, 0.8), 0 5px 20px hsla(150, 100%, 50%, 0.6); /* Enhanced glow on hover */
+            box-shadow: 0 0 25px hsla(150, 100%, 50%, 0.8), 0 5px 20px hsla(150, 100%, 50%, 0.6); 
             transform: translateY(-2px);
             background: linear-gradient(90deg, hsl(160, 100%, 50%) 0%, hsl(150, 100%, 50%) 50%, hsl(190, 100%, 50%) 100%);
             color: var(--primary);
         }
 
-        /* Custom twinkle animation for stars */
+        /* Custom twinkle animation for decorative stars */
         @keyframes twinkle {
-            0%, 100% { opacity: 0.4; } /* Start and end with moderate opacity */
-            20% { opacity: 1; } /* Brightest point */
+            0%, 100% { opacity: 0.4; } 
+            20% { opacity: 1; } 
             40% { opacity: 0.5; }
             60% { opacity: 0.9; }
             80% { opacity: 0.4; }
         }
 
         .animate-twinkle {
-            animation: twinkle 4s ease-in-out infinite; /* Apply the twinkle animation */
+            animation: twinkle 4s ease-in-out infinite; 
         }
 
         /* Navbar styles */
@@ -84,17 +103,18 @@
             left: 0;
             width: 100%;
             height: 70px;
-            background-color: transparent; /* Changed to transparent */
+            background-color: transparent; 
             display: flex;
             align-items: center;
             padding: 0 20px;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            /* Removed border-bottom: 1px solid var(--border-color); */
+            backdrop-filter: blur(5px); /* Add a slight blur for better contrast */
         }
 
+        /* Styling for the logo image */
         .navbar-logo {
-            height: 40px;
+            height: 40px; /* Use h-10 class in HTML */
             margin-right: 15px;
             transition: transform 0.3s ease-in-out;
         }
@@ -102,37 +122,42 @@
         .navbar-logo:hover {
             transform: scale(1.1);
         }
-
-        /* Responsive adjustments from provided CSS */
-        @media (max-width: 768px) {
-            .title {
-                font-size: 30px;
-            }
-            .section-title {
-                font-size: 24px;
-            }
+        
+        /* Style for the Home link next to the button */
+        .nav-link {
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent);
+            background-color: rgba(0, 255, 157, 0.1);
         }
 
-        /* Gradient text style for h1 */
+
+        /* Gradient text style for main headings */
         .gradient-text {
             background: linear-gradient(90deg, hsl(150, 100%, 50%) 0%, hsl(160, 100%, 50%) 50%, hsl(190, 100%, 50%) 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            color: transparent; /* Fallback for browsers that don't support text-fill-color */
-            background-size: 800% auto; /* Increased size for smoother, more blended wave */
-            cursor: pointer; /* Indicate interactivity */
+            color: transparent; 
+            background-size: 800% auto; 
+            cursor: pointer; 
         }
 
         /* Keyframes for continuous gradient animation */
         @keyframes gradient-wave {
             0% { background-position: 0% center; }
-            100% { background-position: -100% center; } /* Scrolls the gradient left by its full width */
+            100% { background-position: -100% center; } 
         }
 
-        /* Apply continuous animation on hover, faster and smoother */
+        /* Apply continuous animation on hover */
         .gradient-text:hover {
-            animation: gradient-wave 3s linear infinite; /* Continuous animation on hover, 3 seconds, linear, infinite */
+            animation: gradient-wave 3s linear infinite; 
         }
 
         /* Full-page stars container */
@@ -142,26 +167,102 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Allows clicks to pass through to elements below */
-            z-index: 5; /* Lower than content, higher than body background */
-            overflow: hidden; /* Hide stars outside the viewport */
+            pointer-events: none; 
+            z-index: 5; 
+            overflow: hidden; 
         }
 
         /* New page load animation */
         @keyframes pageLoadAnimation {
             from {
                 opacity: 0;
-                transform: translateY(20px); /* Start slightly below */
+                transform: translateY(20px); 
             }
             to {
                 opacity: 1;
-                transform: translateY(0); /* End at original position */
+                transform: translateY(0); 
             }
+        }
+        
+        /* Custom card style for features and process */
+        .neon-card {
+            background-color: var(--secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.15); 
+            transition: all 0.3s ease;
+        }
+
+        .neon-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 35px rgba(0, 255, 157, 0.4); 
+            transform: translateY(-5px);
+        }
+
+        .icon-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            background-color: rgba(0, 255, 157, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        /* --- Video Carousel Styles --- */
+        
+        .video-scroll-container {
+            display: flex;
+            overflow-x: scroll;
+            gap: 1rem;
+            padding-bottom: 1rem; 
+            scroll-snap-type: x mandatory;
+            cursor: grab;
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+        }
+
+        .video-scroll-container::-webkit-scrollbar {
+            display: none; 
+        }
+
+        /* Portrait video card style */
+        .portrait-video-card {
+            min-width: 280px; 
+            width: 280px;
+            height: 480px; 
+            background-color: var(--secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.2); 
+            scroll-snap-align: start; 
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .portrait-video-card:hover {
+            box-shadow: 0 0 35px rgba(0, 255, 157, 0.6);
+        }
+
+        /* Video element inside the card */
+        .portrait-video {
+            height: 70%; /* Takes up 70% of the card height */
+            width: 100%;
+            object-fit: cover;
+            border-radius: 16px 16px 0 0;
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
+    <!-- Decorative Stars Background (Using star1.png images) -->
     <div class="stars-background">
         <img src="images/star1.png" alt="Decorative Star" class="absolute top-1/5 right-[10%] w-28 h-28 opacity-60 animate-twinkle hidden md:block">
         <img src="images/star1.png" alt="Decorative Star" class="absolute bottom-[15%] left-[10%] w-20 h-20 opacity-50 animate-twinkle hidden md:block" style="animation-delay: 1s;">
@@ -180,17 +281,29 @@
         <img src="images/star1.png" alt="Decorative Star" class="absolute bottom-[40%] left-[5%] w-18 h-18 opacity-55 animate-twinkle hidden md:block" style="animation-delay: 0.7s;">
     </div>
 
-    <nav class="navbar">
-        <img src="images/logo2.png" alt="RAW ADS Logo" class="h-10 mr-4 transition-transform hover:scale-105 cursor-pointer navbar-logo">
+    <!-- Navbar -->
+    <nav class="navbar" id="top-nav">
+        <!-- Logo Link (Home) - Using image as requested -->
+        <a href="index.html" class="flex items-center">
+            <!-- Logo image with fallback to placeholder image -->
+            <img src="images/logo2.png" alt="RAW ADS Logo" class="navbar-logo w-auto h-10" 
+                 onerror="this.onerror=null; this.src='https://placehold.co/120x40/000/00ff9d?text=RAW+ADS+Logo';" />
+        </a>
+        
+        <!-- Navigation Links and CTA -->
         <div class="flex flex-col sm:flex-row gap-4 items-center mt-4 sm:mt-0 ml-auto">
-            <a href="index.html" class="font-semibold text-base gradient-text hover:opacity-80 transition-opacity duration-300">Home</a>
+            <!-- Back to Home Link (Text updated) -->
+            <a href="index.html" class="nav-link text-base">Home</a>
+
+            <!-- Get Started CTA Button -->
             <a href="contactus.html" class="px-6 py-2 rounded-full font-semibold custom-button text-base">Get Started</a>
         </div>
     </nav>
 
-    <section class="relative py-20 px-4 flex flex-col items-center justify-center text-center overflow-hidden flex-grow pt-[70px]">
+    <!-- Hero Section -->
+    <section class="relative py-20 px-4 flex flex-col items-center justify-center text-center overflow-hidden flex-grow pt-[70px]" id="hero">
         <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight relative z-10 max-w-5xl gradient-text">
-            RAWads: 360° Marketing Mastery for Brands That Refuse to Blend In.
+            360° Marketing Mastery for Brands That Refuse to Blend In.
         </h1>
         <h2 class="text-xl md:text-2xl mb-2 max-w-5xl relative z-10" style="color: var(--subtext);">
             We fuse data, creativity, and relentless hustle to turn raw ideas into viral campaigns,
@@ -198,27 +311,225 @@
         <h3 class="text-xl md:text-2xl mb-8 max-w-5xl relative z-10" style="color: var(--subtext);">
             unstoppable SEO, and PR that trends.
         </h3>
+        <!-- IMPORTANT CHANGE: Added id="scroll-to-work-btn" for JavaScript targeting -->
+        <a href="#featured-work" id="scroll-to-work-btn" class="px-8 py-3 rounded-full font-semibold custom-button text-lg">
+            See Our Work 👇
+        </a>
     </section>
 
-    <section class="py-32 px-4 relative z-10" style="background-color: rgba(26, 26, 26, 0.8);">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <div class="text-left">
-                <h2 class="text-sm font-semibold uppercase mb-2" style="color: var(--accent);">HOW WE WORK</h2>
-                <h3 class="text-4xl font-bold mb-4" style="color: var(--text);">
-                    Get a dedicated design team at fraction of the cost.
-                </h3>
-            </div>
-            <div class="text-left">
-                <p class="text-lg mb-4" style="color: var(--subtext);">
-                    Grow your brand with high-quality design for a flat monthly fee. Work with senior designers.
-                    Subscribe and make as many requests as you need no limits.
+    <!-- SECTION: Featured RAW Work (Case Study Showcase) -->
+    <section id="featured-work" class="py-24 px-4 relative z-10" style="background-color: rgba(26, 26, 26, 0.8);">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-semibold uppercase mb-2" style="color: var(--accent);">FEATURED RAW WORK</h2>
+                <h3 class="text-4xl font-bold mb-4" style="color: var(--text);">Local Buzz to Global Growth.</h3>
+                <p class="text-lg max-w-3xl mx-auto" style="color: var(--subtext);">
+                    See the results of our **relentless execution**—whether it's generating hyperlocal buzz or crafting high-performance digital portals. **Scroll to see the creative in action.**
                 </p>
-                <a href="plans.html" class="inline-block px-6 py-2 rounded-full font-semibold custom-button text-base">
-                    Explore Our Plans 🚀
-                </a>
+            </div>
+
+            <!-- Project 1: Union Pub Ads (Vertical Video Carousel) -->
+            <div class="grid grid-cols-1 gap-12 justify-items-center">
+                <div class="scroll-animate w-full max-w-4xl" data-animate="left">
+                    <h4 class="text-3xl font-bold mb-2" style="color: var(--accent);">Union Pub: Viral Video Series</h4>
+                    <p class="text-lg mb-6" style="color: var(--subtext);">
+                        **Project:** Local Viral Takeover. We produced 4 high-impact, vertical videos optimized for social feeds, driving massive organic reach and immediate foot traffic.
+                    </p>
+                    
+                    <!-- Horizontal Scroll Container for Portrait Videos -->
+                    <div class="video-scroll-container">
+                        
+                        <!-- Video Card 1: raw1.mp4 -->
+                        <div class="portrait-video-card">
+                            <video class="portrait-video" 
+                                src="videos/raw1.mp4" 
+                                autoplay loop muted playsinline 
+                                poster="https://placehold.co/280x336/2A2A2A/00ff9d?text=Video+1+Placeholder" 
+                                alt="Changanassery Union Food Vibes">
+                            </video>
+                            <div class="p-4 flex-grow border-t-2" style="border-color: var(--border-color);"><p class="text-sm font-semibold" style="color: var(--accent);">Clip 1/4: Union Vibes (raw1.mp4)</p><p class="text-xs" style="color: var(--subtext);">Changanassery Union! Where the food's 'adipoli' and the vibes are 'polichu'!</p></div>
+                        </div>
+
+                        <!-- Video Card 2: raw2.mp4 -->
+                        <div class="portrait-video-card">
+                            <video class="portrait-video" 
+                                src="videos/raw2.mp4" 
+                                autoplay loop muted playsinline 
+                                poster="https://placehold.co/280x336/333333/00ff9d?text=Video+2+Placeholder" 
+                                alt="Favorite Drink Anticipation">
+                            </video>
+                            <div class="p-4 flex-grow border-t-2" style="border-color: var(--border-color);"><p class="text-sm font-semibold" style="color: var(--accent);">Clip 2/4: Favorite Drink (raw2.mp4)</p><p class="text-xs" style="color: var(--subtext);">That feeling when your favourite drink is waiting for you! Step into Union for great vibes.</p></div>
+                        </div>
+                        
+                         <!-- Video Card 3: raw3.mp4 -->
+                        <div class="portrait-video-card">
+                            <video class="portrait-video" 
+                                src="videos/raw3.mp4" 
+                                autoplay loop muted playsinline 
+                                poster="https://placehold.co/280x336/444444/00ff9d?text=Video+3+Placeholder" 
+                                alt="Bites and Moments">
+                            </video>
+                            <div class="p-4 flex-grow border-t-2" style="border-color: var(--border-color);">
+                                <p class="text-sm font-semibold" style="color: var(--accent);">Clip 3/4: Bites and Moments (raw3.mp4)</p>
+                                <p class="text-xs" style="color: var(--subtext);">Stack ‘em up and dig in! The best moments are made here, with our signature drinks and tasty bites.</p>
+                            </div>
+                        </div>
+
+                        <!-- Video Card 4: raw4.mp4 -->
+                        <div class="portrait-video-card">
+                            <video class="portrait-video" 
+                                src="videos/raw4.mp4" 
+                                autoplay loop muted playsinline 
+                                poster="https://placehold.co/280x336/555555/00ff9d?text=Video+4+Placeholder" 
+                                alt="Union Pine Punch CTA">
+                            </video>
+                            <div class="p-4 flex-grow border-t-2" style="border-color: var(--border-color);">
+                                <p class="text-sm font-semibold" style="color: var(--accent);">Clip 4/4: Union Pine Punch (raw4.mp4)</p>
+                                <p class="text-xs" style="color: var(--subtext);">Ready to punch up your day? Meet the Union Pine Punch! This unique cocktail is your perfect escape.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Detailed Services / Features Section -->
+    <section id="services" class="py-24 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-semibold uppercase mb-2" style="color: var(--accent);">WHAT WE DELIVER</h2>
+                <h3 class="text-4xl font-bold mb-4" style="color: var(--text);">Our 360° Service Spectrum</h3>
+                <p class="text-lg max-w-3xl mx-auto" style="color: var(--subtext);">
+                    From performance ads to deep market analysis and viral creative, we cover every touchpoint.
+                </p>
+            </div>
+
+            <!-- Service Grid (4 columns) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Performance Campaigns -->
+                <div class="neon-card text-center scroll-animate" data-animate="left">
+                    <div class="icon-circle mx-auto">
+                        <!-- Chart Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Performance Campaigns</h4>
+                    <p class="text-sm" style="color: var(--subtext);">
+                        High-ROI strategies for Google Ads, Meta, TikTok, and more. Data-driven creative testing and relentless optimization.
+                    </p>
+                </div>
+
+                <!-- Card 2: Design & Creative Assets -->
+                <div class="neon-card text-center scroll-animate" data-animate="right" style="animation-delay: 0.1s;">
+                    <div class="icon-circle mx-auto">
+                        <!-- Edit Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Design & Creative Assets</h4>
+                    <p class="text-sm" style="color: var(--subtext);">
+                        Unlimited design requests for ads, web assets, and social media. Fast turnaround without compromising quality.
+                    </p>
+                </div>
+                
+                <!-- Card 3: Technical SEO & Content -->
+                <div class="neon-card text-center scroll-animate" data-animate="left" style="animation-delay: 0.2s;">
+                    <div class="icon-circle mx-auto">
+                        <!-- Search Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Technical SEO & Content</h4>
+                    <p class="text-sm" style="color: var(--subtext);">
+                        Dominate search rankings with site audits, schema markup, and expertly crafted, keyword-rich content strategies.
+                    </p>
+                </div>
+
+                <!-- Card 4: Brand PR & Outreach -->
+                <div class="neon-card text-center scroll-animate" data-animate="right" style="animation-delay: 0.3s;">
+                    <div class="icon-circle mx-auto">
+                        <!-- Megaphone Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464l-4.242 4.242M14.828 14.828l-4.242-4.242M19 12a7 7 0 11-14 0 7 7 0 0114 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20.5 12a8.5 8.5 0 11-17 0 8.5 8.5 0 0117 0z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Brand PR & Outreach</h4>
+                    <p class="text-sm" style="color: var(--subtext);">
+                        Secure features in major publications and amplify your narrative to build true authority and industry buzz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA Banner -->
+    <section class="py-16 px-4 relative z-10" style="background-color: var(--primary); border-top: 1px solid var(--border-color);">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <!-- Left Text: Animates from the left -->
+            <div class="mb-8 md:mb-0 scroll-animate" data-animate="left">
+                <h3 class="text-4xl font-extrabold mb-2" style="color: var(--text);">
+                    Stop Waiting. <span class="gradient-text">Start Trending.</span>
+                </h3>
+                <p class="text-lg" style="color: var(--subtext);">
+                    Your competitor is already planning their next viral campaign. Don't be left behind.
+                </p>
+            </div>
+            <!-- Right Button: Animates from the right -->
+            <a href="contactus.html" class="custom-button px-10 py-4 text-lg scroll-animate" data-animate="right">
+                Book Your Discovery Call
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 relative z-10 border-t" style="border-color: var(--border-color);">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-xl font-bold mb-4" style="color: var(--accent);">RAW ADS</p>
+            <div class="flex justify-center space-x-6 text-sm mb-4" style="color: var(--subtext);">
+                <a href="#hero" class="hover:text-white transition-colors">Home</a>
+                <a href="#featured-work" class="hover:text-white transition-colors">Work</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="contactus.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <p class="text-sm" style="color: var(--subtext);">
+                &copy; 2024 RAW ADS. All rights reserved. A service of AKJ Company.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Use DOMContentLoaded to ensure elements are fully loaded before running script
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Smooth Scroll for Hero Button (New functionality)
+            const scrollToWorkBtn = document.getElementById('scroll-to-work-btn');
+            const targetSection = document.getElementById('featured-work');
+
+            if (scrollToWorkBtn && targetSection) {
+                // Prevent the default jump and implement smooth scroll
+                scrollToWorkBtn.addEventListener('click', (e) => {
+                    e.preventDefault(); 
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start' // Scroll to the top of the section
+                    });
+                });
+            }
+
+            // 2. JavaScript for scroll-triggered animations (Intersection Observer)
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const direction = entry.target.dataset.animate;
+                        if (direction === 'left' || direction === 'right') {
+                             entry.target.classList.add(`active-${direction}`);
+                        }
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { 
+                threshold: 0.2 
+            });
+
+            // Attach the observer to all elements with the 'scroll-animate' class
+            document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
