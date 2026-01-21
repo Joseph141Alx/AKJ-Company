@@ -1,123 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kochumagique - Under Construction</title>
-  <link rel="icon" type="image/jpeg" href="images/logo6.jpg">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kochumagique - Coming Soon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'magique-cream': '#F6F3E9',
+                        'magique-green': '#405751',
+                        'magique-gold': '#C5A059',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F6F3E9;
+            overflow-x: hidden;
+        }
+        .fade-in {
+            animation: fadeIn 1.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Origami & Line Animations */
+        .line-grow {
+            transform-origin: center;
+            animation: lineGrow 2.5s ease-out infinite alternate;
+        }
+        @keyframes lineGrow {
+            0% { transform: scaleX(0.8); opacity: 0.2; }
+            100% { transform: scaleX(1.2); opacity: 0.5; }
+        }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff; /* White background */
-    }
+        .origami-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
 
-    /* Home button style */
-    .home-button {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      padding: 10px 15px;
-      background-color: #00bcd4; /* Cyan background */
-      color: #ffffff; /* White text */
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-    }
+        .logo-ring {
+            animation: pulse-ring 4s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 0.2; }
+            100% { transform: scale(0.95); opacity: 0.5; }
+        }
 
-    .home-button:hover {
-      background-color: #009688; /* Teal on hover */
-    }
-
-    /* Main content - only the under construction box */
-    .main-content {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .container {
-      text-align: center;
-      padding: 30px 20px;
-      background: #ffffff; /* White container background */
-      border: 2px dashed #00bcd4; /* Cyan border */
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2); /* Teal/cyan shadow */
-      max-width: 500px;
-      width: 100%;
-    }
-
-    .construction-img {
-      width: 100%;
-      max-height: 250px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    .icon {
-      font-size: 48px;
-      margin-bottom: 15px;
-      color: #009688; /* Teal icon color */
-    }
-
-    h1 {
-      color: #00bcd4; /* Cyan heading color */
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: #555;
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-
-    @media (max-width: 600px) {
-      .home-button {
-        top: 10px;
-        left: 10px;
-        padding: 8px 12px;
-        font-size: 0.9rem;
-      }
-      h1 {
-        font-size: 24px;
-      }
-
-      .icon {
-        font-size: 36px;
-      }
-
-      p {
-        font-size: 14px;
-      }
-    }
-  </style>
+        .origami-bg {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.04;
+            z-index: 0;
+        }
+    </style>
 </head>
-<body>
+<body class="font-sans text-magique-green min-h-screen flex flex-col relative">
 
-  <a href="index.html" class="home-button">Home</a>
+    <!-- Subtle Background Origami Elements -->
+    <svg class="origami-bg top-20 -left-10 w-64 h-64" viewBox="0 0 100 100">
+        <path d="M10 50 L50 10 L90 50 L50 90 Z" fill="currentColor"/>
+    </svg>
+    <svg class="origami-bg bottom-20 -right-10 w-80 h-80" viewBox="0 0 100 100">
+        <path d="M0 20 L50 0 L100 20 L50 100 Z" fill="currentColor"/>
+    </svg>
 
-  <main class="main-content">
-    <div class="container">
-      <img src="images/photo6.jpg" alt="Under Construction Worksite" class="construction-img" />
-      <div class="icon">🚧</div>
-      <h1>We're Working On It!</h1>
-      <p>This page is currently under construction.</p>
-      <p>Please check back soon for updates.</p>
-    </div>
-  </main>
+    <!-- Header / Logo Area -->
+    <header class="pt-16 pb-8 text-center fade-in z-10">
+        <div class="flex flex-col items-center relative">
+            
+            <!-- Animated Symmetrical Design Background for Logo -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 pointer-events-none">
+                <div class="logo-ring absolute inset-0 border border-magique-gold rounded-full"></div>
+                <!-- Symmetrical Diagonal Lines -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-[1px] bg-magique-green/10 rotate-45"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-[1px] bg-magique-green/10 -rotate-45"></div>
+            </div>
 
+            <!-- Company Logo -->
+            <div class="w-24 h-24 md:w-28 md:h-28 mb-8 relative z-20 origami-float">
+                <img 
+                    src="images/logo6.jpg" 
+                    alt="Kochumagique Logo" 
+                    class="w-full h-full object-contain rounded-full shadow-sm bg-white p-1 border border-magique-gold/30"
+                    onerror="this.src='https://via.placeholder.com/150?text=K'"
+                >
+            </div>
+
+            <a href="#" class="inline-block relative">
+                <h1 class="font-serif text-3xl md:text-5xl tracking-[0.25em] font-medium uppercase">Kochumagique</h1>
+                <div class="text-[10px] md:text-xs font-light tracking-[0.5em] uppercase mt-3 opacity-70">
+                    Handmade • Heartfelt • Honest
+                </div>
+                <!-- Underline Detail -->
+                <div class="mt-4 flex justify-center items-center space-x-2">
+                    <div class="h-[1px] w-8 bg-magique-gold/40"></div>
+                    <div class="w-1 h-1 rounded-full bg-magique-gold"></div>
+                    <div class="h-[1px] w-8 bg-magique-gold/40"></div>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center px-6 py-12 z-10">
+        <div class="max-w-4xl w-full text-center fade-in" style="animation-delay: 0.3s;">
+            
+            <!-- Symmetrical Line Detail -->
+            <div class="flex items-center justify-center space-x-6 mb-16 overflow-hidden">
+                <div class="h-[1px] w-16 md:w-48 bg-magique-green opacity-20 line-grow"></div>
+                <div class="text-magique-gold origami-float">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <!-- Origami Crane-style Bird Shape -->
+                        <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="h-[1px] w-16 md:w-48 bg-magique-green opacity-20 line-grow"></div>
+            </div>
+
+            <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl mb-8 leading-tight font-light italic">
+                From her kitchen <br class="hidden md:block"/> to her needle.
+            </h2>
+            
+            <p class="font-sans text-sm md:text-base max-w-xl mx-auto leading-relaxed opacity-80 mb-14 tracking-[0.15em] uppercase px-4">
+                Meticulously kneaded. Carefully tailored. <br class="hidden md:block"/>
+                A story of passion is coming home to you.
+            </p>
+
+            <!-- Sophisticated Mailing List -->
+            <div class="max-w-md mx-auto w-full bg-white/40 backdrop-blur-md p-10 rounded-sm border border-magique-green/5 shadow-sm relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-magique-cream px-4 text-[10px] tracking-[0.3em] uppercase text-magique-gold">
+                    Invitations
+                </div>
+                <p class="font-serif text-2xl mb-8 font-light italic">Join our circle</p>
+                <form id="waitlist-form" class="space-y-6">
+                    <input 
+                        type="email" 
+                        required 
+                        placeholder="EMAIL ADDRESS" 
+                        class="w-full bg-transparent border-b border-magique-green/20 py-3 px-1 text-[10px] tracking-widest focus:border-magique-green outline-none transition-colors placeholder:text-magique-green/30 uppercase"
+                    >
+                    <button type="submit" class="group relative w-full bg-magique-green text-magique-cream py-4 text-[10px] tracking-[0.4em] uppercase overflow-hidden transition-all">
+                        <span class="relative z-10">Request an Update</span>
+                        <div class="absolute inset-0 bg-magique-gold translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                    </button>
+                </form>
+                <div id="form-message" class="hidden mt-6 text-[11px] tracking-[0.2em] text-magique-gold uppercase font-semibold">
+                    Thank you. We will be in touch.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pb-16 px-6 text-center fade-in z-10" style="animation-delay: 0.6s;">
+        <div class="nav-line w-full max-w-xs mx-auto mb-8"></div>
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 text-[9px] tracking-[0.3em] uppercase font-light">
+            <a href="#" class="hover:text-magique-gold transition-colors italic">Baking</a>
+            <span class="hidden md:inline opacity-20">/</span>
+            <a href="#" class="hover:text-magique-gold transition-colors italic">Stitching</a>
+            <span class="hidden md:inline opacity-20">/</span>
+            <a href="#" class="hover:text-magique-gold transition-colors italic">Contact</a>
+        </div>
+        <p class="text-[9px] tracking-[0.4em] uppercase opacity-30 mt-12">
+            &copy; 2026 Kochumagique &mdash; Curated by Hand
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.opacity = '0';
+            setTimeout(() => {
+                this.style.display = 'none';
+                document.getElementById('form-message').classList.remove('hidden');
+            }, 300);
+        });
+    </script>
 </body>
 </html>
