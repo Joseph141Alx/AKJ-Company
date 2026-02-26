@@ -11,54 +11,135 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <script>
+        /**
+         * Enhanced Image Handling
+         * Defined in head to ensure availability during initial render
+         */
+        function handleLogoError(img) {
+            const originalSrc = img.src;
+            
+            // If it failed as .png, try .jpg
+            if (originalSrc.toLowerCase().endsWith('.png')) {
+                img.src = originalSrc.replace(/\.png$/i, '.jpg');
+                img.onerror = () => { img.parentElement.style.display = 'none'; }; 
+                return;
+            }
+            
+            // If it failed as .jpg, try .png
+            if (originalSrc.toLowerCase().endsWith('.jpg')) {
+                img.src = originalSrc.replace(/\.jpg$/i, '.png');
+                img.onerror = () => { img.parentElement.style.display = 'none'; };
+                return;
+            }
+
+            // Otherwise, hide the container
+            img.parentElement.style.display = 'none';
+        }
+    </script>
+
     <style>
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            cursor: none; 
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #000;
             overflow-x: hidden;
-        }
-        
-        /* Custom Cursor */
-        #custom-cursor, #cursor-dot {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-        }
-        #custom-cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #6FA219;
-            border-radius: 50%;
-            transition: transform 0.1s ease-out, background-color 0.2s ease;
-        }
-        #cursor-dot {
-            width: 4px;
-            height: 4px;
-            background-color: #6FA219;
-            border-radius: 50%;
-        }
-        .cursor-active #custom-cursor {
-            transform: translate(-50%, -50%) scale(2.5);
-            background-color: rgba(111, 162, 25, 0.2);
-            border-color: #fff;
+            height: 100vh; /* Locked during loader */
         }
 
-        /* Slideshow Animation */
-        .slide {
+        /* 1. Cinematic Loader Styles */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .loader-text {
+            color: #6FA219;
+            font-size: 5rem;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            position: relative;
+            transform: scale(0.8);
+            filter: blur(10px);
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        #loader.active .loader-text {
+            transform: scale(1);
+            filter: blur(0);
+            opacity: 1;
+            letter-spacing: 0.1em;
+        }
+
+        .loader-bar-container {
+            width: 200px;
+            height: 2px;
+            background: rgba(255,255,255,0.1);
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loader-bar-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            background: #6FA219;
+            box-shadow: 0 0 15px #6FA219;
+            transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* 2. Transition Overlay (for Nav clicks) */
+        #nav-transition {
+            position: fixed;
+            inset: 0;
+            background: #6FA219;
+            z-index: 9998;
+            transform: translateY(100%);
+            pointer-events: none;
+        }
+
+        /* 3. Content Reveal After Loading */
+        .content-wrap {
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+        body.loaded {
+            height: auto;
+        }
+
+        body.loaded .content-wrap {
+            opacity: 1;
+        }
+
+        /* Hero Image Parallax/Scale Effect */
+        .hero-bg {
             position: absolute;
             inset: 0;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out, transform 6s ease-out;
             background-size: cover;
             background-position: center;
+            transform: scale(1.2);
+            filter: brightness(0.5);
+            transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
         }
-        .slide.active {
-            opacity: 1;
-            transform: scale(1.05);
+
+        body.loaded .hero-bg {
+            transform: scale(1);
+            filter: brightness(0.7);
         }
 
         /* Glass Utility */
@@ -70,157 +151,232 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
         }
 
-        /* Marquee */
+        /* Marquee Fixes */
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-320px * 8)); }
+            100% { transform: translateX(-50%); }
         }
+        
+        .marquee-container {
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+
         .marquee-content {
             display: flex;
-            width: calc(320px * 16);
-            animation: scroll 30s linear infinite;
+            gap: 4rem;
+            width: max-content;
+            animation: scroll 40s linear infinite;
         }
+
         .logo-item {
-            width: 280px;
-            height: 160px;
-            margin: 0 20px;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            filter: brightness(1.1);
-            transition: all 0.5s ease;
+            width: 160px;
+            height: 100px;
+            opacity: 0.9;
+            transition: all 0.4s ease;
         }
-        .logo-item:hover { transform: scale(1.15); }
-        .logo-item img { max-width: 90%; max-height: 90%; object-fit: contain; }
+
+        .logo-item:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
         
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        /* Scroll Animation Reveals */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
     </style>
 </head>
 <body class="bg-black">
 
-    <div id="custom-cursor"></div>
-    <div id="cursor-dot"></div>
-
-    <!-- NAVIGATION (UNTOUCHED CONTENT) -->
-    <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-6xl pointer-events-none">
-        <div class="glass-panel pointer-events-auto w-full h-20 rounded-3xl flex items-center justify-between px-10">
-            <div class="flex items-center gap-4">
-                <a href="index.html" class="flex items-center gap-2 group">
-                    <div class="w-2 h-8 bg-[#6FA219] rounded-full group-hover:scale-y-110 transition-transform"></div>
-                    <span class="text-white font-black italic text-2xl tracking-tighter uppercase">AMARON</span>
-                </a>
-            </div>
-            <div class="hidden md:flex items-center gap-10">
-                <a href="#products" class="text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase">Products</a>
-                <a href="#tech" class="text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase">Technology</a>
-                <a href="#contact" class="text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase">Contact</a>
-            </div>
-            <div class="flex items-center gap-6">
-                <span class="text-white font-extrabold text-[10px] tracking-[0.2em] uppercase">Status: Online</span>
-            </div>
+    <!-- OPENING LOADER -->
+    <div id="loader">
+        <div class="loader-text" id="loader-text">AMARON</div>
+        <div class="loader-bar-container">
+            <div class="loader-bar-fill" id="loader-bar"></div>
         </div>
-    </nav>
+    </div>
 
-    <!-- HERO SLIDESHOW -->
-    <header class="w-full h-screen relative overflow-hidden bg-black">
-        <div class="slideshow-container w-full h-screen relative">
-            <!-- Ensure images folder is named 'images' in GitHub root -->
-            <div class="slide active" style="background-image: url('images/Battery1.png');"></div>
-            <div class="slide" style="background-image: url('images/Battery2.png');"></div>
+    <!-- NAVIGATION POWER TRANSITION -->
+    <div id="nav-transition"></div>
+
+    <div class="content-wrap" id="main-content">
+        <!-- NAVIGATION -->
+        <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-6xl pointer-events-none">
+            <div class="glass-panel pointer-events-auto w-full h-20 rounded-3xl flex items-center justify-between px-10">
+                <div class="flex items-center gap-4">
+                    <a href="#" class="flex items-center gap-2 group nav-link">
+                        <div class="w-2 h-8 bg-[#6FA219] rounded-full group-hover:scale-y-110 transition-transform duration-300"></div>
+                        <span class="text-white font-black italic text-2xl tracking-tighter uppercase">AMARON</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center gap-10">
+                    <a href="#tech" class="nav-link text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase transition-colors">Technology</a>
+                    <a href="#partners" class="nav-link text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase transition-colors">Partners</a>
+                    <a href="#support" class="nav-link text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase transition-colors">Support</a>
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="flex items-center gap-6"></div>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <header id="home" class="w-full h-screen relative overflow-hidden bg-black">
+            <div class="hero-bg" style="background-image: url('D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/images/Battery1.png');"></div>
             
             <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-            <div class="absolute bottom-20 left-12 z-20 flex flex-col">
-                <span class="text-[#6FA219] text-5xl md:text-8xl font-black italic tracking-tighter uppercase">AMARON</span>
-                <h1 class="text-white text-xl md:text-3xl font-bold uppercase tracking-widest">Power Without Limits.</h1>
+            
+            <div class="absolute top-1/3 left-12 z-20 flex flex-col">
+                <span class="text-[#6FA219] text-5xl md:text-8xl font-black italic tracking-tighter uppercase leading-none reveal">AMARON</span>
+                <h1 class="text-white text-lg md:text-3xl font-bold uppercase tracking-[0.3em] mt-2 reveal stagger-1">"Power Without Limits."</h1>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="bg-black py-32 px-12">
-        <div class="max-w-7xl mx-auto">
-            <!-- Tech Section -->
-            <section id="tech" class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center mb-48 reveal">
-                <div>
-                    <h2 class="text-[#6FA219] text-xs font-bold tracking-[0.5em] uppercase mb-6">Advanced Engineering</h2>
-                    <h3 class="text-white text-4xl md:text-6xl font-extrabold italic uppercase tracking-tighter leading-none mb-8">The Core of Endurance</h3>
-                    <p class="text-white/40 text-lg leading-relaxed max-w-md">Our batteries feature SilvenX technology for extreme heat resistance and superior longevity in harsh environments.</p>
-                </div>
-                <div class="relative flex justify-center">
-                    <div class="w-full max-w-md aspect-square glass-panel rounded-full overflow-hidden flex items-center justify-center border-[#6FA219]/20">
-                        <img src="images/Battery3.png" alt="Battery" class="w-4/5 h-auto object-contain">
+        <!-- MAIN CONTENT -->
+        <main class="bg-black pt-32 pb-12 px-12">
+            <div class="max-w-7xl mx-auto">
+                
+                <!-- Tech Section -->
+                <section id="tech" class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center mb-48 reveal">
+                    <div>
+                        <h2 class="text-[#6FA219] text-[10px] font-bold tracking-[0.5em] uppercase mb-6 stagger-1">Advanced Engineering</h2>
+                        <h3 class="text-white text-3xl md:text-5xl font-extrabold italic uppercase tracking-tighter leading-none mb-8 stagger-2">"The Core of Endurance"</h3>
+                        <p class="text-white/40 text-base leading-relaxed max-w-md">Our batteries feature SilvenX technology for extreme heat resistance and superior longevity in harsh environments.</p>
                     </div>
-                </div>
-            </section>
+                    <div class="relative flex justify-center">
+                        <div class="w-full max-w-md aspect-square glass-panel rounded-full overflow-hidden flex items-center justify-center border-[#6FA219]/20">
+                            <img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/images/Battery2.png" onerror="this.src='D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/images/Battery3.png'" alt="Battery" class="w-4/5 h-auto object-contain">
+                        </div>
+                    </div>
+                </section>
 
-            <!-- PARTNERS MARQUEE -->
-            <section class="reveal mb-32">
+                <!-- PARTNERS MARQUEE -->
+                <section id="partners" class="reveal mb-32">
+                    <div class="text-center mb-16">
+                        <h3 class="text-white/80 text-2xl font-black italic uppercase tracking-tighter">Trusted By Giants</h3>
+                    </div>
+
+                    <div class="marquee-container relative overflow-hidden py-12">
+                        <div class="marquee-content" id="marquee-content">
+                            <!-- Logos with dynamic error handling -->
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Toyota_logo.png" onerror="handleLogoError(this)" alt="Toyota"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Tata_logo.png" onerror="handleLogoError(this)" alt="Tata"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Suzuki_logo.png" onerror="handleLogoError(this)" alt="Suzuki"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Nissan_logo.png" onerror="handleLogoError(this)" alt="Nissan"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Kia_logo.png" onerror="handleLogoError(this)" alt="Kia"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Hyundai_logo.png" onerror="handleLogoError(this)" alt="Hyundai"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Ktm_logo.png" onerror="handleLogoError(this)" alt="KTM"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Mahindra_logo.png" onerror="handleLogoError(this)" alt="Mahindra"></div>
+                            
+                            <!-- Duplicate set for seamless scrolling -->
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Toyota_logo.png" onerror="handleLogoError(this)" alt="Toyota"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Tata_logo.png" onerror="handleLogoError(this)" alt="Tata"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Suzuki_logo.png" onerror="handleLogoError(this)" alt="Suzuki"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Nissan_logo.png" onerror="handleLogoError(this)" alt="Nissan"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Kia_logo.png" onerror="handleLogoError(this)" alt="Kia"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Hyundai_logo.png" onerror="handleLogoError(this)" alt="Hyundai"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Ktm_logo.png" onerror="handleLogoError(this)" alt="KTM"></div>
+                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Mahindra_logo.png" onerror="handleLogoError(this)" alt="Mahindra"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- FOOTER SECTION -->
+        <footer id="support" class="bg-black border-t border-white/5 pt-32 pb-20 px-12 reveal">
+            <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <h3 class="text-white/80 text-3xl font-black italic uppercase tracking-tighter">Trusted By Giants</h3>
+                    <h2 class="text-[#6FA219] text-[10px] font-bold tracking-[0.5em] uppercase mb-6">Support</h2>
+                    <h3 class="text-white text-3xl md:text-5xl font-extrabold italic uppercase tracking-tighter leading-none mb-8">"Always Within Reach"</h3>
                 </div>
-
-                <div class="marquee-container relative overflow-hidden py-12">
-                    <div class="marquee-content">
-                                              <!-- Set 1 -->
-                        <div class="logo-item"><img src="Car logo/Toyota_logo.png" onerror="this.src='Car logo/Toyota_logo.jpg'" alt="Toyota"></div>
-                        <div class="logo-item"><img src="Car logo/Tata_logo.png" onerror="this.src='Car logo/Tata_logo.jpg'" alt="Tata"></div>
-                        <div class="logo-item"><img src="Car logo/Suzuki_logo.png" onerror="this.src='Car logo/Suzuki_logo.jpg'" alt="Suzuki"></div>
-                        <div class="logo-item"><img src="Car logo/Nissan_logo.png" onerror="this.src='Car logo/Nissan_logo.jpg'" alt="Nissan"></div>
-                        <div class="logo-item"><img src="Car logo/Kia_logo.png" onerror="this.src='Car logo/Kia_logo.jpg'" alt="Kia"></div>
-                        <div class="logo-item"><img src="Car logo/Hyundai_logo.png" onerror="this.src='Car logo/Hyundai_logo.jpg'" alt="Hyundai"></div>
-                        <div class="logo-item"><img src="Car logo/Ktm_logo.png" onerror="this.src='Car logo/Ktm_logo.jpg'" alt="KTM"></div>
-                        <div class="logo-item"><img src="Car logo/Mahindra_logo.png" onerror="this.src='Car logo/Mahindra_logo.jpg'" alt="Mahindra"></div>
-                        
-                        <!-- Set 2 -->
-                        <div class="logo-item"><img src="Car logo/Toyota_logo.png" onerror="this.src='Car logo/Toyota_logo.jpg'" alt="Toyota"></div>
-                        <div class="logo-item"><img src="Car logo/Tata_logo.png" onerror="this.src='Car logo/Tata_logo.jpg'" alt="Tata"></div>
-                        <div class="logo-item"><img src="Car logo/Suzuki_logo.png" onerror="this.src='Car logo/Suzuki_logo.jpg'" alt="Suzuki"></div>
-                        <div class="logo-item"><img src="Car logo/Nissan_logo.png" onerror="this.src='Car logo/Nissan_logo.jpg'" alt="Nissan"></div>
-                        <div class="logo-item"><img src="Car logo/Kia_logo.png" onerror="this.src='Car logo/Kia_logo.jpg'" alt="Kia"></div>
-                        <div class="logo-item"><img src="Car logo/Hyundai_logo.png" onerror="this.src='Car logo/Hyundai_logo.jpg'" alt="Hyundai"></div>
-                        <div class="logo-item"><img src="Car logo/Ktm_logo.png" onerror="this.src='Car logo/Ktm_logo.jpg'" alt="KTM"></div>
-                        <div class="logo-item"><img src="Car logo/Mahindra_logo.png" onerror="this.src='Car logo/Mahindra_logo.jpg'" alt="Mahindra"></div>
-                    </div>
+                <div class="text-center pt-12 border-t border-white/5">
+                    <span class="text-[#6FA219] text-3xl font-black italic uppercase">AMARON</span>
+                    <p class="text-white/20 text-[9px] tracking-[0.5em] uppercase mt-4">&copy; 2024 Amaron Batteries.</p>
                 </div>
-            </section>
-        </div>
-    </main>
-
-    <footer id="contact" class="bg-black border-t border-white/5 py-20 text-center">
-        <span class="text-[#6FA219] text-4xl font-black italic uppercase">AMARON</span>
-        <p class="text-white/20 text-[10px] tracking-[0.5em] uppercase mt-4">&copy; 2024 Amaron Batteries. Engineered for the future.</p>
-    </footer>
+            </div>
+        </footer>
+    </div>
 
     <script>
-        // Cursor Logic
-        const cursor = document.getElementById('custom-cursor');
-        const dot = document.getElementById('cursor-dot');
-        document.addEventListener('mousemove', (e) => {
-            dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
-            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+        // 1. Cinematic Opening Logic
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            const bar = document.getElementById('loader-bar');
+            
+            setTimeout(() => {
+                loader.classList.add('active');
+                bar.style.width = '100%';
+            }, 100);
+
+            setTimeout(() => {
+                loader.style.transition = 'transform 1s cubic-bezier(0.77, 0, 0.175, 1)';
+                loader.style.transform = 'translateY(-100%)';
+                document.body.classList.add('loaded');
+                
+                setTimeout(() => {
+                    document.querySelectorAll('header .reveal').forEach(el => el.classList.add('active'));
+                }, 500);
+            }, 2000);
         });
 
-        // Hover Effect
-        const interactives = document.querySelectorAll('button, a, .glass-panel, .logo-item');
-        interactives.forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
+        // 2. Power-Jump Navigation Animation
+        const transitionOverlay = document.getElementById('nav-transition');
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || !targetId.startsWith('#')) return window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                const targetElement = document.querySelector(targetId);
+                if (!targetElement) return;
+                
+                transitionOverlay.style.transition = 'none';
+                transitionOverlay.style.transform = 'translateY(100%)';
+                transitionOverlay.offsetHeight;
+
+                transitionOverlay.style.transition = 'transform 0.5s cubic-bezier(0.77, 0, 0.175, 1)';
+                transitionOverlay.style.transform = 'translateY(0%)';
+
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'auto'
+                    });
+                    transitionOverlay.style.transform = 'translateY(-100%)';
+                }, 500);
+            });
         });
 
-        // Slideshow Logic
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 5000);
-
-        // Scroll Reveal
+        // 3. Scroll Reveal Logic
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { 
+                    entry.target.classList.add('active'); 
+                }
+            });
         }, { threshold: 0.1 });
+
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
