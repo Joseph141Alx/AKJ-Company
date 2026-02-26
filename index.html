@@ -6,7 +6,7 @@
   <title>AKJ Company - Under Construction</title>
   <link rel="icon" type="image/png" href="images/logo4.jpg">
 
-  <meta name="description" content="AKJ Company is currently under construction. Stay tuned for exciting updates and explore our existing services like RAW ADS and Kochumagique!">
+  <meta name="description" content="AKJ Company is currently under construction. Stay tuned for exciting updates and explore our existing services like RAW ADS, Kochumagique, and Amaron!">
   <link rel="canonical" href="https://akjcompany.com/">
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,20 +14,20 @@
     /* Import the Inter font from Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
     body {
-      font-family: 'Inter', sans-serif; /* Apply Inter font to the whole body */
+      font-family: 'Inter', sans-serif;
     }
     /* Keyframe animation for the scrolling text */
     @keyframes scroll-left {
       0% {
-        transform: translateX(100%); /* Start off-screen to the right */
+        transform: translateX(100%);
       }
       100% {
-        transform: translateX(-100%); /* Move off-screen to the left */
+        transform: translateX(-100%);
       }
     }
     /* Apply the scrolling animation */
     .animate-scroll {
-      animation: scroll-left 10s linear infinite; /* 10s duration, linear timing, infinite loop */
+      animation: scroll-left 10s linear infinite;
     }
   </style>
 </head>
@@ -46,12 +46,9 @@
   <main class="flex-1 flex justify-center items-center p-5">
     <div class="text-center p-8 bg-white border-2 border-dashed border-orange-400 rounded-xl shadow-lg max-w-xl w-full">
       <div id="videoContainer" class="relative w-full h-72 mb-5 shadow-md rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center text-gray-500">
-        <video id="constructionVideo" class="absolute inset-0 w-full h-full object-cover" autoplay loop muted>
+        <video id="constructionVideo" class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline>
           <source src="videos/video1.mp4" type="video/mp4">
           Your browser does not support the video tag.
-          <div class="p-4 bg-red-100 text-red-700 rounded-md">
-            Video failed to load or is not supported. Please check the file path.
-          </div>
         </video>
         <img id="hoverImage" src="images/damu.jpg" alt="Hover Image" 
               class="absolute inset-0 w-full h-full object-cover hidden"
@@ -65,57 +62,60 @@
       <p class="text-gray-700 text-lg">Please check back soon for updates.</p>
       <p class="text-orange-600 text-md mt-4 italic font-bold mb-5">Meanwhile, explore our existing offerings below!</p>
       
-      <div class="flex flex-col items-center space-y-4 mt-4">
+      <!-- Brand Logos Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-4 items-center justify-items-center">
+        <!-- RAW ADS -->
         <a href="rawads.html" class="block transition-transform duration-300 ease-in-out hover:scale-105 hover:opacity-80">
           <img src="images/logo3.png" alt="RAW ADS" class="w-32 h-32 rounded-md shadow-sm object-contain"
                 onerror="this.onerror=null; this.src='https://placehold.co/128x128/FF9800/FFFFFF?text=RAW+ADS';"
           >
+          <span class="block text-sm font-semibold text-gray-600 mt-1">RAW ADS</span>
         </a>
+
+        <!-- Kochumagique -->
         <a href="kochumagique.html" class="block transition-transform duration-300 ease-in-out hover:scale-105 hover:opacity-80">
           <img src="images/logo6.jpg" alt="Kochumagique" class="w-32 h-32 rounded-md shadow-sm object-cover"
                 onerror="this.onerror=null; this.src='https://placehold.co/128x128/E65100/FFFFFF?text=KOCHUMAGIQUE';"
           >
+          <span class="block text-sm font-semibold text-gray-600 mt-1">KOCHUMAGIQUE</span>
+        </a>
+
+        <!-- Amaron (New Entry) -->
+        <a href="amaron.html" class="block transition-transform duration-300 ease-in-out hover:scale-105 hover:opacity-80">
+          <img src="images/logo7.jpg" alt="Amaron" class="w-32 h-32 rounded-md shadow-sm object-contain"
+                onerror="this.onerror=null; this.src='https://placehold.co/128x128/4CAF50/FFFFFF?text=AMARON';"
+          >
+          <span class="block text-sm font-semibold text-gray-600 mt-1">AMARON</span>
         </a>
       </div>
     </div>
   </main>
 
   <script>
-    // Get references to the video container, video, and image elements
     const videoContainer = document.getElementById('videoContainer');
     const video = document.getElementById('constructionVideo');
     const hoverImage = document.getElementById('hoverImage');
 
-    // Check if all elements exist before adding event listeners to prevent errors
     if (videoContainer && video && hoverImage) {
-      // Set the initial playback rate for the video to make it faster
       video.playbackRate = 2.0;
 
-      // Add event listener for when the mouse enters the video container area
       videoContainer.addEventListener('mouseenter', () => {
-        // Only pause if the video is currently playing
         if (!video.paused) {
-          video.pause(); // Pause the video
+          video.pause();
         }
-        video.classList.add('hidden'); // Hide the video using Tailwind's hidden class
-        hoverImage.classList.remove('hidden'); // Show the image by removing the hidden class
+        video.classList.add('hidden');
+        hoverImage.classList.remove('hidden');
       });
 
-      // Add event listener for when the mouse leaves the video container area
       videoContainer.addEventListener('mouseleave', () => {
-        hoverImage.classList.add('hidden'); // Hide the image
-        video.classList.remove('hidden'); // Show the video
-        // Only play if the video is currently paused
+        hoverImage.classList.add('hidden');
+        video.classList.remove('hidden');
         if (video.paused) {
           video.play().catch(error => {
-            // Catch and log any errors from play() to prevent unhandled rejections
             console.error("Video play error:", error);
           }); 
         }
       });
-    } else {
-      // Log an error if any of the required elements are not found
-      console.error("One or more elements (videoContainer, constructionVideo, hoverImage) not found.");
     }
   </script>
 
