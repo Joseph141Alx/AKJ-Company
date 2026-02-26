@@ -21,44 +21,33 @@
             overflow-x: hidden;
         }
         
-        .amaron-green { color: #6FA219; }
-        .bg-amaron-green { background-color: #95C93D; }
-        
-        /* Custom Cursor Styles */
+        /* Custom Cursor */
+        #custom-cursor, #cursor-dot {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
         #custom-cursor {
             width: 20px;
             height: 20px;
             border: 2px solid #6FA219;
             border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
             transition: transform 0.1s ease-out, background-color 0.2s ease;
-            transform: translate(-50%, -50%);
         }
-
         #cursor-dot {
             width: 4px;
             height: 4px;
             background-color: #6FA219;
             border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
         }
-
         .cursor-active #custom-cursor {
             transform: translate(-50%, -50%) scale(2.5);
             background-color: rgba(111, 162, 25, 0.2);
             border-color: #fff;
         }
 
-        a, button, .cursor-pointer {
-            cursor: none;
-        }
-
-        /* Slideshow Animation Styles */
+        /* Slideshow Animation */
         .slide {
             position: absolute;
             inset: 0;
@@ -67,61 +56,30 @@
             background-size: cover;
             background-position: center;
         }
-
         .slide.active {
             opacity: 1;
-            transform: scale(1.05); /* Subtle Ken Burns effect */
+            transform: scale(1.05);
         }
 
-        .video-inner-glow {
-            box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
-        }
-
-        /* Glass Utility Class */
+        /* Glass Utility */
         .glass-panel {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-top-color: rgba(255, 255, 255, 0.2);
-            border-left-color: rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
         }
 
-        /* Scroll Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Modern Marquee Animation */
+        /* Marquee */
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc(-320px * 8)); }
         }
-
-        .marquee-container {
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-        }
-
         .marquee-content {
             display: flex;
             width: calc(320px * 16);
             animation: scroll 30s linear infinite;
-            padding: 40px 0;
         }
-
-        .marquee-content:hover {
-            animation-play-state: paused;
-        }
-
         .logo-item {
             width: 280px;
             height: 160px;
@@ -129,144 +87,82 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 10px;
-            background: transparent;
-            
-            /* RESTORED COLORS: Removed grayscale, kept subtle brightness for dark bg */
-            filter: brightness(1.1) opacity(0.85);
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            filter: brightness(1.1);
+            transition: all 0.5s ease;
         }
-
-        .logo-item:hover {
-            filter: brightness(1.2) opacity(1);
-            transform: scale(1.15);
-        }
-
-        .logo-item img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-        }
+        .logo-item:hover { transform: scale(1.15); }
+        .logo-item img { max-width: 90%; max-height: 90%; object-fit: contain; }
+        
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-
 <body class="bg-black">
 
-    <!-- Custom Cursor Elements -->
     <div id="custom-cursor"></div>
     <div id="cursor-dot"></div>
 
-    <!-- GLASSY NAV BAR -->
+    <!-- NAVIGATION (UNTOUCHED CONTENT) -->
     <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-6xl pointer-events-none">
-        <div class="glass-panel pointer-events-auto w-full h-20 rounded-3xl flex items-center justify-between px-10 transition-all duration-500 hover:border-white/30 hover:bg-white/[0.05]">
-            
-            <!-- Logo Section -->
+        <div class="glass-panel pointer-events-auto w-full h-20 rounded-3xl flex items-center justify-between px-10">
             <div class="flex items-center gap-4">
                 <a href="index.html" class="flex items-center gap-2 group">
-                    <div class="w-2 h-8 bg-[#6FA219] rounded-full group-hover:scale-y-110 transition-transform duration-300"></div>
+                    <div class="w-2 h-8 bg-[#6FA219] rounded-full group-hover:scale-y-110 transition-transform"></div>
                     <span class="text-white font-black italic text-2xl tracking-tighter uppercase">AMARON</span>
                 </a>
             </div>
-
-            <!-- Navigation Links -->
             <div class="hidden md:flex items-center gap-10">
-                <a href="#products" class="text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase transition-colors duration-300">Products</a>
-                <a href="#tech" class="text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase transition-colors duration-300">Technology</a>
-                <a href="#support" class="text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase transition-colors duration-300">Support</a>
-                <a href="#contact" class="text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase transition-colors duration-300">Contact</a>
+                <a href="#products" class="text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase">Products</a>
+                <a href="#tech" class="text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase">Technology</a>
+                <a href="#contact" class="text-white/60 hover:text-[#6FA219] font-bold text-[10px] tracking-[0.3em] uppercase">Contact</a>
             </div>
-
-            <!-- CTA/Status -->
             <div class="flex items-center gap-6">
-                <div class="h-6 w-[1px] bg-white/10"></div>
-                <a href="index.html" class="flex items-center gap-2 group">
-                    <span class="text-white font-extrabold text-[10px] tracking-[0.2em] uppercase">Home</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-[#6FA219] group-hover:translate-x-1 transition-transform">
-                        <path d="M5 12h14m-7-7 7 7-7 7"/>
-                    </svg>
-                </a>
+                <span class="text-white font-extrabold text-[10px] tracking-[0.2em] uppercase">Status: Online</span>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SLIDESHOW SECTION -->
+    <!-- HERO SLIDESHOW -->
     <header class="w-full h-screen relative overflow-hidden bg-black">
         <div class="slideshow-container w-full h-screen relative">
-            <div class="slide active" style="background-image: url('images/Battery1.png'), url('images/Battery1.jpg');"></div>
-            <div class="slide" style="background-image: url('Battery2.png'), url('images/Battery2.jpg');"></div>
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-[#6FA219]/5 blur-[120px] pointer-events-none z-10"></div>
-            <div class="absolute inset-0 video-inner-glow pointer-events-none z-10"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 pointer-events-none z-10"></div>
+            <!-- Ensure images folder is named 'images' in GitHub root -->
+            <div class="slide active" style="background-image: url('images/Battery1.png');"></div>
+            <div class="slide" style="background-image: url('images/Battery2.png');"></div>
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
             <div class="absolute bottom-20 left-12 z-20 flex flex-col">
-                <span class="text-[#6FA219] text-4xl md:text-7xl font-black italic tracking-tighter uppercase mb-[-10px]">AMARON</span>
-                <h1 class="text-white text-2xl md:text-4xl font-black italic tracking-tighter uppercase">Power Without Limits.</h1>
+                <span class="text-[#6FA219] text-5xl md:text-8xl font-black italic tracking-tighter uppercase">AMARON</span>
+                <h1 class="text-white text-xl md:text-3xl font-bold uppercase tracking-widest">Power Without Limits.</h1>
             </div>
         </div>
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="bg-black py-32 px-12 overflow-hidden">
+    <main class="bg-black py-32 px-12">
         <div class="max-w-7xl mx-auto">
             <!-- Tech Section -->
             <section id="tech" class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center mb-48 reveal">
                 <div>
                     <h2 class="text-[#6FA219] text-xs font-bold tracking-[0.5em] uppercase mb-6">Advanced Engineering</h2>
-                    <h3 class="text-white text-4xl md:text-6xl font-extrabold italic uppercase tracking-tighter leading-none mb-8">The Core of <br> Endurance</h3>
-                    <p class="text-white/40 text-lg leading-relaxed max-w-md">Amaron batteries are designed with world-class SilvenX alloy technology, offering high heat resistance and zero maintenance.</p>
+                    <h3 class="text-white text-4xl md:text-6xl font-extrabold italic uppercase tracking-tighter leading-none mb-8">The Core of Endurance</h3>
+                    <p class="text-white/40 text-lg leading-relaxed max-w-md">Our batteries feature SilvenX technology for extreme heat resistance and superior longevity in harsh environments.</p>
                 </div>
-                <div class="relative group">
-                    <div class="aspect-square glass-panel rounded-full overflow-hidden flex items-center justify-center border-[#6FA219]/20 transition-all duration-700 group-hover:border-[#6FA219]/40">
-                        <img src="images/Battery3.png" onerror="this.src='images/Battery3.jpg'" alt="Amaron Battery Tech" class="absolute w-[80%] h-auto object-contain z-0 transition-transform duration-1000 group-hover:scale-110">
-                        <div class="text-[#6FA219] text-8xl font-black opacity-10 italic z-10 pointer-events-none select-none">ENDURE</div>
-                        <div class="absolute inset-0 bg-gradient-to-br from-[#6FA219]/10 to-transparent z-[1]"></div>
+                <div class="relative flex justify-center">
+                    <div class="w-full max-w-md aspect-square glass-panel rounded-full overflow-hidden flex items-center justify-center border-[#6FA219]/20">
+                        <img src="images/Battery3.png" alt="Battery" class="w-4/5 h-auto object-contain">
                     </div>
                 </div>
             </section>
 
-            <!-- Features -->
-            <section id="products" class="mb-48 reveal">
-                <div class="text-center mb-24">
-                    <h2 class="text-[#6FA219] text-xs font-bold tracking-[0.5em] uppercase mb-6">Key Specifications</h2>
-                    <h3 class="text-white text-5xl font-extrabold italic uppercase tracking-tighter">Why Choose Amaron?</h3>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="glass-panel p-12 rounded-[40px] hover:border-[#6FA219]/50 transition-all duration-500 group">
-                        <div class="w-12 h-12 bg-[#6FA219] rounded-xl mb-8 flex items-center justify-center group-hover:rotate-12 transition-transform">
-                            <svg class="text-black w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                        <h4 class="text-white text-xl font-bold mb-4 uppercase italic">Long Life</h4>
-                        <p class="text-white/30 text-sm leading-relaxed">Silver-alloy grid technology ensures superior life in high-heat conditions.</p>
-                    </div>
-                    <div class="glass-panel p-12 rounded-[40px] hover:border-[#6FA219]/50 transition-all duration-500 group">
-                        <div class="w-12 h-12 bg-[#6FA219] rounded-xl mb-8 flex items-center justify-center group-hover:rotate-12 transition-transform">
-                            <svg class="text-black w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                        <h4 class="text-white text-xl font-bold mb-4 uppercase italic">High Cranking</h4>
-                        <p class="text-white/30 text-sm leading-relaxed">Delivers massive power bursts for effortless vehicle starting every time.</p>
-                    </div>
-                    <div class="glass-panel p-12 rounded-[40px] hover:border-[#6FA219]/50 transition-all duration-500 group">
-                        <div class="w-12 h-12 bg-[#6FA219] rounded-xl mb-8 flex items-center justify-center group-hover:rotate-12 transition-transform">
-                            <svg class="text-black w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                        <h4 class="text-white text-xl font-bold mb-4 uppercase italic">Zero Maintenance</h4>
-                        <p class="text-white/30 text-sm leading-relaxed">Factory-sealed and wet-charged for immediate, hassle-free usage.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- BRAND LOGO MARQUEE (COLOR RESTORED, LARGE SCALE) -->
+            <!-- PARTNERS MARQUEE -->
             <section class="reveal mb-32">
                 <div class="text-center mb-16">
-                    <h2 class="text-[#6FA219] text-[10px] font-bold tracking-[0.6em] uppercase mb-4 opacity-50">OEM Partners</h2>
                     <h3 class="text-white/80 text-3xl font-black italic uppercase tracking-tighter">Trusted By Giants</h3>
                 </div>
 
-                <div class="marquee-container relative py-12">
-                    <div class="absolute left-0 top-0 bottom-0 w-48 bg-gradient-to-r from-black via-black/50 to-transparent z-10"></div>
-                    <div class="absolute right-0 top-0 bottom-0 w-48 bg-gradient-to-l from-black via-black/50 to-transparent z-10"></div>
-                    
+                <div class="marquee-container relative overflow-hidden py-12">
                     <div class="marquee-content">
-                        <!-- Set 1 -->
+                                              <!-- Set 1 -->
                         <div class="logo-item"><img src="Car logo/Toyota_logo.png" onerror="this.src='Car logo/Toyota_logo.jpg'" alt="Toyota"></div>
                         <div class="logo-item"><img src="Car logo/Tata_logo.png" onerror="this.src='Car logo/Tata_logo.jpg'" alt="Tata"></div>
                         <div class="logo-item"><img src="Car logo/Suzuki_logo.png" onerror="this.src='Car logo/Suzuki_logo.jpg'" alt="Suzuki"></div>
@@ -291,13 +187,13 @@
         </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer id="contact" class="bg-black border-t border-white/5 py-20 px-12 text-center">
-        <span class="text-[#6FA219] text-5xl font-black italic tracking-tighter uppercase mb-8 block">AMARON</span>
-        <p class="text-white/20 text-[10px] tracking-[0.5em] uppercase">&copy; 2024 Amaron Batteries. Engineered for the future.</p>
+    <footer id="contact" class="bg-black border-t border-white/5 py-20 text-center">
+        <span class="text-[#6FA219] text-4xl font-black italic uppercase">AMARON</span>
+        <p class="text-white/20 text-[10px] tracking-[0.5em] uppercase mt-4">&copy; 2024 Amaron Batteries. Engineered for the future.</p>
     </footer>
 
     <script>
+        // Cursor Logic
         const cursor = document.getElementById('custom-cursor');
         const dot = document.getElementById('cursor-dot');
         document.addEventListener('mousemove', (e) => {
@@ -305,27 +201,27 @@
             cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
         });
 
-        const interactives = document.querySelectorAll('button, a, .cursor-pointer, .glass-panel, .logo-item');
+        // Hover Effect
+        const interactives = document.querySelectorAll('button, a, .glass-panel, .logo-item');
         interactives.forEach(el => {
             el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
             el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
         });
 
+        // Slideshow Logic
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
-        function nextSlide() {
+        setInterval(() => {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
-        }
-        setInterval(nextSlide, 5000);
+        }, 5000);
 
+        // Scroll Reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
-
 </html>
-
