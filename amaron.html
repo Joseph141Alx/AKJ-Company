@@ -14,6 +14,7 @@
     <script>
         /**
          * Enhanced Image Handling
+         * Automatically attempts to swap .png and .jpg if an image fails to load
          */
         function handleLogoError(img) {
             const originalSrc = img.src;
@@ -187,7 +188,7 @@
 </head>
 <body class="bg-black">
 
-    <!-- NAVIGATION POWER TRANSITION (Remains for page navigation) -->
+    <!-- NAVIGATION POWER TRANSITION -->
     <div id="nav-transition">
         <div class="nav-transition-text">AMARON</div>
     </div>
@@ -230,7 +231,8 @@
 
         <!-- HERO SECTION -->
         <header id="home" class="w-full h-screen relative overflow-hidden bg-black flex items-center">
-            <div class="hero-bg" style="background-image: url('D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/images/Battery1.png');"></div>
+            <!-- Updated relative path for GitHub -->
+            <div class="hero-bg" style="background-image: url('images/Battery1.png');"></div>
             
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
             
@@ -255,7 +257,8 @@
                     </div>
                     <div class="relative flex justify-center order-1 md:order-2">
                         <div class="w-full max-w-[260px] md:max-w-md aspect-square glass-panel rounded-full overflow-hidden flex items-center justify-center border-[#6FA219]/20">
-                            <img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/images/Battery2.png" onerror="this.src='D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/images/Battery3.png'" alt="Battery" class="w-4/5 h-auto object-contain">
+                            <!-- Updated relative path for GitHub -->
+                            <img src="images/Battery2.png" onerror="this.src='images/Battery3.png'" alt="Battery" class="w-4/5 h-auto object-contain">
                         </div>
                     </div>
                 </section>
@@ -268,59 +271,60 @@
 
                     <div class="marquee-container relative overflow-hidden py-6 md:py-12">
                         <div class="marquee-content" id="marquee-content">
-                            <!-- Original Set -->
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Toyota_logo.png" onerror="handleLogoError(this)" alt="Toyota"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Tata_logo.png" onerror="handleLogoError(this)" alt="Tata"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Suzuki_logo.png" onerror="handleLogoError(this)" alt="Suzuki"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Nissan_logo.png" onerror="handleLogoError(this)" alt="Nissan"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Kia_logo.png" onerror="handleLogoError(this)" alt="Kia"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Hyundai_logo.png" onerror="handleLogoError(this)" alt="Hyundai"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Ktm_logo.png" onerror="handleLogoError(this)" alt="KTM"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Mahindra_logo.png" onerror="handleLogoError(this)" alt="Mahindra"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Mg_logo.jpg" onerror="handleLogoError(this)" alt="MG"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/AshokLeyland_logo.png" onerror="handleLogoError(this)" alt="Ashok Leyland"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Mitsubishi_logo.jpg" onerror="handleLogoError(this)" alt="Mitsubishi"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Ford_logo.png" onerror="handleLogoError(this)" alt="Ford"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Volkswagen_logo.jpg" onerror="handleLogoError(this)" alt="Volkswagen"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Skoda_logo.jpg" onerror="handleLogoError(this)" alt="Skoda"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Honda_logo.png" onerror="handleLogoError(this)" alt="Honda"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/HeroHonda_logo.png" onerror="handleLogoError(this)" alt="Hero Honda"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Eicher_logo.png" onerror="handleLogoError(this)" alt="Eicher"></div>
-                            <!-- Newly Added Logos -->
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Volvo_logo.jpg" onerror="handleLogoError(this)" alt="Volvo"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Force_logo.png" onerror="handleLogoError(this)" alt="Force"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Mini_logo.jpg" onerror="handleLogoError(this)" alt="Mini"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Izuzu_logo.png" onerror="handleLogoError(this)" alt="Isuzu"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Tvs_logo.jpg" onerror="handleLogoError(this)" alt="TVS"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Fiat_logo.png" onerror="handleLogoError(this)" alt="Fiat"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Jaguar_logo.png" onerror="handleLogoError(this)" alt="Jaguar"></div>
+                            <!-- Helper function to output logos based on your GitHub list -->
+                            <!-- List: AshokLeyland_logo.png, Eicher_logo.png, Fiat_logo.png, Force_logo.png, Ford_logo.png, HeroHonda_logo.png, Honda_logo.png, Hyundai_logo.png, Izuzu_logo.png, Jaguar_logo.png, Kia_logo.jpg, Ktm_logo.jpg, Mahindra_logo.png, Mg_logo.jpg, Mini_logo.jpg, Mitsubishi_logo.jpg, Nissan_logo.png, Skoda_logo.jpg, Suzuki_logo.png, Tata_logo.png, Toyota_logo.png, Tvs_logo.jpg, Volkswagen_logo.jpg, Volvo_logo.jpg -->
                             
-                            <!-- Duplicate for seamless scrolling -->
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Toyota_logo.png" onerror="handleLogoError(this)" alt="Toyota"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Tata_logo.png" onerror="handleLogoError(this)" alt="Tata"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Suzuki_logo.png" onerror="handleLogoError(this)" alt="Suzuki"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Nissan_logo.png" onerror="handleLogoError(this)" alt="Nissan"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Kia_logo.png" onerror="handleLogoError(this)" alt="Kia"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Hyundai_logo.png" onerror="handleLogoError(this)" alt="Hyundai"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Ktm_logo.png" onerror="handleLogoError(this)" alt="KTM"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Mahindra_logo.png" onerror="handleLogoError(this)" alt="Mahindra"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Mg_logo.jpg" onerror="handleLogoError(this)" alt="MG"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/AshokLeyland_logo.png" onerror="handleLogoError(this)" alt="Ashok Leyland"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Mitsubishi_logo.jpg" onerror="handleLogoError(this)" alt="Mitsubishi"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Ford_logo.png" onerror="handleLogoError(this)" alt="Ford"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Volkswagen_logo.jpg" onerror="handleLogoError(this)" alt="Volkswagen"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Skoda_logo.jpg" onerror="handleLogoError(this)" alt="Skoda"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Honda_logo.png" onerror="handleLogoError(this)" alt="Honda"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/HeroHonda_logo.png" onerror="handleLogoError(this)" alt="Hero Honda"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Eicher_logo.png" onerror="handleLogoError(this)" alt="Eicher"></div>
-                            <!-- Duplicate newly added logos -->
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Volvo_logo.jpg" onerror="handleLogoError(this)" alt="Volvo"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Force_logo.png" onerror="handleLogoError(this)" alt="Force"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Mini_logo.jpg" onerror="handleLogoError(this)" alt="Mini"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Izuzu_logo.png" onerror="handleLogoError(this)" alt="Isuzu"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Tvs_logo.jpg" onerror="handleLogoError(this)" alt="TVS"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Fiat_logo.png" onerror="handleLogoError(this)" alt="Fiat"></div>
-                            <div class="logo-item"><img src="D:/Joseph s Files/HTML/AKJ COMP WEBSITE/CODE/Car logo/Jaguar_logo.png" onerror="handleLogoError(this)" alt="Jaguar"></div>
+                            <!-- First Sequence -->
+                            <div class="logo-item"><img src="Car logo/AshokLeyland_logo.png" onerror="handleLogoError(this)" alt="Ashok Leyland"></div>
+                            <div class="logo-item"><img src="Car logo/Eicher_logo.png" onerror="handleLogoError(this)" alt="Eicher"></div>
+                            <div class="logo-item"><img src="Car logo/Fiat_logo.png" onerror="handleLogoError(this)" alt="Fiat"></div>
+                            <div class="logo-item"><img src="Car logo/Force_logo.png" onerror="handleLogoError(this)" alt="Force"></div>
+                            <div class="logo-item"><img src="Car logo/Ford_logo.png" onerror="handleLogoError(this)" alt="Ford"></div>
+                            <div class="logo-item"><img src="Car logo/HeroHonda_logo.png" onerror="handleLogoError(this)" alt="Hero Honda"></div>
+                            <div class="logo-item"><img src="Car logo/Honda_logo.png" onerror="handleLogoError(this)" alt="Honda"></div>
+                            <div class="logo-item"><img src="Car logo/Hyundai_logo.png" onerror="handleLogoError(this)" alt="Hyundai"></div>
+                            <div class="logo-item"><img src="Car logo/Izuzu_logo.png" onerror="handleLogoError(this)" alt="Isuzu"></div>
+                            <div class="logo-item"><img src="Car logo/Jaguar_logo.png" onerror="handleLogoError(this)" alt="Jaguar"></div>
+                            <div class="logo-item"><img src="Car logo/Kia_logo.jpg" onerror="handleLogoError(this)" alt="Kia"></div>
+                            <div class="logo-item"><img src="Car logo/Ktm_logo.jpg" onerror="handleLogoError(this)" alt="KTM"></div>
+                            <div class="logo-item"><img src="Car logo/Mahindra_logo.png" onerror="handleLogoError(this)" alt="Mahindra"></div>
+                            <div class="logo-item"><img src="Car logo/Mg_logo.jpg" onerror="handleLogoError(this)" alt="MG"></div>
+                            <div class="logo-item"><img src="Car logo/Mini_logo.jpg" onerror="handleLogoError(this)" alt="Mini"></div>
+                            <div class="logo-item"><img src="Car logo/Mitsubishi_logo.jpg" onerror="handleLogoError(this)" alt="Mitsubishi"></div>
+                            <div class="logo-item"><img src="Car logo/Nissan_logo.png" onerror="handleLogoError(this)" alt="Nissan"></div>
+                            <div class="logo-item"><img src="Car logo/Skoda_logo.jpg" onerror="handleLogoError(this)" alt="Skoda"></div>
+                            <div class="logo-item"><img src="Car logo/Suzuki_logo.png" onerror="handleLogoError(this)" alt="Suzuki"></div>
+                            <div class="logo-item"><img src="Car logo/Tata_logo.png" onerror="handleLogoError(this)" alt="Tata"></div>
+                            <div class="logo-item"><img src="Car logo/Toyota_logo.png" onerror="handleLogoError(this)" alt="Toyota"></div>
+                            <div class="logo-item"><img src="Car logo/Tvs_logo.jpg" onerror="handleLogoError(this)" alt="TVS"></div>
+                            <div class="logo-item"><img src="Car logo/Volkswagen_logo.jpg" onerror="handleLogoError(this)" alt="Volkswagen"></div>
+                            <div class="logo-item"><img src="Car logo/Volvo_logo.jpg" onerror="handleLogoError(this)" alt="Volvo"></div>
+
+                            <!-- Duplicate Sequence for Loop -->
+                            <div class="logo-item"><img src="Car logo/AshokLeyland_logo.png" onerror="handleLogoError(this)" alt="Ashok Leyland"></div>
+                            <div class="logo-item"><img src="Car logo/Eicher_logo.png" onerror="handleLogoError(this)" alt="Eicher"></div>
+                            <div class="logo-item"><img src="Car logo/Fiat_logo.png" onerror="handleLogoError(this)" alt="Fiat"></div>
+                            <div class="logo-item"><img src="Car logo/Force_logo.png" onerror="handleLogoError(this)" alt="Force"></div>
+                            <div class="logo-item"><img src="Car logo/Ford_logo.png" onerror="handleLogoError(this)" alt="Ford"></div>
+                            <div class="logo-item"><img src="Car logo/HeroHonda_logo.png" onerror="handleLogoError(this)" alt="Hero Honda"></div>
+                            <div class="logo-item"><img src="Car logo/Honda_logo.png" onerror="handleLogoError(this)" alt="Honda"></div>
+                            <div class="logo-item"><img src="Car logo/Hyundai_logo.png" onerror="handleLogoError(this)" alt="Hyundai"></div>
+                            <div class="logo-item"><img src="Car logo/Izuzu_logo.png" onerror="handleLogoError(this)" alt="Isuzu"></div>
+                            <div class="logo-item"><img src="Car logo/Jaguar_logo.png" onerror="handleLogoError(this)" alt="Jaguar"></div>
+                            <div class="logo-item"><img src="Car logo/Kia_logo.jpg" onerror="handleLogoError(this)" alt="Kia"></div>
+                            <div class="logo-item"><img src="Car logo/Ktm_logo.jpg" onerror="handleLogoError(this)" alt="KTM"></div>
+                            <div class="logo-item"><img src="Car logo/Mahindra_logo.png" onerror="handleLogoError(this)" alt="Mahindra"></div>
+                            <div class="logo-item"><img src="Car logo/Mg_logo.jpg" onerror="handleLogoError(this)" alt="MG"></div>
+                            <div class="logo-item"><img src="Car logo/Mini_logo.jpg" onerror="handleLogoError(this)" alt="Mini"></div>
+                            <div class="logo-item"><img src="Car logo/Mitsubishi_logo.jpg" onerror="handleLogoError(this)" alt="Mitsubishi"></div>
+                            <div class="logo-item"><img src="Car logo/Nissan_logo.png" onerror="handleLogoError(this)" alt="Nissan"></div>
+                            <div class="logo-item"><img src="Car logo/Skoda_logo.jpg" onerror="handleLogoError(this)" alt="Skoda"></div>
+                            <div class="logo-item"><img src="Car logo/Suzuki_logo.png" onerror="handleLogoError(this)" alt="Suzuki"></div>
+                            <div class="logo-item"><img src="Car logo/Tata_logo.png" onerror="handleLogoError(this)" alt="Tata"></div>
+                            <div class="logo-item"><img src="Car logo/Toyota_logo.png" onerror="handleLogoError(this)" alt="Toyota"></div>
+                            <div class="logo-item"><img src="Car logo/Tvs_logo.jpg" onerror="handleLogoError(this)" alt="TVS"></div>
+                            <div class="logo-item"><img src="Car logo/Volkswagen_logo.jpg" onerror="handleLogoError(this)" alt="Volkswagen"></div>
+                            <div class="logo-item"><img src="Car logo/Volvo_logo.jpg" onerror="handleLogoError(this)" alt="Volvo"></div>
                         </div>
                     </div>
                 </section>
