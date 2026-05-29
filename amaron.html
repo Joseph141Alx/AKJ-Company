@@ -5,32 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amaron | Power Experience</title>
     
+    <!-- --- CDN SPEED BOOSTER (FAST LOADER) --- -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for high-tech icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
-        /**
-         * Enhanced Image Handling
-         * Automatically attempts to swap .png and .jpg if an image fails to load
-         */
         function handleLogoError(img) {
             const originalSrc = img.src;
-            
             if (originalSrc.toLowerCase().endsWith('.png')) {
                 img.src = originalSrc.replace(/\.png$/i, '.jpg');
                 img.onerror = () => { img.parentElement.style.display = 'none'; }; 
                 return;
             }
-            
             if (originalSrc.toLowerCase().endsWith('.jpg')) {
                 img.src = originalSrc.replace(/\.jpg$/i, '.png');
                 img.onerror = () => { img.parentElement.style.display = 'none'; };
                 return;
             }
-
             img.parentElement.style.display = 'none';
         }
     </script>
@@ -40,11 +43,14 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
+            background-color: #030508;
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(111, 162, 25, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(111, 162, 25, 0.03) 0%, transparent 50%);
         }
 
-        /* Transition Overlay (for Nav clicks) */
+        /* --- ENHANCED TRANSITION OVERLAY --- */
         #nav-transition {
             position: fixed;
             inset: 0;
@@ -53,29 +59,169 @@
             transform: translateY(100%);
             pointer-events: none;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #nav-transition::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.15) 1px, transparent 0);
+            background-size: 40px 40px;
+            opacity: 0.5;
+        }
+
+        .transition-content {
+            position: relative;
+            z-index: 10;
         }
 
         .nav-transition-text {
             color: #000;
-            font-size: 3rem;
-            @media (min-width: 768px) { font-size: 6rem; }
+            font-size: 3.5rem;
             font-weight: 900;
             font-style: italic;
-            letter-spacing: -0.05em;
+            letter-spacing: -0.06em;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: skewX(-10deg) translateY(40px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            line-height: 0.8;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+        }
+
+        .nav-transition-subtext {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             opacity: 0;
             transform: translateY(20px);
-            transition: all 0.4s ease;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+            margin-top: 1.5rem;
+            background: rgba(0,0,0,0.05);
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            display: inline-block;
         }
 
-        #nav-transition.active .nav-transition-text {
+        @media (min-width: 768px) {
+            .nav-transition-text { font-size: 10rem; }
+            .nav-transition-subtext { font-size: 2.2rem; margin-top: 2rem; padding: 0.75rem 2.5rem; }
+        }
+
+        #nav-transition.active .nav-transition-text,
+        #nav-transition.active .nav-transition-subtext {
             opacity: 1;
-            transform: translateY(0);
+            transform: skewX(-10deg) translateY(0);
         }
 
-        /* Hero Image Fix for Mobile */
+        .glass-panel {
+            background: rgba(10, 18, 12, 0.75);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(111, 162, 25, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+        }
+
+        .glass-input {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(111, 162, 25, 0.2);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-input:focus {
+            border-color: #7BB21E;
+            box-shadow: 0 0 15px rgba(111, 162, 25, 0.3);
+            outline: none;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* --- DASHBOARD GRAPH BARS --- */
+        .dashboard-panel {
+            background: linear-gradient(145deg, rgba(20,20,20,0.8) 0%, rgba(5,5,5,0.9) 100%);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+
+        .dashboard-grid-line {
+            width: 1px;
+            height: 100%;
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 50%, transparent 50%);
+            background-size: 1px 10px;
+        }
+
+        .bar-container {
+            background: #080808;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            height: 44px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .bar-fill {
+            width: 0%;
+            height: 100%;
+            position: relative;
+            transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            white-space: nowrap; /* Prevent ugly squished multi-line wraps */
+        }
+
+        .bar-fill-amaron {
+            background: linear-gradient(90deg, #3a5a0a 0%, #6FA219 80%, #a4ff00 100%);
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.4), 0 0 15px rgba(111, 162, 25, 0.4);
+            border-radius: 4px;
+            border-right: 2px solid #fff;
+        }
+
+        .bar-fill-amaron::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(-45deg, transparent, transparent 8px, rgba(0, 0, 0, 0.15) 8px, rgba(0, 0, 0, 0.15) 16px);
+            z-index: 1;
+        }
+
+        .bar-fill-amaron::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8));
+            filter: blur(4px);
+            z-index: 2;
+        }
+
+        .bar-fill-conv {
+            background: linear-gradient(90deg, #1a1a1a 0%, #333 100%);
+            border-right: 2px solid #555;
+            border-radius: 4px;
+        }
+
+        .bar-label { position: relative; z-index: 10; }
+
+        .reveal.active .delay-1 { transition-delay: 0.1s; }
+        .reveal.active .delay-2 { transition-delay: 0.2s; }
+        .reveal.active .delay-3 { transition-delay: 0.3s; }
+        .reveal.active .delay-4 { transition-delay: 0.4s; }
+
+        .reveal.active .w-lifespan-amaron { width: 92%; }
+        .reveal.active .w-lifespan-conv { width: 45%; }
+        .reveal.active .w-temp-amaron { width: 98%; }
+        .reveal.active .w-temp-conv { width: 50%; }
+        .reveal.active .w-cca-amaron { width: 88%; }
+        .reveal.active .w-cca-conv { width: 60%; }
+
         .hero-bg {
             position: absolute;
             inset: 0;
@@ -84,23 +230,6 @@
             filter: brightness(0.6);
         }
 
-        @media (max-width: 767px) {
-            .hero-bg {
-                background-size: cover;
-                background-position: 70% center;
-            }
-        }
-
-        /* Glass Utility */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
-        }
-
-        /* Marquee Fixes */
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -113,10 +242,10 @@
 
         .marquee-content {
             display: flex;
-            gap: 2rem;
-            @media (min-width: 768px) { gap: 4rem; }
+            gap: 5rem;
             width: max-content;
             animation: scroll 60s linear infinite;
+            align-items: center;
         }
 
         .logo-item {
@@ -124,35 +253,30 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100px;
-            @media (min-width: 768px) { width: 160px; }
-            height: 60px;
-            @media (min-width: 768px) { height: 100px; }
-            opacity: 0.9;
-            transition: all 0.4s ease;
+            width: 140px;
         }
 
         .logo-item img {
+            width: auto;
             max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            height: auto;
+            max-height: 65px;
+            filter: grayscale(1) brightness(1.5) opacity(0.5);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        
-        /* Scroll Animation Reveals */
+
+        .logo-item img:hover {
+            filter: grayscale(0) brightness(1) opacity(1);
+            transform: scale(1.15);
+        }
+
+        /* --- SOLID FADE-IN ANIMATION FIX FOR SANDBOX ENVIRONMENT --- */
         .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .reveal.active {
-            opacity: 1;
+            opacity: 1; /* Always show, avoiding iframe blank viewport states */
             transform: translateY(0);
+            transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        .stagger-1 { transition-delay: 0.1s; }
-        .stagger-2 { transition-delay: 0.2s; }
-
-        /* Mobile Hamburger Animation */
         .menu-toggle span {
             display: block;
             width: 24px;
@@ -166,7 +290,6 @@
         .menu-toggle.open span:nth-child(2) { opacity: 0; }
         .menu-toggle.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -5px); }
 
-        /* Mobile Menu Panel */
         #mobile-menu-overlay {
             position: fixed;
             inset: 0;
@@ -181,28 +304,350 @@
             transform: translateX(100%);
             transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
         }
-        #mobile-menu-overlay.open {
-            transform: translateX(0);
+        #mobile-menu-overlay.open { transform: translateX(0); }
+
+        /* --- CUSTOM HIGH-TECH BUTTON --- */
+        .button {
+            --main-color: rgb(111, 162, 25);
+            --main-bg-color: rgba(111, 162, 25, 0.36);
+            --pattern-color: rgba(111, 162, 25, 0.073);
+            filter: hue-rotate(0deg);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            background: radial-gradient(circle, var(--main-bg-color) 0%, rgba(0, 0, 0, 0) 95%),
+                        linear-gradient(var(--pattern-color) 1px, transparent 1px),
+                        linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+            background-size: cover, 15px 15px, 15px 15px;
+            background-position: center center, center center, center center;
+            border-image: radial-gradient(circle, var(--main-color) 0%, rgba(0, 0, 0, 0) 100%) 1;
+            border-width: 1px 0 1px 0;
+            color: var(--main-color);
+            padding: 1rem 3rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: background-size 0.2s ease-in-out;
+            border-style: solid;
+            display: inline-block;
+            outline: none;
+        }
+        .button:hover {
+            background-size: cover, 10px 10px, 10px 10px;
+        }
+        .button:active {
+            filter: hue-rotate(250deg);
+        }
+
+        /* --- REALISTIC CAR CLUSTER ANIMATION --- */
+        .dashboard-cluster-wrapper {
+            display: none;
+            opacity: 0;
+            transform: scale(0.9) translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%;
+            padding: 2rem 0 4rem 0;
+        }
+        
+        .dashboard-cluster-wrapper.active { display: block; }
+        .dashboard-cluster-wrapper.show { opacity: 1; transform: scale(1) translateY(0); }
+
+        .cluster-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* SVG Element Styling */
+        .gauge-svg { overflow: visible; position: relative; z-index: 1; }
+        
+        .gauge-track {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.05);
+            stroke-linecap: round;
+        }
+        
+        .gauge-ticks {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.4);
+            stroke-width: 8;
+        }
+        .gauge-ticks-minor {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.15);
+            stroke-width: 4;
+        }
+        
+        .gauge-sweep {
+            fill: none;
+            stroke: #6FA219;
+            stroke-linecap: round;
+            filter: drop-shadow(0 0 12px rgba(111, 162, 25, 0.8));
+        }
+
+        /* Needle Logic */
+        .needle-pivot {
+            transform-origin: center;
+            transform: rotate(225deg);
+        }
+        
+        /* Typography */
+        .cluster-text {
+            font-family: 'Rajdhani', sans-serif;
+            fill: #fff;
+            text-anchor: middle;
+            font-weight: 700;
+        }
+        .text-label { font-size: 14px; letter-spacing: 4px; fill: #6FA219; }
+        .text-sm-label { font-size: 11px; letter-spacing: 2px; fill: rgba(255,255,255,0.4); }
+        .text-dial-num { font-size: 16px; font-weight: 600; fill: rgba(255,255,255,0.8); }
+
+        /* Absolute Placed Numbers for Center Speedometer (Radius ~105) */
+        .speed-nums { position: absolute; inset: 0; pointer-events: none; z-index: 2; font-family: 'Rajdhani', sans-serif; font-weight: 700; color: white; }
+        .speed-num { position: absolute; transform: translate(-50%, -50%); font-size: 18px; text-shadow: 0 0 5px rgba(0,0,0,0.8); }
+        .s-0 { top: 254px; left: 106px; }
+        .s-20 { top: 212px; left: 80px; }
+        .s-40 { top: 164px; left: 76px; }
+        .s-60 { top: 118px; left: 95px; }
+        .s-80 { top: 87px; left: 132px; }
+        .s-100 { top: 75px; left: 180px; }
+        .s-120 { top: 87px; left: 228px; }
+        .s-140 { top: 118px; left: 265px; }
+        .s-160 { top: 164px; left: 284px; }
+        .s-180 { top: 212px; left: 280px; }
+        .s-200 { top: 254px; left: 254px; color: #ff3b3b; }
+
+        /* RPM Numbers (Radius ~45) */
+        .rpm-num { position: absolute; transform: translate(-50%, -50%); font-size: 14px; }
+        .r-0 { top: 112px; left: 48px; }
+        .r-2 { top: 63px; left: 39px; }
+        .r-4 { top: 35px; left: 80px; }
+        .r-6 { top: 63px; left: 121px; }
+        .r-8 { top: 112px; left: 112px; color: #ff3b3b; }
+
+        /* Fuel Marks */
+        .f-E { top: 112px; left: 48px; color: #ff3b3b; }
+        .f-Half { top: 35px; left: 80px; font-size: 12px; }
+        .f-F { top: 112px; left: 112px; color: #6FA219; }
+
+        /* Odometer Styling */
+        .odometer-container {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 5;
+        }
+        .odo-readout {
+            font-family: monospace;
+            background: #0a0a0a;
+            padding: 4px 8px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 3px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,1);
+            margin-top: 5px;
+            display: flex;
+        }
+        .odo-highlight { color: #6FA219; }
+
+        /* --- ANIMATION SEQUENCES (REALISTIC REV UP AND DOWN) --- */
+        .booting #needle-speed {
+            animation: sweepSpeed 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        .booting #main-sweep {
+            animation: glowSpeed 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes sweepSpeed {
+            0%   { transform: rotate(225deg); }
+            40%  { transform: rotate(495deg); }
+            50%  { transform: rotate(495deg); }
+            100% { transform: rotate(225deg); }
+        }
+        @keyframes glowSpeed {
+            0%   { stroke-dashoffset: 659.7; }
+            40%  { stroke-dashoffset: 0; }
+            50%  { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 659.7; }
+        }
+
+        .booting #needle-rpm {
+            animation: sweepRPM 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        .booting #left-sweep {
+            animation: glowRPM 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes sweepRPM {
+            0%   { transform: rotate(225deg); }
+            35%  { transform: rotate(495deg); }
+            45%  { transform: rotate(495deg); }
+            100% { transform: rotate(225deg); }
+        }
+        @keyframes glowRPM {
+            0%   { stroke-dashoffset: 282.7; }
+            35%  { stroke-dashoffset: 0; }
+            45%  { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 282.7; }
+        }
+
+        .booting #needle-fuel {
+            animation: sweepFuel 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        .booting #right-sweep {
+            animation: glowFuel 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes sweepFuel {
+            0%   { transform: rotate(225deg); }
+            40%  { transform: rotate(495deg); }
+            50%  { transform: rotate(495deg); }
+            100% { transform: rotate(440deg); }
+        }
+        @keyframes glowFuel {
+            0%   { stroke-dashoffset: 282.7; }
+            40%  { stroke-dashoffset: 0; }
+            50%  { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 56.5; }
+        }
+
+        /* --- DYNAMIC INVENTORY GRID (CONVERTS TO PORTAL) --- */
+        #inventory-grid {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #inventory-grid.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        /* --- PRODUCTS HUD IGNITION GUIDE --- */
+        @keyframes sonar-ripple {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1.6);
+                opacity: 0;
+            }
+        }
+        
+        .pulse-ring {
+            position: absolute;
+            animation: sonar-ripple 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+            border: 1px solid rgba(111, 162, 25, 0.4);
+            box-shadow: 0 0 15px rgba(111, 162, 25, 0.2);
+            pointer-events: none;
+        }
+        
+        .pulse-ring-delay {
+            animation-delay: 1.25s;
+        }
+
+        .hud-prompter {
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 0.15em;
+            text-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+        }
+
+        /* --- PORTAL TACTILE INTERACTION --- */
+        .text-amaron { color: #7BB21E; }
+        .bg-amaron { background-color: #6FA219; }
+        .border-amaron { border-color: rgba(111, 162, 25, 0.4); }
+
+        .segment-tab {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .segment-tab::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0; height: 3px;
+            background: #6FA219;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .segment-tab.active {
+            background: linear-gradient(135deg, rgba(111, 162, 25, 0.15) 0%, rgba(111, 162, 25, 0.03) 100%);
+            border-color: rgba(111, 162, 25, 0.5);
+            color: #fff;
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(111, 162, 25, 0.15);
+        }
+        .segment-tab.active::before {
+            transform: scaleX(1);
+        }
+
+        .cell-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #3a5a0a 0%, #6FA219 70%, #a4ff00 100%);
+            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+        .cell-bar::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.25) 50%,
+                transparent
+            );
+            animation: sweep-bar 2.5s infinite;
+        }
+        @keyframes sweep-bar {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .status-pulse {
+            position: relative;
+        }
+        .status-pulse::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 9999px;
+            border: 2px solid #6FA219;
+            animation: pulse-ring 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
         }
     </style>
 </head>
 <body class="bg-black">
 
-    <!-- NAVIGATION POWER TRANSITION -->
+    <!-- Transition overlay screen -->
     <div id="nav-transition">
-        <div class="nav-transition-text">AMARON</div>
+        <div class="transition-content">
+            <div class="nav-transition-text">AMARON</div>
+            <div class="nav-transition-subtext">BY AKJ Company</div>
+        </div>
     </div>
 
-    <!-- MOBILE MENU OVERLAY -->
+    <!-- Mobile overlay menu -->
     <div id="mobile-menu-overlay">
         <a href="index.html" class="text-[#6FA219] text-3xl font-black italic uppercase tracking-tighter">AKJ</a>
         <a href="#tech" class="mobile-nav-link text-white text-3xl font-black italic uppercase tracking-tighter">Technology</a>
+        <a href="#products-start" class="mobile-nav-link text-white text-3xl font-black italic uppercase tracking-tighter">Products</a>
         <a href="#partners" class="mobile-nav-link text-white text-3xl font-black italic uppercase tracking-tighter">Partners</a>
         <a href="#support" class="mobile-nav-link text-white text-3xl font-black italic uppercase tracking-tighter">Support</a>
     </div>
 
     <div class="content-wrap" id="main-content">
-        <!-- NAVIGATION -->
+        
+        <!-- Navigation Bar -->
         <nav class="fixed top-3 md:top-4 left-1/2 -translate-x-1/2 z-[100] w-[95%] md:w-[90%] max-w-6xl pointer-events-none">
             <div class="glass-panel pointer-events-auto w-full h-16 md:h-20 rounded-2xl md:rounded-3xl flex items-center justify-between px-4 md:px-10">
                 <div class="flex items-center gap-2 md:gap-4 shrink-0">
@@ -211,31 +656,23 @@
                         <span class="text-white font-black italic text-lg md:text-2xl tracking-tighter uppercase">AMARON</span>
                     </a>
                 </div>
-                
-                <!-- Desktop Nav -->
                 <div class="hidden md:flex items-center gap-8">
                     <a href="#tech" class="nav-link text-white/80 hover:text-[#6FA219] font-extrabold text-[13px] tracking-[0.2em] uppercase transition-colors">Technology</a>
+                    <a href="#products-start" class="nav-link text-white/80 hover:text-[#6FA219] font-extrabold text-[13px] tracking-[0.2em] uppercase transition-colors">Products</a>
                     <a href="#partners" class="nav-link text-white/80 hover:text-[#6FA219] font-extrabold text-[13px] tracking-[0.2em] uppercase transition-colors">Partners</a>
                     <a href="#support" class="nav-link text-white/80 hover:text-[#6FA219] font-extrabold text-[13px] tracking-[0.2em] uppercase transition-colors">Support</a>
                     <a href="index.html" class="text-[#6FA219] font-extrabold text-[13px] tracking-[0.2em] uppercase transition-colors">AKJ</a>
                 </div>
-
-                <!-- Mobile Hamburger Button -->
                 <button id="menu-btn" class="md:hidden menu-toggle focus:outline-none p-2 z-[110] relative">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </nav>
 
-        <!-- HERO SECTION -->
+        <!-- Hero / Header Section -->
         <header id="home" class="w-full h-screen relative overflow-hidden bg-black flex items-center">
-            <!-- Updated relative path for GitHub -->
             <div class="hero-bg" style="background-image: url('images/Battery1.png');"></div>
-            
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
-            
             <div class="relative z-20 px-8 md:px-12 w-full">
                 <div class="flex flex-col max-w-4xl">
                     <span class="text-[#6FA219] text-5xl md:text-8xl font-black italic tracking-tighter uppercase leading-[0.85] reveal active">AMARON</span>
@@ -244,94 +681,442 @@
             </div>
         </header>
 
-        <!-- MAIN CONTENT -->
+        <!-- Main Page Container -->
         <main class="bg-black pt-20 md:pt-32 pb-12 px-6 md:px-12">
             <div class="max-w-7xl mx-auto">
                 
-                <!-- Tech Section -->
+                <!-- Advanced Engineering Segment -->
                 <section id="tech" class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center mb-32 md:mb-48 reveal">
                     <div class="order-2 md:order-1">
-                        <h2 class="text-[#6FA219] text-[10px] font-bold tracking-[0.5em] uppercase mb-4 md:mb-6 stagger-1">Advanced Engineering</h2>
-                        <h3 class="text-white text-3xl md:text-5xl font-extrabold italic uppercase tracking-tighter leading-tight mb-6 md:mb-8 stagger-2">"The Core of Endurance"</h3>
+                        <h2 class="text-[#6FA219] text-[10px] font-bold tracking-[0.5em] uppercase mb-4 md:mb-6">Advanced Engineering</h2>
+                        <h3 class="text-white text-3xl md:text-5xl font-extrabold italic uppercase tracking-tighter leading-tight mb-6 md:mb-8">"The Core of Endurance"</h3>
                         <p class="text-white/40 text-sm md:text-base leading-relaxed max-w-md">Our batteries feature SilvenX technology for extreme heat resistance and superior longevity in harsh environments.</p>
                     </div>
                     <div class="relative flex justify-center order-1 md:order-2">
                         <div class="w-full max-w-[260px] md:max-w-md aspect-square glass-panel rounded-full overflow-hidden flex items-center justify-center border-[#6FA219]/20">
-                            <!-- Updated relative path for GitHub -->
                             <img src="images/Battery2.png" onerror="this.src='images/Battery3.png'" alt="Battery" class="w-4/5 h-auto object-contain">
                         </div>
                     </div>
                 </section>
 
-                <!-- PARTNERS MARQUEE -->
+                <!-- Static Telemetry benchmarks segment -->
+                <section class="mb-32 md:mb-48 reveal">
+                    <div class="text-center mb-12 md:mb-16">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 border border-[#6FA219]/30 rounded-full mb-6 bg-[#6FA219]/5">
+                            <div class="w-2 h-2 rounded-full bg-[#6FA219] animate-pulse"></div>
+                            <span class="text-[#6FA219] text-[10px] font-bold tracking-[0.3em] uppercase">Telemetry Data</span>
+                        </div>
+                        <h2 class="text-white text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-4">High Output Benchmark</h2>
+                    </div>
+
+                    <div class="max-w-5xl mx-auto dashboard-panel rounded-[2rem] p-6 md:p-12 relative border border-white/5">
+                        <div class="absolute inset-0 pointer-events-none flex justify-between px-12 md:px-24 py-12 opacity-30 z-0">
+                            <div class="dashboard-grid-line"></div>
+                            <div class="dashboard-grid-line"></div>
+                            <div class="dashboard-grid-line"></div>
+                            <div class="dashboard-grid-line hidden md:block"></div>
+                        </div>
+
+                        <div class="relative z-10 space-y-12">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-end border-b border-white/10 pb-2">
+                                    <span class="text-white/90 text-sm md:text-base font-bold uppercase tracking-[0.2em]">Durability Cycle</span>
+                                    <span class="text-[#6FA219] font-black text-xs md:text-sm uppercase tracking-widest italic">Optimized Performance</span>
+                                </div>
+                                <div class="space-y-3 pt-2">
+                                    <div class="bar-container">
+                                        <div class="bar-fill bar-fill-amaron w-lifespan-amaron delay-1">
+                                            <span class="bar-label text-black text-xs md:text-sm font-black uppercase italic tracking-tight drop-shadow-md">AMARON HI-LIFE</span>
+                                        </div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill bar-fill-conv w-lifespan-conv delay-2">
+                                            <span class="bar-label text-white/50 text-xs md:text-sm font-bold uppercase tracking-tight">CONVENTIONAL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-end border-b border-white/10 pb-2">
+                                    <span class="text-white/90 text-sm md:text-base font-bold uppercase tracking-[0.2em]">Thermal Stability</span>
+                                    <span class="text-[#6FA219] font-black text-xs md:text-sm uppercase tracking-widest italic">Heat Resistant</span>
+                                </div>
+                                <div class="space-y-3 pt-2">
+                                    <div class="bar-container">
+                                        <div class="bar-fill bar-fill-amaron w-temp-amaron delay-2">
+                                            <span class="bar-label text-black text-xs md:text-sm font-black uppercase italic tracking-tight drop-shadow-md">SILVENX ALLOY PRO</span>
+                                        </div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill bar-fill-conv w-temp-conv delay-3">
+                                            <span class="bar-label text-white/50 text-xs md:text-sm font-bold uppercase tracking-tight">CONVENTIONAL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-end border-b border-white/10 pb-2">
+                                    <span class="text-white/90 text-sm md:text-base font-bold uppercase tracking-[0.2em]">Cranking Reliability</span>
+                                    <span class="text-[#6FA219] font-black text-xs md:text-sm uppercase tracking-widest italic">High Velocity Start</span>
+                                </div>
+                                <div class="space-y-3 pt-2">
+                                    <div class="bar-container">
+                                        <div class="bar-fill bar-fill-amaron w-cca-amaron delay-3">
+                                            <span class="bar-label text-black text-xs md:text-sm font-black uppercase italic tracking-tight drop-shadow-md">MAX CRANK POWER</span>
+                                        </div>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill bar-fill-conv w-cca-conv delay-4">
+                                            <span class="bar-label text-white/50 text-xs md:text-sm font-bold uppercase tracking-tight">CONVENTIONAL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PRODUCTS PORTAL SECTION -->
+                <section id="products-start" class="mb-32 md:mb-48 reveal text-center">
+                    <div class="mb-12">
+                        <h2 class="text-[#6FA219] text-[10px] font-bold tracking-[0.5em] uppercase mb-4">System Access</h2>
+                        <h3 class="text-white text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-8">Products Portal</h3>
+                    </div>
+
+                    <!-- HUD Trigger Launcher -->
+                    <div id="start-trigger-container" class="py-12 flex flex-col items-center justify-center gap-8 relative select-none">
+                        <div id="hud-prompter" class="hud-prompter flex items-center gap-3 bg-black/40 border border-amber-500/20 px-5 py-2.5 rounded-full backdrop-blur-md transition-all duration-300">
+                            <span id="hud-led" class="relative flex h-2.5 w-2.5">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
+                            </span>
+                            <span id="hud-prompt-text" class="text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] text-amber-500/90">
+                                [ Standby: Press Engine Button to Load Products ]
+                            </span>
+                        </div>
+
+                        <div class="relative inline-block group">
+                            <div class="absolute inset-0 pulse-ring rounded-lg -z-10"></div>
+                            <div class="absolute inset-0 pulse-ring pulse-ring-delay rounded-lg -z-10"></div>
+                            
+                            <button class="button relative z-10" 
+                                    onclick="initiateClusterBoot()"
+                                    onmouseenter="updateHUDStatus(true)"
+                                    onmouseleave="updateHUDStatus(false)">
+                                START ENGINE
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- DYNAMIC CAR CLUSTER IGNITION SEQUENCE -->
+                    <div id="cluster-container" class="dashboard-cluster-wrapper">
+                        <div class="cluster-grid">
+                            
+                            <!-- Left: RPM Gauge -->
+                            <div class="relative">
+                                <svg class="gauge-svg" width="160" height="160" viewBox="0 0 160 160">
+                                    <circle class="gauge-track" stroke-width="6" cx="80" cy="80" r="60" stroke-dasharray="282.7 377" stroke-dashoffset="0" transform="rotate(135 80 80)"></circle>
+                                    <circle class="gauge-ticks" cx="80" cy="80" r="60" stroke-dasharray="2 33.33" transform="rotate(135 80 80)"></circle>
+                                    <circle id="left-sweep" class="gauge-sweep" stroke-width="6" cx="80" cy="80" r="60" stroke-dasharray="282.7 377" stroke-dashoffset="282.7" transform="rotate(135 80 80)"></circle>
+                                    <g id="needle-rpm" class="needle-pivot">
+                                        <polygon points="78,80 82,80 80,25 80,25" fill="#ff3b3b" filter="drop-shadow(0 0 3px rgba(255,59,59,0.8))"/>
+                                        <circle cx="80" cy="80" r="6" fill="#222" stroke="#555" stroke-width="1"/>
+                                    </g>
+                                </svg>
+                                <div class="speed-nums">
+                                    <span class="rpm-num r-0">0</span>
+                                    <span class="rpm-num r-2">2</span>
+                                    <span class="rpm-num r-4">4</span>
+                                    <span class="rpm-num r-6">6</span>
+                                    <span class="rpm-num r-8">8</span>
+                                    <span class="absolute top-[85%] left-1/2 -translate-x-1/2 text-white/50 tracking-widest text-[9px] font-bold">RPM x1000</span>
+                                </div>
+                            </div>
+
+                            <!-- Center: Speedometer Gauge -->
+                            <div class="relative flex flex-col items-center">
+                                <svg class="gauge-svg" width="360" height="360" viewBox="0 0 360 360">
+                                    <circle class="gauge-track" stroke-width="8" cx="180" cy="180" r="140" stroke-dasharray="659.7 880" stroke-dashoffset="0" transform="rotate(135 180 180)"></circle>
+                                    <circle class="gauge-ticks-minor" cx="180" cy="180" r="140" stroke-dasharray="2 11.19" transform="rotate(135 180 180)"></circle>
+                                    <circle class="gauge-ticks" cx="180" cy="180" r="140" stroke-dasharray="4 61.97" transform="rotate(135 180 180)"></circle>
+                                    <circle id="main-sweep" class="gauge-sweep" stroke-width="8" cx="180" cy="180" r="140" stroke-dasharray="659.7 880" stroke-dashoffset="659.7" transform="rotate(135 180 180)"></circle>
+                                    <text class="cluster-text text-label" x="180" y="220">KM/H</text>
+                                    <g id="needle-speed" class="needle-pivot">
+                                        <polygon points="176,180 184,180 180,45 180,45" fill="#ff3b3b" filter="drop-shadow(0 0 5px rgba(255,59,59,0.8))"/>
+                                        <circle cx="180" cy="180" r="14" fill="#111" stroke="#333" stroke-width="2"/>
+                                        <circle cx="180" cy="180" r="4" fill="#ff3b3b"/>
+                                    </g>
+                                </svg>
+                                <div class="speed-nums">
+                                    <span class="speed-num s-0">0</span>
+                                    <span class="speed-num s-20">20</span>
+                                    <span class="speed-num s-40">40</span>
+                                    <span class="speed-num s-60">60</span>
+                                    <span class="speed-num s-80">80</span>
+                                    <span class="speed-num s-100">100</span>
+                                    <span class="speed-num s-120">120</span>
+                                    <span class="speed-num s-140">140</span>
+                                    <span class="speed-num s-160">160</span>
+                                    <span class="speed-num s-180">180</span>
+                                    <span class="speed-num s-200">200</span>
+                                </div>
+                                <div class="odometer-container">
+                                    <span class="text-white/50 text-[10px] uppercase font-bold tracking-widest">ODO RANGE</span>
+                                    <div class="odo-readout">
+                                        <span id="odo-val">005842</span><span class="odo-highlight ml-1">KM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Fuel Gauge -->
+                            <div class="relative">
+                                <svg class="gauge-svg" width="160" height="160" viewBox="0 0 160 160">
+                                    <circle class="gauge-track" stroke-width="6" cx="80" cy="80" r="60" stroke-dasharray="282.7 377" stroke-dashoffset="0" transform="rotate(135 80 80)"></circle>
+                                    <circle class="gauge-ticks" cx="80" cy="80" r="60" stroke-dasharray="2 139" transform="rotate(135 80 80)"></circle>
+                                    <circle id="right-sweep" class="gauge-sweep" stroke-width="6" cx="80" cy="80" r="60" stroke-dasharray="282.7 377" stroke-dashoffset="282.7" transform="rotate(135 80 80)"></circle>
+                                    <g id="needle-fuel" class="needle-pivot">
+                                        <polygon points="78,80 82,80 80,25 80,25" fill="#ff3b3b" filter="drop-shadow(0 0 3px rgba(255,59,59,0.8))"/>
+                                        <circle cx="80" cy="80" r="6" fill="#222" stroke="#555" stroke-width="1"/>
+                                    </g>
+                                </svg>
+                                <div class="speed-nums">
+                                    <span class="rpm-num f-E">E</span>
+                                    <span class="rpm-num f-Half">1/2</span>
+                                    <span class="rpm-num f-F">F</span>
+                                    <span class="absolute top-[85%] left-1/2 -translate-x-1/2 text-white/50 tracking-widest text-[9px] font-bold">FUEL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- HIGH-END DYNAMIC PORTAL ENGINE GRID -->
+                    <div id="inventory-grid" class="w-full text-left mx-auto max-w-6xl">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                            
+                            <!-- Left: Multi-wizard selector -->
+                            <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+                                
+                                <!-- Segments selection sub-bar -->
+                                <div class="space-y-3 select-none">
+                                    <span class="text-[10px] font-bold text-[#6FA219] uppercase tracking-[0.25em] block">Select Core Category</span>
+                                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+                                        <button onclick="selectSegment('cars')" id="tab-cars" class="segment-tab active flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-800 text-slate-400 hover:text-white bg-slate-950/40">
+                                            <i class="fa-solid fa-car-side text-base mb-1.5"></i>
+                                            <span class="text-[8.5px] font-extrabold uppercase tracking-wider">Cars</span>
+                                        </button>
+                                        <button onclick="selectSegment('bikes')" id="tab-bikes" class="segment-tab flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-800 text-slate-400 hover:text-white bg-slate-950/40">
+                                            <i class="fa-solid fa-motorcycle text-base mb-1.5"></i>
+                                            <span class="text-[8.5px] font-extrabold uppercase tracking-wider">Bikes</span>
+                                        </button>
+                                        <button onclick="selectSegment('trucks')" id="tab-trucks" class="segment-tab flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-800 text-slate-400 hover:text-white bg-slate-950/40">
+                                            <i class="fa-solid fa-truck-moving text-base mb-1.5"></i>
+                                            <span class="text-[8.5px] font-extrabold uppercase tracking-wider">Trucks</span>
+                                        </button>
+                                        <button onclick="selectSegment('rickshaws')" id="tab-rickshaws" class="segment-tab flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-800 text-slate-400 hover:text-white bg-slate-950/40">
+                                            <i class="fa-solid fa-truck-pickup text-base mb-1.5"></i>
+                                            <span class="text-[8.5px] font-extrabold uppercase tracking-wider">Autos</span>
+                                        </button>
+                                        <button onclick="selectSegment('tractors')" id="tab-tractors" class="segment-tab flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-800 text-slate-400 hover:text-white bg-slate-950/40">
+                                            <i class="fa-solid fa-tractor text-base mb-1.5"></i>
+                                            <span class="text-[8.5px] font-extrabold uppercase tracking-wider">Tractors</span>
+                                        </button>
+                                        <button onclick="selectSegment('inverters')" id="tab-inverters" class="segment-tab flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-800 text-slate-400 hover:text-white bg-slate-950/40">
+                                            <i class="fa-solid fa-house-laptop text-base mb-1.5"></i>
+                                            <span class="text-[8.5px] font-extrabold uppercase tracking-wider">Inverters</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Step forms glass panel -->
+                                <div class="glass-panel rounded-3xl p-6 space-y-6 flex-1 flex flex-col justify-between">
+                                    
+                                    <!-- Global Live Search bar -->
+                                    <div class="space-y-2 relative">
+                                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Instant Global System Finder</label>
+                                        <div class="relative">
+                                            <input type="text" id="live-search-input" onkeyup="handleLiveSearch()" placeholder="Search 'Daewoo Cielo', 'Porsche Cayenne', 'Aston', 'Volvo', 'Quanta'..." class="glass-input w-full h-14 rounded-2xl pl-12 pr-4 text-sm text-white placeholder-slate-500">
+                                            <i class="fa-solid fa-magnifying-glass-chart absolute left-4 top-1/2 -translate-y-1/2 text-[#6FA219] text-lg"></i>
+                                        </div>
+                                        <div id="live-suggest-box" class="absolute left-0 right-0 mt-2 max-h-48 overflow-y-auto rounded-2xl border border-[#6FA219]/30 bg-black/95 divide-y divide-white/5 hidden z-50 shadow-2xl">
+                                            <!-- Suggested items injected dynamically -->
+                                        </div>
+                                    </div>
+
+                                    <div class="border-t border-white/5 my-1"></div>
+
+                                    <!-- Dropdown assists -->
+                                    <div class="space-y-4">
+                                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.25em] block">Step-By-Step Assistance</span>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div class="space-y-2">
+                                                <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Brand / Manufacturer</label>
+                                                <select id="select-brand" onchange="onBrandChange()" class="glass-input w-full h-12 rounded-xl px-4 text-sm text-slate-200 cursor-pointer">
+                                                    <option value="">Select Brand</option>
+                                                </select>
+                                            </div>
+                                            <div class="space-y-2">
+                                                <label id="sub-category-label" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Fuel Type</label>
+                                                <select id="select-fuel" onchange="onFuelChange()" class="glass-input w-full h-12 rounded-xl px-4 text-sm text-slate-200 cursor-pointer">
+                                                    <option value="">Select Fuel/Profile</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Model Family / Capacity Rating</label>
+                                            <select id="select-model" onchange="onModelChange()" class="glass-input w-full h-12 rounded-xl px-4 text-sm text-slate-200 cursor-pointer" disabled>
+                                                <option value="">Select Manufacturer first...</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Technical Note Info box -->
+                                    <div id="help-box" class="bg-[#6FA219]/5 border border-[#6FA219]/10 rounded-2xl p-4 flex gap-3 items-start transition-all duration-300">
+                                        <i class="fa-solid fa-microchip text-[#7BB21E] text-sm mt-0.5 animate-pulse"></i>
+                                        <div>
+                                            <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-0.5">Zero-Knowledge Diagnostic Assistance</h4>
+                                            <p id="help-text" class="text-[11px] text-slate-400 leading-normal">For Passenger vehicles, standard petrol models require compact terminal layouts (35AH-40AH), while advanced direct-injection turbo diesel setups require premium heavy cold-cranking output configurations (60AH-65AH).</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-4">
+                                        <button onclick="resetPortal()" class="flex-1 py-3 border border-white/5 hover:border-white/10 rounded-xl text-xs font-bold text-slate-400 hover:text-white uppercase tracking-wider transition-all">
+                                            Clear Portal Config
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Dynamic Spec card visualizer -->
+                            <div class="lg:col-span-5 flex flex-col justify-between">
+                                <div id="empty-state" class="flex flex-col items-center justify-center text-center h-full min-h-[400px] glass-panel border-dashed rounded-3xl p-8 bg-white/[0.01]">
+                                    <div class="w-16 h-16 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-600 mb-6 relative">
+                                        <div class="absolute inset-0 rounded-full border border-amaron/20 animate-ping"></div>
+                                        <i class="fa-solid fa-wave-square text-xl text-amaron"></i>
+                                    </div>
+                                    <h4 class="text-sm font-bold text-slate-300 uppercase tracking-widest mb-2">Live Amaron Telemetry</h4>
+                                    <p class="text-xs text-slate-500 max-w-[240px] leading-relaxed">Select a vehicle segment, use our step-by-step assistant, or type a model name above to map exact battery matches.</p>
+                                </div>
+
+                                <div id="result-card" class="hidden h-full flex-col justify-between glass-panel border-amaron rounded-3xl p-6 hover:shadow-[0_0_40px_rgba(111,162,25,0.15)] transition-all duration-500 relative overflow-hidden">
+                                    <div class="space-y-6">
+                                        <div class="flex justify-between items-center">
+                                            <span class="bg-[#6FA219]/10 text-[#7BB21E] border border-[#6FA219]/20 text-[9px] font-black tracking-widest uppercase px-3 py-1 rounded-full">
+                                                System Spec Match
+                                            </span>
+                                            <div class="flex items-center gap-1.5">
+                                                <span class="w-2 h-2 rounded-full bg-[#6FA219] animate-ping"></span>
+                                                <span class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Perfect Fit</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-center gap-4 bg-black/40 p-4 rounded-2xl border border-white/5">
+                                            <div class="w-16 h-16 bg-[#6FA219] rounded-xl flex flex-col items-center justify-center font-sans shadow-lg shadow-[#6FA219]/20 relative overflow-hidden">
+                                                <div class="absolute top-0 inset-x-0 h-1.5 bg-black"></div>
+                                                <div class="flex gap-2.5 absolute top-2">
+                                                    <span class="w-1.5 h-1 bg-amber-400 rounded-sm"></span>
+                                                    <span class="w-1.5 h-1 bg-red-500 rounded-sm"></span>
+                                                </div>
+                                                <span class="text-black font-black text-xs uppercase italic tracking-tighter mt-2">AMARON</span>
+                                                <span id="badge-capacity" class="text-black font-extrabold text-[10px] -mt-1">35 AH</span>
+                                            </div>
+                                            <div>
+                                                <span id="card-make" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Hyundai</span>
+                                                <h3 id="card-model" class="text-xl font-extrabold italic uppercase text-white leading-tight">i10 Petrol</h3>
+                                                <span id="card-segment-badge" class="inline-block mt-1 text-[9px] bg-slate-800 text-slate-300 font-bold uppercase px-2 py-0.5 rounded-md">Passenger Car</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="space-y-3 pt-2">
+                                            <div class="flex justify-between items-center text-xs">
+                                                <span class="text-slate-400 font-medium">Recommended Lineup:</span>
+                                                <span id="card-series" class="text-amaron font-black uppercase tracking-wider text-sm italic">AMARON FLO</span>
+                                            </div>
+                                            <div class="flex justify-between items-center text-xs">
+                                                <span class="text-slate-400 font-medium">Capacity / Rating:</span>
+                                                <span id="card-rating" class="text-white font-extrabold text-sm">35 AH</span>
+                                            </div>
+                                            <div class="flex justify-between items-center text-xs">
+                                                <span class="text-slate-400 font-medium">Part ID / OEM Standard:</span>
+                                                <span id="card-part" class="text-slate-300 font-mono font-semibold bg-black/40 px-2 py-1 rounded-md text-[11px] border border-white/5">B0406CL</span>
+                                            </div>
+                                            <div class="flex justify-between items-center text-xs">
+                                                <span class="text-slate-400 font-medium">Warranty Lifecycle:</span>
+                                                <span id="card-warranty" class="text-amber-400 font-black text-xs bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20">30 Months</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Telemetry status gauges -->
+                                        <div class="space-y-4 pt-4 border-t border-white/5">
+                                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block">Active Telemetry Benchmarks</span>
+                                            <div class="space-y-1.5">
+                                                <div class="flex justify-between text-[10px] uppercase font-bold text-slate-400 tracking-wider">
+                                                    <span>Thermal Stability (SilvenX Alloy)</span>
+                                                    <span class="text-[#7BB21E]">98% Tolerant</span>
+                                                </div>
+                                                <div class="h-1.5 bg-black rounded-full overflow-hidden border border-white/5">
+                                                    <div class="cell-bar" id="telemetry-thermal" style="width: 98%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="space-y-1.5">
+                                                <div class="flex justify-between text-[10px] uppercase font-bold text-slate-400 tracking-wider">
+                                                    <span>Starting Cranking Amps (CCA)</span>
+                                                    <span class="text-[#7BB21E]">Extreme High</span>
+                                                </div>
+                                                <div class="h-1.5 bg-black rounded-full overflow-hidden border border-white/5">
+                                                    <div class="cell-bar" id="telemetry-cca" style="width: 92%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button onclick="lockSpec()" class="w-full bg-gradient-to-r from-[#537e11] to-amaron hover:from-amaron hover:to-[#7BB21E] text-black font-black text-xs tracking-[0.2em] uppercase py-4 rounded-2xl shadow-lg shadow-amaron/10 transition-all transform active:scale-95 flex items-center justify-center gap-2 mt-6">
+                                        <i class="fa-solid fa-circle-check text-sm"></i> Confirm System Match
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Giants Partners Marquee -->
                 <section id="partners" class="reveal mb-24 md:mb-32">
                     <div class="text-center mb-12 md:mb-16">
                         <h3 class="text-white/80 text-xl md:text-2xl font-black italic uppercase tracking-tighter">Trusted By <span class="text-[#6FA219]">Giants</span></h3>
                     </div>
-
                     <div class="marquee-container relative overflow-hidden py-6 md:py-12">
                         <div class="marquee-content" id="marquee-content">
-                            <!-- Helper function to output logos based on your GitHub list -->
-                            <!-- List: AshokLeyland_logo.png, Eicher_logo.png, Fiat_logo.png, Force_logo.png, Ford_logo.png, HeroHonda_logo.png, Honda_logo.png, Hyundai_logo.png, Izuzu_logo.png, Jaguar_logo.png, Kia_logo.jpg, Ktm_logo.jpg, Mahindra_logo.png, Mg_logo.jpg, Mini_logo.jpg, Mitsubishi_logo.jpg, Nissan_logo.png, Skoda_logo.jpg, Suzuki_logo.png, Tata_logo.png, Toyota_logo.png, Tvs_logo.jpg, Volkswagen_logo.jpg, Volvo_logo.jpg -->
-                            
-                            <!-- First Sequence -->
-                            <div class="logo-item"><img src="Car logo/AshokLeyland_logo.png" onerror="handleLogoError(this)" alt="Ashok Leyland"></div>
+                            <div class="logo-item"><img src="Car logo/AshokLeyland_logo.png" onerror="handleLogoError(this)" alt="Ashok"></div>
                             <div class="logo-item"><img src="Car logo/Eicher_logo.png" onerror="handleLogoError(this)" alt="Eicher"></div>
                             <div class="logo-item"><img src="Car logo/Fiat_logo.png" onerror="handleLogoError(this)" alt="Fiat"></div>
                             <div class="logo-item"><img src="Car logo/Force_logo.png" onerror="handleLogoError(this)" alt="Force"></div>
                             <div class="logo-item"><img src="Car logo/Ford_logo.png" onerror="handleLogoError(this)" alt="Ford"></div>
-                            <div class="logo-item"><img src="Car logo/HeroHonda_logo.png" onerror="handleLogoError(this)" alt="Hero Honda"></div>
                             <div class="logo-item"><img src="Car logo/Honda_logo.png" onerror="handleLogoError(this)" alt="Honda"></div>
                             <div class="logo-item"><img src="Car logo/Hyundai_logo.png" onerror="handleLogoError(this)" alt="Hyundai"></div>
-                            <div class="logo-item"><img src="Car logo/Izuzu_logo.png" onerror="handleLogoError(this)" alt="Isuzu"></div>
-                            <div class="logo-item"><img src="Car logo/Jaguar_logo.png" onerror="handleLogoError(this)" alt="Jaguar"></div>
                             <div class="logo-item"><img src="Car logo/Kia_logo.jpg" onerror="handleLogoError(this)" alt="Kia"></div>
-                            <div class="logo-item"><img src="Car logo/Ktm_logo.jpg" onerror="handleLogoError(this)" alt="KTM"></div>
                             <div class="logo-item"><img src="Car logo/Mahindra_logo.png" onerror="handleLogoError(this)" alt="Mahindra"></div>
-                            <div class="logo-item"><img src="Car logo/Mg_logo.jpg" onerror="handleLogoError(this)" alt="MG"></div>
-                            <div class="logo-item"><img src="Car logo/Mini_logo.jpg" onerror="handleLogoError(this)" alt="Mini"></div>
-                            <div class="logo-item"><img src="Car logo/Mitsubishi_logo.jpg" onerror="handleLogoError(this)" alt="Mitsubishi"></div>
-                            <div class="logo-item"><img src="Car logo/Nissan_logo.png" onerror="handleLogoError(this)" alt="Nissan"></div>
-                            <div class="logo-item"><img src="Car logo/Skoda_logo.jpg" onerror="handleLogoError(this)" alt="Skoda"></div>
-                            <div class="logo-item"><img src="Car logo/Suzuki_logo.png" onerror="handleLogoError(this)" alt="Suzuki"></div>
                             <div class="logo-item"><img src="Car logo/Tata_logo.png" onerror="handleLogoError(this)" alt="Tata"></div>
                             <div class="logo-item"><img src="Car logo/Toyota_logo.png" onerror="handleLogoError(this)" alt="Toyota"></div>
-                            <div class="logo-item"><img src="Car logo/Tvs_logo.jpg" onerror="handleLogoError(this)" alt="TVS"></div>
-                            <div class="logo-item"><img src="Car logo/Volkswagen_logo.jpg" onerror="handleLogoError(this)" alt="Volkswagen"></div>
-                            <div class="logo-item"><img src="Car logo/Volvo_logo.jpg" onerror="handleLogoError(this)" alt="Volvo"></div>
-
-                            <!-- Duplicate Sequence for Loop -->
-                            <div class="logo-item"><img src="Car logo/AshokLeyland_logo.png" onerror="handleLogoError(this)" alt="Ashok Leyland"></div>
-                            <div class="logo-item"><img src="Car logo/Eicher_logo.png" onerror="handleLogoError(this)" alt="Eicher"></div>
-                            <div class="logo-item"><img src="Car logo/Fiat_logo.png" onerror="handleLogoError(this)" alt="Fiat"></div>
-                            <div class="logo-item"><img src="Car logo/Force_logo.png" onerror="handleLogoError(this)" alt="Force"></div>
-                            <div class="logo-item"><img src="Car logo/Ford_logo.png" onerror="handleLogoError(this)" alt="Ford"></div>
-                            <div class="logo-item"><img src="Car logo/HeroHonda_logo.png" onerror="handleLogoError(this)" alt="Hero Honda"></div>
-                            <div class="logo-item"><img src="Car logo/Honda_logo.png" onerror="handleLogoError(this)" alt="Honda"></div>
-                            <div class="logo-item"><img src="Car logo/Hyundai_logo.png" onerror="handleLogoError(this)" alt="Hyundai"></div>
-                            <div class="logo-item"><img src="Car logo/Izuzu_logo.png" onerror="handleLogoError(this)" alt="Isuzu"></div>
-                            <div class="logo-item"><img src="Car logo/Jaguar_logo.png" onerror="handleLogoError(this)" alt="Jaguar"></div>
-                            <div class="logo-item"><img src="Car logo/Kia_logo.jpg" onerror="handleLogoError(this)" alt="Kia"></div>
-                            <div class="logo-item"><img src="Car logo/Ktm_logo.jpg" onerror="handleLogoError(this)" alt="KTM"></div>
-                            <div class="logo-item"><img src="Car logo/Mahindra_logo.png" onerror="handleLogoError(this)" alt="Mahindra"></div>
-                            <div class="logo-item"><img src="Car logo/Mg_logo.jpg" onerror="handleLogoError(this)" alt="MG"></div>
-                            <div class="logo-item"><img src="Car logo/Mini_logo.jpg" onerror="handleLogoError(this)" alt="Mini"></div>
-                            <div class="logo-item"><img src="Car logo/Mitsubishi_logo.jpg" onerror="handleLogoError(this)" alt="Mitsubishi"></div>
-                            <div class="logo-item"><img src="Car logo/Nissan_logo.png" onerror="handleLogoError(this)" alt="Nissan"></div>
-                            <div class="logo-item"><img src="Car logo/Skoda_logo.jpg" onerror="handleLogoError(this)" alt="Skoda"></div>
-                            <div class="logo-item"><img src="Car logo/Suzuki_logo.png" onerror="handleLogoError(this)" alt="Suzuki"></div>
-                            <div class="logo-item"><img src="Car logo/Tata_logo.png" onerror="handleLogoError(this)" alt="Tata"></div>
-                            <div class="logo-item"><img src="Car logo/Toyota_logo.png" onerror="handleLogoError(this)" alt="Toyota"></div>
-                            <div class="logo-item"><img src="Car logo/Tvs_logo.jpg" onerror="handleLogoError(this)" alt="TVS"></div>
-                            <div class="logo-item"><img src="Car logo/Volkswagen_logo.jpg" onerror="handleLogoError(this)" alt="Volkswagen"></div>
-                            <div class="logo-item"><img src="Car logo/Volvo_logo.jpg" onerror="handleLogoError(this)" alt="Volvo"></div>
+                            <div class="logo-item"><img src="Car logo/Volkswagen_logo.jpg" onerror="handleLogoError(this)" alt="VW"></div>
                         </div>
                     </div>
                 </section>
             </div>
         </main>
 
-        <!-- FOOTER SECTION -->
+        <!-- Dynamic High-tech confirm toast -->
+        <div id="custom-toast" class="fixed bottom-6 right-6 glass-panel border-amaron p-4 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-32 opacity-0 transition-all duration-500 z-[1000] max-w-sm">
+            <div class="p-2.5 bg-[#6FA219]/20 text-[#7BB21E] rounded-xl">
+                <i class="fa-solid fa-circle-check text-lg"></i>
+            </div>
+            <div>
+                <h5 class="text-xs font-black uppercase text-white tracking-wide">Specification Locked</h5>
+                <p id="toast-msg" class="text-[10px] text-slate-400 mt-0.5">Matching battery code registered.</p>
+            </div>
+        </div>
+
+        <!-- Footer Area -->
         <footer id="support" class="bg-black border-t border-white/5 pt-20 md:pt-32 pb-12 md:pb-20 px-6 md:px-12 reveal">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-12 md:mb-16">
@@ -340,16 +1125,580 @@
                 </div>
                 <div class="text-center pt-12 border-t border-white/5">
                     <span class="text-[#6FA219] text-2xl md:text-3xl font-black italic uppercase">AMARON</span>
-                    <p class="text-white/20 text-[8px] md:text-[9px] tracking-[0.5em] uppercase mt-4">&copy; 2024 Amaron Batteries.</p>
+                    <p class="text-white/20 text-[8px] md:text-[9px] tracking-[0.5em] uppercase mt-4">&copy; 2026 Amaron Batteries.</p>
                 </div>
             </div>
         </footer>
     </div>
 
+    <!-- Active Scripts & Core Logic -->
     <script>
-        // Logic for Mobile Menu
+        // FULLY CONSOLIDATED MASTER DATABASE - COMBINING ALL PREVIOUS SUBMISSIONS WITHOUT DATA LOSS
+        const masterDatabase = {
+            cars: [
+                // --- FROM FINAL LUXURY & VINTAGE A-Z SUBMISSION (PARTS 1 & 2) ---
+                { id: "audi-a4-petrol-2001-2026", make: "Audi", model: "A4", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Premium DIN90-DIN115 replacement class; large European DIN format." },
+                { id: "audi-a4-diesel-2001-2026", make: "Audi", model: "A4", sub: "Diesel", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Premium DIN90-DIN115 replacement class; large European DIN format." },
+                { id: "audi-a6-petrol-2004-2026", make: "Audi", model: "A6", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Premium DIN90-DIN115 replacement class; suited to large executive sedans." },
+                { id: "audi-a6-diesel-2004-2026", make: "Audi", model: "A6", sub: "Diesel", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Premium DIN90-DIN115 replacement class; high reserve and cranking support." },
+                { id: "audi-q5-petrol-2009-2026", make: "Audi", model: "Q5", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Large DIN case for premium SUV electrical loads." },
+                { id: "audi-q7-diesel-2007-2026", make: "Audi", model: "Q7", sub: "Diesel", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Large premium-SUV replacement battery in DIN100 class." },
+                { id: "bmw-3-series-petrol-1998-2026", make: "BMW", model: "3 Series", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "DIN90-DIN115 OEM replacement family for premium European vehicles." },
+                { id: "bmw-3-series-diesel-2001-2026", make: "BMW", model: "3 Series", sub: "Diesel", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Large DIN fitment for premium diesel cranking requirement." },
+                { id: "bmw-5-series-petrol-1997-2026", make: "BMW", model: "5 Series", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "DIN100 premium replacement; suitable for large European sedans." },
+                { id: "bmw-5-series-diesel-2000-2026", make: "BMW", model: "5 Series", sub: "Diesel", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "High-capacity premium DIN battery for BMW diesel platforms." },
+                { id: "chevrolet-opel-vectra-petrol-1998-2010", make: "Chevrolet", model: "Opel Vectra", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Left layout, DIN60/DIN66 class, 278x175x190 mm." },
+                { id: "chevrolet-opel-astra-diesel-1998-2010", make: "Chevrolet", model: "Opel Astra", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Left layout, DIN60/DIN66 case, legacy Opel-Chevrolet application." },
+                { id: "chrysler-300c-petrol-2004-2020", make: "Chrysler", model: "300C", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Large luxury-sedan class battery; premium DIN replacement group." },
+                { id: "citroen-c5-petrol-2001-2022", make: "Citroen", model: "C5", sub: "Petrol", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "DIN68-DIN72 replacement class; suited to automatic/heavy-engine applications." },
+                { id: "citroen-c5-diesel-2001-2022", make: "Citroen", model: "C5", sub: "Diesel", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "DIN74 minimum recommendation for higher cranking requirement." },
+                { id: "daewoo-cielo-petrol-1994-2002", make: "Daewoo", model: "Cielo", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact JIS B20 left-layout class used across older small petrol sedans." },
+                { id: "daewoo-matiz-petrol-1998-2004", make: "Daewoo", model: "Matiz", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact hatch fitment in B20 left-layout format." },
+                { id: "datsun-go-petrol-2014-2022", make: "Datsun", model: "GO", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Small hatchback JIS B20 left-layout battery class." },
+                { id: "datsun-go-plus-petrol-2014-2022", make: "Datsun", model: "GO+", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact MPV/hatch platform commonly using B20L battery tray." },
+                { id: "fiat-punto-petrol-2009-2018", make: "Fiat", model: "Punto", sub: "Petrol", capacity: "60 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "DIN60/DIN66 class, left layout, 278x175x190 mm." },
+                { id: "fiat-punto-diesel-2009-2018", make: "Fiat", model: "Punto", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Diesel hatch application aligned to DIN66 left-layout case." },
+                { id: "fiat-linea-petrol-2009-2018", make: "Fiat", model: "Linea", sub: "Petrol", capacity: "60 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Mid-size sedan; DIN60/DIN66 left-layout fitment." },
+                { id: "fiat-linea-diesel-2009-2018", make: "Fiat", model: "Linea", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Diesel sedan fitment in DIN66 left-layout format." },
+                { id: "force-one-suv-diesel-2011-2015", make: "Force", model: "One", sub: "Diesel", capacity: "80 AH", series: "AMARON FLO", part: "AAM-FL-580112073", warranty: "24 + 36 Months", notes: "High-CCA diesel SUV class battery using large DIN footprint." },
+                { id: "ford-escort-diesel-1998-2004", make: "Ford", model: "Escort", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Legacy Ford application; left layout DIN60/DIN66 case." },
+                { id: "ford-fiesta-classic-petrol-2005-2014", make: "Ford", model: "Fiesta Classic", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Left layout, 278x175x190 mm, DIN60/DIN66 class." },
+                { id: "ford-fiesta-diesel-2004-2014", make: "Ford", model: "Fiesta", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Verified BatteryBoss listing for Fiesta diesel family; left-layout DIN case." },
+                { id: "ford-fiesta-duratorq-diesel-2006-2011", make: "Ford", model: "Fiesta DuraTorq", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "1.4L diesel application listed on FLO DIN66; left layout." },
+                { id: "ford-fiesta-new-petrol-2011-2014", make: "Ford", model: "Fiesta New", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Modern sedan application in left-layout DIN60/DIN66 format." },
+                { id: "ford-fiesta-new-diesel-2011-2014", make: "Ford", model: "Fiesta New", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Left-layout DIN battery for diesel cranking demand." },
+                { id: "ford-figo-petrol-2010-2021", make: "Ford", model: "Figo", sub: "Petrol", capacity: "55 AH", series: "AMARON FLO", part: "AAM-FL-00055D23L", warranty: "24 + 36 Months", notes: "JIS D23L fitment commonly used on compact petrol hatch/sedan applications." },
+                { id: "ford-figo-diesel-2010-2021", make: "Ford", model: "Figo", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Diesel compact car application using left-layout DIN60/DIN66 footprint." },
+                { id: "ford-ecosport-petrol-2013-2021", make: "Ford", model: "EcoSport", sub: "Petrol", capacity: "55 AH", series: "AMARON FLO", part: "AAM-FL-00055D23L", warranty: "24 + 36 Months", notes: "JIS D23 left terminal layout commonly used for compact crossover petrol." },
+                { id: "ford-ecosport-diesel-2013-2021", make: "Ford", model: "EcoSport", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "DIN60/DIN66 left-layout diesel crossover fitment." },
+                { id: "honda-amaze-petrol-2013-2026", make: "Honda", model: "Amaze", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "JIS B20L layout; compact sedan petrol fitment." },
+                { id: "honda-amaze-diesel-2013-2023", make: "Honda", model: "Amaze", sub: "Diesel", capacity: "50 AH", series: "AMARON FLO", part: "AAM-FL-550114042", warranty: "24 + 36 Months", notes: "Compact DIN battery; diesel Amaze listing available on BatteryBoss." },
+                { id: "honda-brio-petrol-2011-2019", make: "Honda", model: "Brio", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "JIS B20L compact hatchback battery." },
+                { id: "honda-city-cng-2004-2014", make: "Honda", model: "City", sub: "CNG", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "BatteryBoss lists Honda City CNG on 40B20L compact left-layout battery." },
+                { id: "honda-city-petrol-1999-2026", make: "Honda", model: "City", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Honda City petrol family listed on 40B20L; compact JIS left layout." },
+                { id: "honda-city-ivtec-petrol-2008-2026", make: "Honda", model: "City i-VTEC", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Honda City i-VTEC explicitly listed on 40B20L." },
+                { id: "honda-city-zxi-petrol-2000-2008", make: "Honda", model: "City ZXi", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Legacy City ZXi application in JIS B20 left-layout format." },
+                { id: "honda-city-dolphin-petrol-2003-2008", make: "Honda", model: "City Dolphin", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Legacy City Dolphin application listed on 40B20L." },
+                { id: "honda-jazz-petrol-2009-2023", make: "Honda", model: "Jazz", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact hatchback B20L left-layout fitment." },
+                { id: "honda-mobilio-petrol-2014-2017", make: "Honda", model: "Mobilio", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact MPV petrol fitment in B20 left-layout class." },
+                { id: "honda-br-v-petrol-2016-2020", make: "Honda", model: "BR-V", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact crossover petrol fitment in JIS B20L class." },
+                { id: "honda-wr-v-petrol-2017-2023", make: "Honda", model: "WR-V", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Cross-hatch petrol fitment on B20 left-layout battery." },
+                { id: "hyundai-accent-diesel-1999-2013", make: "Hyundai", model: "Accent", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Left layout, DIN60/DIN66 class, 278x175x190 mm." },
+                { id: "hyundai-elantra-petrol-2004-2016", make: "Hyundai", model: "Elantra", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss fitment on DIN66 left-layout platform." },
+                { id: "hyundai-verna-diesel-2011-2026", make: "Hyundai", model: "Verna", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss shows Verna CRDi family on FLO DIN66; left layout." },
+                { id: "hyundai-venue-diesel-2019-2026", make: "Hyundai", model: "Venue", sub: "Diesel", capacity: "60 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "12 + 0 Months", notes: "BatteryBoss snippet confirms 60 AH application for Hyundai Venue Diesel." },
+                { id: "hyundai-tucson-petrol-2005-2026", make: "Hyundai", model: "Tucson", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss vehicle page shows FLO DIN66 / DIN60 for Tucson petrol." },
+                { id: "isuzu-d-max-v-cross-diesel-2017-2026", make: "Isuzu", model: "D-Max V-Cross", sub: "Diesel", capacity: "80 AH", series: "AMARON FLO", part: "AAM-FL-580112073", warranty: "24 + 36 Months", notes: "Pickup/SUV diesel class requiring higher CCA and reserve." },
+                { id: "jaguar-xf-petrol-2008-2026", make: "Jaguar", model: "XF", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Premium DIN90-DIN115 replacement class explicitly covering Jaguar." },
+                { id: "jaguar-xf-diesel-2008-2026", make: "Jaguar", model: "XF", sub: "Diesel", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Premium European diesel sedan battery in DIN100 class." },
+                { id: "jeep-compass-petrol-2017-2026", make: "Jeep", model: "Compass", sub: "Petrol", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "DIN74 class recommended for heavier engines and automatic vehicles." },
+                { id: "jeep-compass-diesel-2017-2026", make: "Jeep", model: "Compass", sub: "Diesel", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "DIN74 minimum recommendation for high-cranking diesel SUV." },
+                { id: "kia-carens-diesel-2022-2026", make: "Kia", model: "Carens", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss fitment list explicitly includes Kia Carens Diesel on FLO DIN66." },
+                { id: "kia-seltos-petrol-2019-2026", make: "Kia", model: "Seltos", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Kia model family covered on official Amaron passenger portal." },
+                { id: "kia-sonet-petrol-2020-2026", make: "Kia", model: "Sonet", sub: "Petrol", capacity: "55 AH", series: "AMARON FLO", part: "AAM-FL-00055D23L", warranty: "24 + 36 Months", notes: "Compact SUV petrol fitment aligned to D23L JIS class." },
+                { id: "kia-carnival-diesel-2020-2026", make: "Kia", model: "Carnival", sub: "Diesel", capacity: "80 AH", series: "AMARON FLO", part: "AAM-FL-580112073", warranty: "24 + 36 Months", notes: "Large MPV diesel class using high-capacity DIN battery." },
+                { id: "land-rover-discovery-diesel-1999-2026", make: "Land Rover", model: "Discovery", sub: "Diesel", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Premium large-SUV replacement in DIN100 class." },
+                { id: "land-rover-range-rover-petrol-1995-2026", make: "Land Rover", model: "Range Rover", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Large luxury SUV requiring premium DIN90-DIN115 replacement battery." },
+                { id: "lexus-rx-hybrid-2005-2026", make: "Lexus", model: "RX", sub: "Hybrid", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "DIN74 class explicitly recommended for hybrid/automatic vehicle battery replacement." },
+                { id: "mahindra-logan-petrol-2007-2011", make: "Mahindra", model: "Logan", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss fitment in DIN66 left-layout class." },
+                { id: "mahindra-logan-diesel-2007-2011", make: "Mahindra", model: "Logan", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss fitment in DIN66 left-layout class." },
+                { id: "mahindra-verito-diesel-2011-2020", make: "Mahindra", model: "Verito", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Listed by BatteryBoss on FLO DIN66 left-layout battery." },
+                { id: "mahindra-xuv-3xo-diesel-2024-2026", make: "Mahindra", model: "XUV 3XO", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss page explicitly shows Amaron FLO DIN66 for XUV 3XO Diesel." },
+                { id: "mahindra-scorpio-diesel-2002-2026", make: "Mahindra", model: "Scorpio", sub: "Diesel", capacity: "80 AH", series: "AMARON FLO", part: "AAM-FL-580112073", warranty: "24 + 36 Months", notes: "Diesel SUV high-CCA requirement using larger DIN footprint." },
+                { id: "mahindra-bolero-diesel-2000-2026", make: "Mahindra", model: "Bolero", sub: "Diesel", capacity: "80 AH", series: "AMARON FLO", part: "AAM-FL-580112073", warranty: "24 + 36 Months", notes: "Utility diesel class needing higher reserve and cranking capacity." },
+                { id: "maruti-suzuki-sx4-automatic-petrol-2007-2014", make: "Maruti Suzuki", model: "SX4 Automatic", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "BatteryBoss lists SX4 AT petrol on 40B20L compact left-layout battery." },
+                { id: "maruti-suzuki-gypsy-1000-petrol-1990-2019", make: "Maruti Suzuki", model: "Gypsy 1000", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Legacy light-utility fitment on compact B20L battery." },
+                { id: "maruti-suzuki-1000-petrol-1990-2000", make: "Maruti Suzuki", model: "1000", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Legacy sedan application listed on 40B20L." },
+                { id: "maruti-suzuki-800-std-petrol-1990-2014", make: "Maruti Suzuki", model: "800 STD", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Classic small-car JIS B20 left-layout battery." },
+                { id: "maruti-suzuki-a-star-petrol-2008-2014", make: "Maruti Suzuki", model: "A-Star", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact hatch fitment in B20L class." },
+                { id: "maruti-suzuki-alto-800-cng-2012-2026", make: "Maruti Suzuki", model: "Alto 800", sub: "CNG", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "BatteryBoss lists Alto 800 CNG on 40B20L." },
+                { id: "maruti-suzuki-alto-800-petrol-2012-2026", make: "Maruti Suzuki", model: "Alto 800", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact hatchback battery in B20 left-layout size." },
+                { id: "maruti-suzuki-alto-k10-petrol-2010-2026", make: "Maruti Suzuki", model: "Alto K10", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "BatteryBoss lists Alto K10 on 40B20L." },
+                { id: "maruti-suzuki-dzire-diesel-2017-2024", make: "Maruti Suzuki", model: "Dzire", sub: "Diesel", capacity: "50 AH", series: "AMARON FLO", part: "AAM-FL-550114042", warranty: "24 + 36 Months", notes: "Compact DIN layout; official Amaron Dzire diesel listing cites centre/FLO 550114042." },
+                { id: "maruti-suzuki-new-dzire-petrol-auto-start-2017-2026", make: "Maruti Suzuki", model: "New Dzire", sub: "Petrol", capacity: "40 AH", series: "AMARON PRO", part: "AAM-DR-EFB60B20L", warranty: "24 + 24 Months", notes: "Auto start-stop application; EFB battery class expected for ISS systems." },
+                { id: "mercedes-benz-c-class-petrol-1998-2026", make: "Mercedes-Benz", model: "C-Class", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Premium DIN90-DIN115 replacement group for compact luxury Mercedes models." },
+                { id: "mercedes-benz-e-class-petrol-1996-2026", make: "Mercedes-Benz", model: "E-Class", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Luxury-model battery price band on Amaron Mercedes page; large DIN premium fitment." },
+                { id: "mercedes-benz-e-class-diesel-1998-2026", make: "Mercedes-Benz", model: "E-Class", sub: "Diesel", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Large executive diesel with premium DIN100 replacement requirement." },
+                { id: "mg-astor-petrol-2021-2026", make: "MG", model: "Astor", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss states OEM Exide DIN63 and recommends Amaron DIN66 aftermarket replacement." },
+                { id: "mg-zs-ev-hybrid-2019-2026", make: "MG", model: "ZS EV", sub: "Hybrid", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss fitment list includes MG ZS EV on FLO DIN66 auxiliary battery class." },
+                { id: "mini-cooper-petrol-2002-2026", make: "MINI", model: "Cooper", sub: "Petrol", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "DIN68-DIN72 replacement family for compact premium automatic vehicles." },
+                { id: "mitsubishi-lancer-petrol-1998-2015", make: "Mitsubishi", model: "Lancer", sub: "Petrol", capacity: "55 AH", series: "AMARON FLO", part: "AAM-FL-00055D23L", warranty: "24 + 36 Months", notes: "JIS D23 left-layout battery class widely used on compact/mid sedan petrol applications." },
+                { id: "mitsubishi-pajero-diesel-2002-2019", make: "Mitsubishi", model: "Pajero", sub: "Diesel", capacity: "80 AH", series: "AMARON FLO", part: "AAM-FL-580112073", warranty: "24 + 36 Months", notes: "Diesel SUV requiring higher CCA and larger DIN footprint." },
+                { id: "nissan-micra-diesel-2010-2020", make: "Nissan", model: "Micra", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss list includes Micra 1.5L old diesel on FLO DIN66 left layout." },
+                { id: "nissan-terrano-petrol-2013-2020", make: "Nissan", model: "Terrano", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Verified BatteryBoss application on DIN66 left-layout battery." },
+                { id: "nissan-terrano-diesel-2013-2020", make: "Nissan", model: "Terrano", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Diesel crossover/SUV fitment in DIN66 left-layout class." },
+                { id: "nissan-kicks-diesel-2019-2023", make: "Nissan", model: "Kicks", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicitly lists Kicks diesel on FLO DIN66." },
+                { id: "opel-vectra-petrol-1998-2003", make: "Opel", model: "Vectra", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Legacy Opel application; left-layout DIN60/DIN66 battery." },
+                { id: "peugeot-307-petrol-2001-2010", make: "Peugeot", model: "307", sub: "Petrol", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "DIN68-DIN72 class for European heavy-engine hatch/sedan applications." },
+                { id: "porsche-cayenne-petrol-2002-2026", make: "Porsche", model: "Cayenne", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Premium DIN90-DIN115 replacement class explicitly covering Porsche." },
+                { id: "porsche-cayenne-diesel-2009-2018", make: "Porsche", model: "Cayenne", sub: "Diesel", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Premium diesel SUV in DIN100 replacement group." },
+                { id: "renault-duster-petrol-2012-2024", make: "Renault", model: "Duster", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit fitment on DIN66 left-layout battery." },
+                { id: "renault-duster-diesel-2012-2024", make: "Renault", model: "Duster", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit fitment on DIN66 left-layout battery." },
+                { id: "renault-lodgy-diesel-2015-2020", make: "Renault", model: "Lodgy", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "MPV diesel fitment listed on FLO DIN66." },
+                { id: "renault-captur-petrol-2017-2020", make: "Renault", model: "Captur", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Captur petrol fitment in DIN66 class." },
+                { id: "renault-captur-diesel-2017-2020", make: "Renault", model: "Captur", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Captur diesel fitment in DIN66 class." },
+                { id: "renault-fluence-petrol-2011-2017", make: "Renault", model: "Fluence", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Fluence petrol fitment on DIN66 battery." },
+                { id: "rolls-royce-ghost-petrol-2010-2026", make: "Rolls-Royce", model: "Ghost", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Ultra-luxury large-sedan class aligned to premium DIN100 replacement family." },
+                { id: "skoda-fabia-petrol-2008-2015", make: "Skoda", model: "Fabia", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss lists Fabia Ambiente 1.2 Petrol on DIN66 left layout." },
+                { id: "skoda-fabia-diesel-2008-2015", make: "Skoda", model: "Fabia", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss lists Fabia Ambiente 1.4 Diesel on DIN66 left layout." },
+                { id: "skoda-laura-petrol-2005-2013", make: "Skoda", model: "Laura", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss lists Laura 1.8 and 2.0 petrol on DIN66 left layout." },
+                { id: "skoda-laura-diesel-2005-2013", make: "Skoda", model: "Laura", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss lists Laura Elegance 1.9 Diesel on FLO DIN66." },
+                { id: "skoda-octavia-petrol-2001-2026", make: "Skoda", model: "Octavia", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Verified BatteryBoss Octavia petrol family fitment; left layout DIN60/DIN66." },
+                { id: "skoda-rapid-diesel-2011-2023", make: "Skoda", model: "Rapid", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Rapid 1.6 Diesel fitment." },
+                { id: "skoda-superb-petrol-2009-2026", make: "Skoda", model: "Superb", sub: "Petrol", capacity: "60 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss Superb 1.8 petrol page shows FLO DIN66 / DIN60 566112060." },
+                { id: "skoda-yeti-diesel-2010-2017", make: "Skoda", model: "Yeti", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Yeti 2.0 Diesel fitment on DIN66." },
+                { id: "ssangyong-rexton-diesel-2012-2019", make: "SsangYong", model: "Rexton", sub: "Diesel", capacity: "80 AH", series: "AMARON FLO", part: "AAM-FL-580112073", warranty: "24 + 36 Months", notes: "Large diesel SUV class requiring higher CCA DIN battery." },
+                { id: "subaru-forester-petrol-1998-2026", make: "Subaru", model: "Forester", sub: "Petrol", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "AWD/heavier-engine fitment aligned to DIN74 replacement class." },
+                { id: "suzuki-swift-petrol-2005-2026", make: "Suzuki", model: "Swift", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Global small-hatch JIS B20 left-layout class analogous to Maruti Swift family." },
+                { id: "tata-indica-diesel-1999-2018", make: "Tata", model: "Indica", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Legacy diesel hatchback aligned to DIN66 left-layout case." },
+                { id: "tata-indigo-diesel-2002-2016", make: "Tata", model: "Indigo", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Legacy diesel sedan aligned to DIN66 left-layout fitment." },
+                { id: "tata-nexon-petrol-2017-2026", make: "Tata", model: "Nexon", sub: "Petrol", capacity: "55 AH", series: "AMARON FLO", part: "AAM-FL-00055D23L", warranty: "24 + 36 Months", notes: "Compact SUV petrol application in JIS D23L class." },
+                { id: "tata-nexon-diesel-2017-2023", make: "Tata", model: "Nexon", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Diesel compact SUV requiring DIN66 left-layout battery." },
+                { id: "tata-tiago-petrol-2016-2026", make: "Tata", model: "Tiago", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact hatchback B20L fitment class." },
+                { id: "toyota-etios-diesel-2011-2020", make: "Toyota", model: "Etios", sub: "Diesel", capacity: "55 AH", series: "AMARON FLO", part: "AAM-FL-00080D23L", warranty: "30 + 30 Months", notes: "Official Amaron listing for Etios Diesel; JIS 80D23L left-layout case." },
+                { id: "toyota-etios-petrol-2011-2020", make: "Toyota", model: "Etios", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FL-00042B20L", warranty: "24 + 24 Months", notes: "Compact JIS B20L battery used on Etios petrol family." },
+                { id: "toyota-corolla-altis-petrol-2003-2020", make: "Toyota", model: "Corolla Altis", sub: "Petrol", capacity: "55 AH", series: "AMARON FLO", part: "AAM-FL-00055D23L", warranty: "24 + 36 Months", notes: "Official Toyota brand page covers Corolla family; D23L class common for petrol sedan applications." },
+                { id: "toyota-fortuner-petrol-2017-2026", make: "Toyota", model: "Fortuner", sub: "Petrol", capacity: "80 AH", series: "AMARON FLO", part: "AAM-FL-580112073", warranty: "24 + 36 Months", notes: "Official Toyota page covers Fortuner; large SUV battery using higher-capacity DIN class." },
+                { id: "toyota-camry-petrol-2002-2026", make: "Toyota", model: "Camry", sub: "Petrol", capacity: "55 AH", series: "AMARON FLO", part: "AAM-FL-00080D23L", warranty: "30 + 30 Months", notes: "Official Amaron Toyota Camry petrol listing uses 80D23L JIS case." },
+                { id: "toyota-rumion-hybrid-2023-2026", make: "Toyota", model: "Rumion Neo Drive", sub: "Hybrid", capacity: "45 AH", series: "AMARON PRO", part: "AAM-DR-EFB80B24L", warranty: "24 + 24 Months", notes: "Neo Drive/mild-hybrid application on EFB class battery." },
+                { id: "toyota-urban-cruiser-taisor-hybrid-2024-2026", make: "Toyota", model: "Urban Cruiser Taisor", sub: "Hybrid", capacity: "40 AH", series: "AMARON PRO", part: "AAM-DR-EFB60B20L", warranty: "24 + 24 Months", notes: "ISS/start-stop application using enhanced flooded battery (EFB)." },
+                { id: "volvo-xc60-petrol-2008-2026", make: "Volvo", model: "XC60", sub: "Petrol", capacity: "100 AH", series: "AMARON PRO", part: "AAM-PR-DIN100", warranty: "24 + 24 Months", notes: "Premium European SUV class aligned to DIN100 replacement family." },
+                { id: "volkswagen-polo-diesel-2010-2020", make: "Volkswagen", model: "Polo", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Polo 1.2/1.5 Diesel fitment; left layout, DIN66." },
+                { id: "volkswagen-polo-petrol-2010-2022", make: "Volkswagen", model: "Polo", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Polo 1.6 Petrol fitment; left-layout DIN66." },
+                { id: "volkswagen-vento-diesel-2010-2022", make: "Volkswagen", model: "Vento", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Vento 1.6 Diesel / 1.2 Diesel fitment." },
+                { id: "volkswagen-vento-petrol-2010-2022", make: "Volkswagen", model: "Vento", sub: "Petrol", capacity: "60 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss Vento 1.6 AT HighLine petrol page shows FLO DIN66 / 566112060." },
+                { id: "volkswagen-ameo-diesel-2016-2020", make: "Volkswagen", model: "Ameo", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Ameo 1.5 Diesel fitment on DIN66 left-layout battery." },
+                { id: "volkswagen-jetta-petrol-2008-2017", make: "Volkswagen", model: "Jetta", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Jetta 1.6L petrol fitment." },
+                { id: "volkswagen-phaeton-petrol-2002-2016", make: "Volkswagen", model: "Phaeton", sub: "Petrol", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss fitment list includes Phaeton 3.6 V6 on FLO DIN66." },
+                { id: "wuling-almaz-petrol-2019-2026", make: "Wuling", model: "Almaz", sub: "Petrol", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "Global mid-size SUV class aligned to DIN74 heavy-engine/automatic recommendation." },
+
+                // --- FROM INITIAL SUBMISSIONS ---
+                { id: "c1-init", make: "Hyundai", model: "i10", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO / PRO / GO", part: "A-FL40B20L / PR-50B20L / GO-38B20L", warranty: "36 + 36 Months", notes: "Heat-resistant top layer with ultra-low water loss." },
+                { id: "c2-init", make: "Hyundai", model: "i20", sub: "Diesel", capacity: "50 AH", series: "AMARON PRO", part: "AAM-PR-550114042", warranty: "36 + 36 Months", notes: "Premium DIN50 configuration ensuring exceptional cold-cranking performance." },
+                { id: "c3-init", make: "Maruti Suzuki", model: "Swift", sub: "Petrol", capacity: "35 AH", series: "AMARON GO", part: "AAM-GO-00038B20L", warranty: "30 + 30 Months", notes: "Patented Silver X Alloy ensures robust corrosion resistance under high heat." },
+                { id: "c4-init", make: "Maruti Suzuki", model: "Brezza", sub: "Diesel", capacity: "65 AH", series: "AMARON FLO", part: "AAM-FL-565106590", warranty: "36 + 36 Months", notes: "DIN65 specification designed for high-vibration engine bays." },
+                { id: "c5-init", make: "Honda", model: "City", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FL-00040B20L", warranty: "36 + 36 Months", notes: "Reliable starting power optimized for modern dual-overhead cam setups." },
+                { id: "c6-init", make: "Toyota", model: "Fortuner", sub: "Diesel", capacity: "80 AH", series: "AMARON PRO", part: "AAM-PR-00095D31R", warranty: "36 + 36 Months", notes: "High reserve capacity tailored for premium multi-zone climate and heavy electronics." },
+                { id: "c7-init", make: "Toyota", model: "Innova Crysta", sub: "Diesel", capacity: "65 AH", series: "AMARON FLO", part: "AAM-FL-00085D23L", warranty: "36 + 36 Months", notes: "Heavy-duty cycling longevity built specifically for long-distance commercial tourers." },
+                { id: "c8-init", make: "Tata", model: "Punch", sub: "Petrol", capacity: "35 AH", series: "AMARON GO", part: "AAM-GO-00038B20R", warranty: "30 + 30 Months", notes: "Right-hand layout terminal design with high impact-resistance casing." },
+                { id: "c9-init", make: "Tata", model: "Nexon", sub: "Petrol", capacity: "45 AH", series: "AMARON FLO", part: "AAM-FL-00055B24LS", warranty: "36 + 36 Months", notes: "Highest cranking power index in its physical footprint class." },
+                { id: "c10-init", make: "Nissan", model: "Magnite", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FL-00042B20L", warranty: "36 + 36 Months", notes: "Excellent charge acceptance rate engineered for compact turbo engines." },
+                { id: "c11-init", make: "Mahindra", model: "Thar", sub: "Diesel", capacity: "70 AH", series: "AMARON PRO", part: "AAM-PR-00080D26R", warranty: "36 + 36 Months", notes: "Reinforced grid structure engineered to withstand rigorous off-road shocks." },
+                { id: "c12-init", make: "Mahindra", model: "Scorpio-N", sub: "Diesel", capacity: "75 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "Premium European DIN74 casing with advanced stamped grid technology." },
+                { id: "c13-init", make: "Kia", model: "Seltos", sub: "Petrol", capacity: "60 AH", series: "AMARON FLO", part: "AAM-FL-560112054", warranty: "36 + 36 Months", notes: "DIN60 casing format providing seamless integration with high-end infotainment networks." },
+                { id: "c14-init", make: "Volkswagen", model: "Taigun", sub: "Petrol", capacity: "50 AH", series: "AMARON PRO", part: "AAM-PR-550114042", warranty: "36 + 36 Months", notes: "Strictly compliant factory match for Continental European onboard electronics." },
+                { id: "c15-init", make: "Renault", model: "Triber", sub: "Petrol", capacity: "35 AH", series: "AMARON BLACK", part: "AAM-BL-0BL400LMF", warranty: "24 + 0 Months", notes: "Value choice delivering highly robust standard capacity without maintenance overheads." },
+                { id: "c16-init", make: "Skoda", model: "Slavia", sub: "Petrol", capacity: "60 AH", series: "AMARON FLO", part: "AAM-FL-560112054", warranty: "36 + 36 Months", notes: "Zero maintenance design minimizing voltage drops across sophisticated sensors." },
+                { id: "c17-init", make: "Ford", model: "EcoSport", sub: "Diesel", capacity: "55 AH", series: "AMARON FLO", part: "AAM-FL-555112048", warranty: "36 + 36 Months", notes: "DIN55 footprint providing superior start-up reliability under cold climatic conditions." },
+                { id: "c18-init", make: "Maruti Suzuki", model: "Ertiga", sub: "CNG", capacity: "45 AH", series: "AMARON FLO", part: "AAM-FL-00055B24RS", warranty: "36 + 36 Months", notes: "Optimized for modern dual-fuel electrical management and frequent restarts." },
+                { id: "maruti-zen-90s", make: "Maruti Suzuki", model: "Zen (Vintage)", sub: "Petrol", capacity: "35 AH", series: "AMARON GO", part: "AAM-GO-00038B20L", warranty: "24 + 24 Months", notes: "Perfect vintage match for classic 90s Maruti chassis." },
+                // ADDED BACK FROM EARLIER
+                { id: "tata-safari-diesel-init", make: "Tata", model: "Safari", sub: "Diesel", capacity: "74 AH", series: "AMARON PRO", part: "574102069", warranty: "36 + 30 Months", notes: "Modern heavy SUV requirements." },
+                { id: "tata-harrier-diesel-init", make: "Tata", model: "Harrier", sub: "Diesel", capacity: "74 AH", series: "AMARON PRO", part: "574102069", warranty: "36 + 30 Months", notes: "Modern heavy SUV requirements." },
+                { id: "ford-endeavour-diesel-init", make: "Ford", model: "Endeavour", sub: "Diesel", capacity: "80 AH", series: "AMARON PRO", part: "105D31L", warranty: "36 + 30 Months", notes: "Heavy SUV cranking amp requirement." },
+                { id: "maruti-omni-petrol-init", make: "Maruti Suzuki", model: "Omni", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FL-00038B20L", warranty: "24 + 24 Months", notes: "Classic Maruti van." },
+                { id: "honda-civic-petrol-init", make: "Honda", model: "Civic", sub: "Petrol", capacity: "45 AH", series: "AMARON FLO", part: "AAM-FL-00055D23L", warranty: "24 + 36 Months", notes: "C-segment Honda petrol sedan commonly uses D23-size JIS fitment." }
+            ],
+
+            bikes: [
+                { id: "b1", make: "KTM", model: "Duke 390", sub: "Standard", capacity: "8 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ9R", warranty: "24 + 24 Months", notes: "Vibration-resistant spillproof design with active absorbent glass separators." },
+                { id: "b2", make: "Royal Enfield", model: "Classic 350", sub: "Electric Start", capacity: "8 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ9R", warranty: "24 + 24 Months", notes: "High cranking power mandatory for rotating high-mass heavy engine flywheels." },
+                { id: "b3", make: "Royal Enfield", model: "Himalayan", sub: "Electric Start", capacity: "8 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ9R", warranty: "24 + 24 Months", notes: "Tested rigorously for physical stability at high altitudes and low sub-zero limits." },
+                { id: "b4", make: "Yamaha", model: "YZF R15", sub: "Electric Start", capacity: "4 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ5L", warranty: "24 + 24 Months", notes: "Compact multi-layer cell execution engineered safely for premium sports fairings." },
+                { id: "b5", make: "Bajaj", model: "Pulsar 150", sub: "Electric Start", capacity: "4 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ5L", warranty: "24 + 24 Months", notes: "Long lasting valve-regulated lead-acid tech tailored for grueling daily commutes." },
+                { id: "b6", make: "Bajaj", model: "Pulsar NS200", sub: "Electric Start", capacity: "8 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ9R", warranty: "24 + 24 Months", notes: "Delivers maximum discharge capacity perfect for high-RPM ignition cycles." },
+                { id: "b7", make: "TVS", model: "Apache RTR 160", sub: "Electric Start", capacity: "4 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ5L", warranty: "24 + 24 Months", notes: "Zero-maintenance construction featuring fast-charging paste configurations." },
+                { id: "b8", make: "Honda", model: "Activa 6G", sub: "Electric Start", capacity: "3 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ4L", warranty: "24 + 24 Months", notes: "Ultra-dependable, long-cycle life battery for mainstream gearless scooters." },
+                { id: "b9", make: "Suzuki", model: "Access 125", sub: "Electric Start", capacity: "3 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ4L", warranty: "24 + 24 Months", notes: "Maintains optimal cold-cranking performance during frequent short urban trips." },
+                { id: "b10", make: "Vespa", model: "Elegante 150", sub: "Electric Start", capacity: "5 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ5L", warranty: "24 + 24 Months", notes: "Premium OEM fitment offering robust internal resistance matching European wiring." },
+                { id: "b11", make: "Kawasaki", model: "Ninja 400", sub: "Superbike", capacity: "8 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ9R", warranty: "24 + 24 Months", notes: "High heat tolerance designed to buffer radiation from high-displacement blocks." },
+                { id: "b12", make: "Bajaj", model: "Platina 100", sub: "Kick Start", capacity: "2.5 AH", series: "AMARON BETA Series", part: "APBTX25", warranty: "24 + 24 Months", notes: "Optimized basic discharge map supporting standard kick instrumentation lines." },
+                // ADDED BACK FROM EARLIER
+                { id: "aprilia-sr150", make: "Aprilia", model: "SR 150", sub: "Scooter", capacity: "5 AH", series: "AMARON PRO RIDER VRLA", part: "APBTX50", warranty: "24 + 24 Months", notes: "Italian performance scooter." },
+                { id: "ducati-monster", make: "Ducati", model: "Monster", sub: "Superbike", capacity: "12 AH", series: "AMARON PRO RIDER", part: "APBTZ12", warranty: "24 + 24 Months", notes: "High performance output." },
+                { id: "harley-davidson-street750", make: "Harley-Davidson", model: "Street 750", sub: "Cruiser", capacity: "14 AH", series: "AMARON PRO RIDER", part: "APB-VRLA14", warranty: "24 + 24 Months", notes: "Heavy cranking for V-Twin." },
+                { id: "triumph-bonneville", make: "Triumph", model: "Bonneville", sub: "Modern Classic", capacity: "12 AH", series: "AMARON PRO RIDER", part: "APBTZ12", warranty: "24 + 24 Months", notes: "Parallel twin cranking power." },
+                { id: "hero-splendor", make: "Hero", model: "Splendor", sub: "Electric Start", capacity: "3 AH", series: "AMARON PRO RIDER VRLA", part: "APBTZ4L", warranty: "24 + 24 Months", notes: "Mass-market commuter standard." }
+            ],
+
+            trucks: [
+                { id: "t1", make: "Eicher", model: "Pro 2049", sub: "Diesel", capacity: "90 AH", series: "AMARON HI-WAY", part: "AAM-HW-NT650H29R", warranty: "24 + 12 Months", notes: "Engineered specifically to support prolonged commercial utility operations." },
+                { id: "t2", make: "Ashok Leyland", model: "1615", sub: "Diesel", capacity: "120 AH", series: "AMARON HI-WAY", part: "AAM-HW-HC700", warranty: "24 + 12 Months", notes: "Extra-thick lead alloy grids engineered to extend operational lifespans." },
+                { id: "t3", make: "Tata", model: "Signa 4825.T", sub: "Diesel", capacity: "150 AH", series: "AMARON HI-WAY", part: "AAM-HW-HCX150", warranty: "24 + 12 Months", notes: "Heavy-duty ultra-rugged casing matching multi-axle heavy transport loads." },
+                { id: "t4", make: "Volvo", model: "FM 420", sub: "Diesel", capacity: "180 AH", series: "AMARON HI-WAY", part: "AAM-HW-HCX180", warranty: "24 + 12 Months", notes: "Global standard commercial DIN design ensuring power output consistency." },
+                { id: "t5", make: "BharatBenz", model: "2823R", sub: "Diesel", capacity: "135 AH", series: "AMARON HI-WAY", part: "AAM-HW-NT800E41R", warranty: "24 + 12 Months", notes: "Low-resistance internal configuration minimizing heat buildup during long drives." },
+                { id: "t8", make: "Tata", model: "LPT 2516", sub: "Heavy Truck", capacity: "150 AH", series: "AMARON HI-WAY BLACK", part: "NTX00D04R", warranty: "18 + 6 Months", notes: "Commercial truck, extreme duty, reliable long-haul performance." },
+                { id: "t9", make: "Ashok Leyland", model: "LYNX Smart", sub: "Bus/Truck", capacity: "150 AH", series: "AMARON HI-WAY BLACK", part: "NTX00D04R", warranty: "18 + 6 Months", notes: "Premium commercial vehicle, CNG/Diesel option available." },
+                { id: "t10", make: "Volvo", model: "FM 84", sub: "Heavy Truck", capacity: "180 AH", series: "AMARON HI-WAY", part: "HC180D04R", warranty: "18 + 6 Months", notes: "Global premium truck, advanced electronics, high cranking power." },
+                { id: "t11", make: "Bharat Benz", model: "3128C", sub: "Tipper Truck", capacity: "150 AH", series: "AMARON HI-WAY BLACK", part: "NTX00D04R", warranty: "18 + 6 Months", notes: "Indian heavy truck, tough build quality, construction-grade durability." },
+                { id: "t12", make: "Eicher", model: "20.16", sub: "Heavy Truck", capacity: "120 AH", series: "AMARON HI-WAY BLACK", part: "BL1300R / NT800D04R", warranty: "18 + 6 Months", notes: "Commercial workhorse, proven reliability, high cycle capacity." },
+                { id: "t13", make: "Mahindra", model: "Maxximo", sub: "LCV Truck", capacity: "60 AH", series: "AMARON FRESH BLACK", part: "BL600R / FR650RMF", warranty: "12 + 18 Months", notes: "Light commercial vehicle, budget-friendly, city delivery vehicle." },
+                { id: "t14", make: "Tata", model: "Super Ace", sub: "LCV", capacity: "65 AH", series: "AMARON FRESH BLACK", part: "BL700R/L", warranty: "12 + 18 Months", notes: "Popular mini truck, high payload, trusted load carrier." },
+                { id: "t15", make: "Force", model: "Traveller", sub: "Mini Bus", capacity: "90 AH", series: "AMARON HI-WAY BLACK", part: "BL1000R/L / NT700E41R", warranty: "18 + 6 Months", notes: "Passenger vehicle, spacious interior, reliable passenger service." }
+            ],
+
+            rickshaws: [
+                { id: "r1", make: "Bajaj", model: "RE E-Expert", sub: "CNG/Petrol", capacity: "35 AH", series: "AMARON 3-WHEELER", part: "AAM-3W-00042B20R", warranty: "24 + 24 Months", notes: "Optimized specifically to handle the constant stop-and-go cycles of inner-city traffic." },
+                { id: "r2", make: "Piaggio", model: "Ape DX", sub: "Diesel", capacity: "45 AH", series: "AMARON 3-WHEELER", part: "AAM-3W-00055B24R", warranty: "24 + 24 Months", notes: "High cold-cranking torque curve mapped directly for heavy single-cylinder diesel engines." },
+                { id: "r3", make: "Atul Auto", model: "Gem Cargo", sub: "Diesel", capacity: "45 AH", series: "AMARON 3-WHEELER", part: "AAM-3W-00055B24L", warranty: "24 + 24 Months", notes: "Spill-resistant and highly heat-tolerant formulation tailored for heavy cargo operations." },
+                { id: "r4", make: "Tata", model: "Zip", sub: "Diesel", capacity: "35 AH", series: "AMARON 3-WHEELER", part: "AAM-3W-00042B20L", warranty: "24 + 24 Months", notes: "Elevated reserve runtime profile protecting modern micro-delivery fleet operations." },
+                { id: "r5", make: "Bajaj", model: "RE4S CNG", sub: "Auto-Rickshaw", capacity: "32 AH", series: "AMARON FRESH BLACK", part: "FR300RMF", warranty: "12 + 18 Months", notes: "Three-wheeler, CNG-fueled, compact city transport, quick-start design." },
+                { id: "r6", make: "Piaggio", model: "APE City Plus", sub: "Auto-Rickshaw", capacity: "35 AH", series: "AMARON FRESH BLACK", part: "FR400RMF", warranty: "12 + 18 Months", notes: "Cargo-capable three-wheeler, sturdy frame, reliable performance." },
+                { id: "r7", make: "Mahindra", model: "Alfa Champion", sub: "Auto-Rickshaw", capacity: "60 AH", series: "AMARON FRESH BLACK", part: "BL600R / FR650RMF", warranty: "12 + 18 Months", notes: "Heavy-duty three-wheeler, passenger/cargo versatility." },
+                { id: "r8", make: "Atul Auto", model: "Gio Diesel", sub: "Three-Wheeler", capacity: "60 AH", series: "AMARON FRESH BLACK", part: "BL600R / FR650RMF", warranty: "12 + 18 Months", notes: "Utility vehicle, diesel-powered, high-capacity payload." },
+                { id: "r9", make: "TVS", model: "King Duramax", sub: "Three-Wheeler", capacity: "32 AH", series: "AMARON FRESH BLACK", part: "FR300RMF", warranty: "12 + 18 Months", notes: "Entry-level three-wheeler, fuel-efficient, wide availability." }
+            ],
+
+            tractors: [
+                { id: "ag1", make: "Mahindra", model: "Swaraj 978 FE", sub: "Tractor 75HP", capacity: "90 AH", series: "AMARON HARVEST BLACK", part: "BL1000R/L", warranty: "18 + 18 Months", notes: "Farm tractor, engine-start reliability, heavy soil operation." },
+                { id: "ag2", make: "Eicher", model: "548", sub: "Tractor 48HP", capacity: "75 AH", series: "AMARON HARVEST BLACK", part: "BL800R/L / TR500D31R", warranty: "18 + 18 Months", notes: "Mid-size tractor, proven field performance, durable construction." },
+                { id: "ag3", make: "John Deere", model: "5065E", sub: "Tractor 65HP", capacity: "90 AH", series: "AMARON HARVEST BLACK", part: "BL1000R/L", warranty: "18 + 18 Months", notes: "Premium tractor, global brand, agricultural reliability standard." },
+                { id: "ag4", make: "Escorts", model: "Powertrac 425", sub: "Tractor 25HP", capacity: "75 AH", series: "AMARON HARVEST BLACK", part: "BL800R/L / TR500D31R", warranty: "18 + 18 Months", notes: "Small tractor, paddy field operations, compact design." },
+                { id: "ag5", make: "New Holland", model: "6500", sub: "Tractor 65HP", capacity: "90 AH", series: "AMARON HARVEST BLACK", part: "BL1000R/L", warranty: "18 + 18 Months", notes: "Global tractor, export-quality engineering, superior reliability." },
+                { id: "ag6", make: "Massey Ferguson", model: "245", sub: "Tractor 50HP", capacity: "75 AH", series: "AMARON HARVEST BLACK", part: "BL800R / TR500D31R", warranty: "18 + 18 Months", notes: "Heritage brand, multi-crop operations, proven Indian durability." },
+                { id: "ag7", make: "SAME DEUTZ-FAHR", model: "Agrolux 60", sub: "Tractor 60HP", capacity: "90 AH", series: "AMARON HARVEST BLACK", part: "BL1000L", warranty: "18 + 18 Months", notes: "European engineering, precision agriculture, modern hydraulics." },
+                { id: "ag8", make: "Sonalika", model: "DI 30", sub: "Tractor 30HP", capacity: "75 AH", series: "AMARON HARVEST BLACK", part: "BL800R / TR500D31R", warranty: "18 + 18 Months", notes: "Affordable tractor, small-farm focus, easy maintenance." }
+            ],
+
+            inverters: [
+                { id: "i1", make: "Amaron Current", model: "Home Backup", sub: "Tall Tubular", capacity: "150 AH", series: "AMARON CURRENT", part: "AR150ST36", warranty: "36 + 12 Months", notes: "Features a corrosion-resistant panoptic spine produced via high-pressure casting." },
+                { id: "i2", make: "Amaron Quanta", model: "Industrial UPS", sub: "SMF VRLA", capacity: "100 AH", series: "AMARON QUANTA", part: "12AL100N", warranty: "24 + 0 Months", notes: "Maintenance-free design incorporating a patented Radgrid structure for low internal resistance." },
+                { id: "i3", make: "Amaron Solar", model: "Solar Storage", sub: "Deep Cycle Tubular", capacity: "200 AH", series: "AMARON SOLAR", part: "12AL200N", warranty: "36 + 24 Months", notes: "Exceptional charge acceptance factor tuned for erratic solar photovoltaic input patterns." },
+                { id: "i4", make: "Amaron Current", model: "Compact Backup", sub: "Short Tubular", capacity: "135 AH", series: "AMARON CURRENT", part: "AR135ST36", warranty: "36 + 12 Months", notes: "Space-saving configuration delivering identical cycle endurance to standard models." },
+                { id: "inv1", make: "Amaron", model: "Current Tall Tubular 150 AH", sub: "Home Backup", capacity: "150 AH", series: "AMARON CURRENT TUBULAR", part: "AAM-CR-DP150TT54", warranty: "42 + 24 Months", notes: "Premium inverter battery, 6-8 hours backup (300W load), heat-resistant calcium grid." },
+                { id: "inv2", make: "Amaron", model: "Current Tall Tubular 220 AH", sub: "Home Backup", capacity: "220 AH", series: "AMARON CURRENT TUBULAR", part: "AAM-CR-DP220TT54", warranty: "42 + 24 Months", notes: "Extended backup system, 6-8 hours (400W load), robust spine grid technology." },
+                { id: "inv3", make: "Amaron", model: "Quanta SMF VRLA 150 AH", sub: "Industrial UPS", capacity: "150 AH", series: "AMARON QUANTA SMF", part: "12AL150", warranty: "24 Months", notes: "Industrial-grade battery, sealed maintenance-free, telecom/banking applications." },
+                { id: "inv4", make: "Amaron", model: "Quanta SMF VRLA 200 AH", sub: "Industrial UPS", capacity: "200 AH", series: "AMARON QUANTA SMF", part: "12AL200", warranty: "24 Months", notes: "Heavy-duty UPS battery, data center compatible, 10-year float life." },
+                { id: "inv5", make: "Amaron", model: "Quanta SMF VRLA 100 AH", sub: "Industrial UPS", capacity: "100 AH", series: "AMARON QUANTA SMF", part: "12AL100", warranty: "24 Months", notes: "Compact UPS battery, office/small server backup, superior charge acceptance." },
+                { id: "inv6", make: "Amaron", model: "Quanta SMF VRLA 65 AH", sub: "Small UPS/Solar", capacity: "65 AH", series: "AMARON QUANTA SMF", part: "12AL065", warranty: "24 Months", notes: "Portable backup system, solar panel compatible, lightweight design." },
+                { id: "inv7", make: "Amaron", model: "Current Tall Tubular", sub: "Inverter Battery", capacity: "150 AH", series: "AMARON CURRENT", part: "AMC-CT150", warranty: "48 + 48 Months", notes: "High-performance tubular plate design." },
+                { id: "inv8", make: "Amaron", model: "Quanta Tall Tubular", sub: "Inverter Battery", capacity: "200 AH", series: "AMARON QUANTA", part: "AMC-QT200", warranty: "60 + 60 Months", notes: "Hot standby tubular battery with long backup." },
+                { id: "inv9", make: "Amaron", model: "SolMax SMF150", sub: "Solar Backup Battery", capacity: "150 AH", series: "AMARON SOLMAX", part: "AMC-SM150", warranty: "60 Months", notes: "Deep-cycle solar battery with high charge acceptance." }
+            ]
+        };
+
+        let currentSegment = 'cars';
+
+        function selectSegment(segment) {
+            currentSegment = segment;
+            document.querySelectorAll('.segment-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(`tab-${segment}`)?.classList.add('active');
+
+            const subLabel = document.getElementById('sub-category-label');
+            if (segment === 'inverters') {
+                subLabel.innerText = 'Application Profile';
+            } else if (segment === 'bikes') {
+                subLabel.innerText = 'Ignition System';
+            } else if (segment === 'tractors') {
+                subLabel.innerText = 'Power / Category';
+            } else {
+                subLabel.innerText = 'Fuel / Engine Type';
+            }
+
+            updateHelpText(segment);
+            populateBrands();
+            resetDropdowns(true);
+            hideResult();
+        }
+
+        function updateHelpText(segment) {
+            const helpText = document.getElementById('help-text');
+            if (segment === 'cars') {
+                helpText.innerText = "For Passenger vehicles, standard petrol models require compact terminal layouts (35AH-40AH), while advanced direct-injection turbo diesel setups require premium heavy cold-cranking output configurations (60AH-65AH).";
+            } else if (segment === 'bikes') {
+                helpText.innerText = "Modern motorcycles (like KTM, Yamaha, Royal Enfield) utilize maintenance-free VRLA cells. They feature sealed leakproof construction to prevent spills during aggressive sports riding.";
+            } else if (segment === 'trucks') {
+                helpText.innerText = "Commercial trucks and heavy buses operate under prolonged heavy loads. They rely on high capacity commercial batteries (120AH-180AH) equipped with thick active grids.";
+            } else if (segment === 'rickshaws') {
+                helpText.innerText = "Three-Wheelers demand continuous stop-and-start operations. Specialized Amaron Rickshaw batteries feature high charge acceptance ratios to handle low idle charges.";
+            } else if (segment === 'tractors') {
+                helpText.innerText = "Agricultural tractors operating in harsh terrains require heavy-duty grid alloys designed specifically to buffer severe mechanical field shocks and vibrations.";
+            } else if (segment === 'inverters') {
+                helpText.innerText = "Home backup & solar systems utilize deep-cycle tall tubular technology designed to release low amps over extended hours rather than sudden high bursts of starting energy.";
+            }
+        }
+
+        function populateBrands() {
+            const selectBrand = document.getElementById('select-brand');
+            selectBrand.innerHTML = '<option value="">Select Brand</option>';
+            const distinctBrands = [...new Set((masterDatabase[currentSegment] || []).map(item => item.make))].sort();
+            distinctBrands.forEach(brand => {
+                const opt = document.createElement('option');
+                opt.value = opt.innerText = brand;
+                selectBrand.appendChild(opt);
+            });
+        }
+
+        function onBrandChange() {
+            const selectedBrand = document.getElementById('select-brand').value;
+            const selectFuel = document.getElementById('select-fuel');
+            selectFuel.innerHTML = '<option value="">Select Engine/Fuel</option>';
+            resetDropdowns(true);
+            if (!selectedBrand) return;
+            const filtered = (masterDatabase[currentSegment] || []).filter(item => item.make === selectedBrand);
+            const distinctSubs = [...new Set(filtered.map(item => item.sub))].sort();
+            distinctSubs.forEach(sub => {
+                const opt = document.createElement('option');
+                opt.value = opt.innerText = sub;
+                selectFuel.appendChild(opt);
+            });
+        }
+
+        function onFuelChange() {
+            const brand = document.getElementById('select-brand').value;
+            const fuel = document.getElementById('select-fuel').value;
+            const selectModel = document.getElementById('select-model');
+            selectModel.innerHTML = '<option value="">Choose your model/spec...</option>';
+            selectModel.disabled = true;
+            if (!brand || !fuel) return;
+            const filtered = (masterDatabase[currentSegment] || []).filter(item => item.make === brand && item.sub === fuel);
+            filtered.forEach(item => {
+                const opt = document.createElement('option');
+                opt.value = item.id;
+                opt.innerText = `${item.model} — ${item.capacity}`;
+                selectModel.appendChild(opt);
+            });
+            selectModel.disabled = false;
+        }
+
+        // Trigger animations immediately to prevent bugs
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                document.querySelectorAll('.reveal').forEach(el => {
+                    el.classList.add('active');
+                });
+            }, 300);
+        });
+
+        function onModelChange() {
+            const id = document.getElementById('select-model').value;
+            if (!id) { hideResult(); return; }
+            const match = (masterDatabase[currentSegment] || []).find(item => item.id === id);
+            if (match) displayResult(match);
+        }
+
+        function handleLiveSearch() {
+            const query = document.getElementById('live-search-input').value.trim().toLowerCase();
+            const suggestBox = document.getElementById('live-suggest-box');
+            if (query.length < 2) { suggestBox.classList.add('hidden'); return; }
+
+            let allItems = [];
+            Object.keys(masterDatabase).forEach(cat => masterDatabase[cat].forEach(item => allItems.push({ ...item, segment: cat })));
+            
+            const matches = allItems.filter(item => 
+                item.model.toLowerCase().includes(query) || 
+                item.make.toLowerCase().includes(query) ||
+                (item.part && item.part.toLowerCase().includes(query)) ||
+                (item.series && item.series.toLowerCase().includes(query))
+            );
+
+            if (matches.length === 0) {
+                suggestBox.innerHTML = '<div class="p-4 text-xs text-slate-500 italic text-left">No matches found. Try entering a simpler brand name or part number.</div>';
+                suggestBox.classList.remove('hidden');
+                return;
+            }
+
+            suggestBox.innerHTML = '';
+            matches.forEach(item => {
+                const div = document.createElement('div');
+                div.className = "p-3 text-xs text-slate-300 hover:bg-[#6FA219]/10 hover:text-white cursor-pointer flex justify-between border-b border-white/5 last:border-0 text-left";
+                
+                let segLabel = item.segment === 'cars' ? 'Car' : 
+                               item.segment === 'bikes' ? 'Bike' : 
+                               item.segment === 'trucks' ? 'Commercial' : 
+                               item.segment === 'rickshaws' ? 'Rickshaw' : 
+                               item.segment === 'tractors' ? 'Tractor' : 'Inverter';
+
+                div.innerHTML = `
+                    <div class="flex items-center gap-2 text-left">
+                        <span class="bg-slate-800 text-[#7BB21E] font-extrabold text-[8px] px-2 py-0.5 rounded uppercase">${segLabel}</span>
+                        <div>
+                            <strong>${item.make}</strong> ${item.model} 
+                            <span class="text-slate-500 font-semibold text-[10px]">(${item.sub})</span>
+                        </div>
+                    </div>
+                    <div class="text-[#7BB21E] font-bold text-right">${item.capacity}</div>
+                `;
+                
+                div.onclick = () => {
+                    selectSegment(item.segment);
+                    displayResult(item);
+                    document.getElementById('live-search-input').value = `${item.make} ${item.model}`;
+                    suggestBox.classList.add('hidden');
+                };
+                suggestBox.appendChild(div);
+            });
+            suggestBox.classList.remove('hidden');
+        }
+
+        // Hide Suggestions if user clicks outside
+        document.addEventListener('click', function(e) {
+            const box = document.getElementById('live-suggest-box');
+            const input = document.getElementById('live-search-input');
+            if (e.target !== box && e.target !== input) {
+                box.classList.add('hidden');
+            }
+        });
+
+        function displayResult(item) {
+            document.getElementById('empty-state').classList.add('hidden');
+            const card = document.getElementById('result-card');
+            card.classList.remove('hidden');
+            card.classList.add('flex');
+            
+            document.getElementById('card-make').innerText = item.make;
+            document.getElementById('card-model').innerText = `${item.model} (${item.sub})`;
+            document.getElementById('badge-capacity').innerText = item.capacity;
+            document.getElementById('card-rating').innerText = item.capacity;
+            document.getElementById('card-series').innerText = item.series;
+            document.getElementById('card-part').innerText = item.part;
+            document.getElementById('card-warranty').innerText = item.warranty;
+
+            const segTag = document.getElementById('card-segment-badge');
+            let thermalBar = document.getElementById('telemetry-thermal');
+            let ccaBar = document.getElementById('telemetry-cca');
+
+            if (currentSegment === 'cars') {
+                segTag.innerText = "Passenger Vehicle";
+                thermalBar.style.width = "98%";
+                ccaBar.style.width = "92%";
+            } else if (currentSegment === 'bikes') {
+                segTag.innerText = "Two-Wheeler / Scooter";
+                thermalBar.style.width = "94%";
+                ccaBar.style.width = "88%";
+            } else if (currentSegment === 'trucks') {
+                segTag.innerText = "Commercial Hauler";
+                thermalBar.style.width = "99%";
+                ccaBar.style.width = "96%";
+            } else if (currentSegment === 'rickshaws') {
+                segTag.innerText = "Three-Wheeler Auto";
+                thermalBar.style.width = "91%";
+                ccaBar.style.width = "85%";
+            } else if (currentSegment === 'tractors') {
+                segTag.innerText = "Farming / Industrial";
+                thermalBar.style.width = "97%";
+                ccaBar.style.width = "94%";
+            } else if (currentSegment === 'inverters') {
+                segTag.innerText = "Tubular Home Backup";
+                thermalBar.style.width = "95%";
+                ccaBar.style.width = "80%";
+            }
+        }
+
+        function hideResult() {
+            document.getElementById('empty-state').classList.remove('hidden');
+            document.getElementById('result-card').classList.add('hidden');
+            document.getElementById('result-card').classList.remove('flex');
+        }
+
+        function resetDropdowns(onlyModel = false) {
+            if (!onlyModel) document.getElementById('select-fuel').innerHTML = '<option value="">Select Engine/Fuel</option>';
+            const selectModel = document.getElementById('select-model');
+            selectModel.innerHTML = '<option value="">Choose your model/spec...</option>';
+            selectModel.disabled = true;
+        }
+
+        function showNotification(msg) {
+            const toast = document.getElementById('custom-toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = msg;
+            
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-32', 'opacity-0');
+            }, 3500);
+        }
+
+        function lockSpec() {
+            const makeModel = document.getElementById('card-model').innerText;
+            const partNo = document.getElementById('card-part').innerText;
+            showNotification(`Specification locked: Match for ${makeModel} (${partNo}) registered!`);
+        }
+
+        // --- CAR IGNITION CLUSTER TELEMETRY BOOT SEQUENCE ---
+        function initiateClusterBoot() {
+            const startBtn = document.getElementById('start-trigger-container');
+            const clusterWrapper = document.getElementById('cluster-container');
+            const grid = document.getElementById('inventory-grid');
+            const odoVal = document.getElementById('odo-val');
+
+            startBtn.style.display = 'none';
+            clusterWrapper.classList.add('active');
+
+            setTimeout(() => {
+                clusterWrapper.classList.add('show');
+                
+                setTimeout(() => {
+                    // Triggers the needle rev up CSS keyframes
+                    clusterWrapper.classList.add('booting');
+
+                    // Odometer rolling numbers effect
+                    const targetOdo = 58428;
+                    let currentOdo = 58420;
+                    const odoInterval = setInterval(() => {
+                        currentOdo += 1;
+                        odoVal.innerText = currentOdo.toString().padStart(6, '0');
+                        if (currentOdo >= targetOdo) {
+                            clearInterval(odoInterval);
+                        }
+                    }, 350);
+
+                    // After gauges sweep and return to normal, fade and transition to Portal
+                    setTimeout(() => {
+                        clusterWrapper.style.opacity = '0';
+                        clusterWrapper.style.transform = 'scale(1.1) translateY(-20px)';
+                        
+                        setTimeout(() => {
+                            clusterWrapper.style.display = 'none';
+                            grid.classList.add('visible');
+                            window.scrollBy({ top: 120, behavior: 'smooth' });
+                            populateBrands();
+                        }, 800);
+                    }, 3300);
+
+                }, 100);
+            }, 50);
+        }
+
+        function updateHUDStatus(isHovered) {
+            const prompter = document.getElementById('hud-prompter');
+            const promptText = document.getElementById('hud-prompt-text');
+            const ledContainer = document.getElementById('hud-led');
+            if (!prompter || !promptText || !ledContainer) return;
+            const leds = ledContainer.children;
+
+            if (isHovered) {
+                prompter.classList.remove('border-amber-500/20');
+                prompter.classList.add('border-[#6FA219]/30', 'bg-black/60');
+                promptText.classList.remove('text-amber-500/90');
+                promptText.classList.add('text-[#6FA219]');
+                promptText.innerText = '[ IGNITION SYSTEM ARMED: CLICK TO START ]';
+                for (let led of leds) {
+                    led.classList.remove('bg-amber-500');
+                    led.classList.add('bg-[#6FA219]');
+                }
+            } else {
+                prompter.classList.remove('border-[#6FA219]/30', 'bg-black/60');
+                prompter.classList.add('border-amber-500/20');
+                promptText.classList.remove('text-[#6FA219]');
+                promptText.classList.add('text-amber-500/90');
+                promptText.innerText = '[ Standby: Press Engine Button to Load Products ]';
+                for (let led of leds) {
+                    led.classList.remove('bg-[#6FA219]');
+                    led.classList.add('bg-amber-500');
+                }
+            }
+        }
+
+        // --- NAVIGATION AND TRANSITIONS LOGIC ---
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu-overlay');
+        const transitionOverlay = document.getElementById('nav-transition');
 
         function toggleMenu() {
             menuBtn.classList.toggle('open');
@@ -357,9 +1706,8 @@
             document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : 'auto';
         }
 
-        menuBtn.addEventListener('click', toggleMenu);
+        if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
 
-        // Closing menu when link is clicked
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 const targetId = link.getAttribute('href');
@@ -367,9 +1715,6 @@
                 triggerPowerJump(targetId);
             });
         });
-
-        // Power-Jump Transition Core
-        const transitionOverlay = document.getElementById('nav-transition');
 
         function triggerPowerJump(targetId) {
             if (!targetId || !targetId.startsWith('#')) return;
@@ -381,21 +1726,22 @@
             transitionOverlay.classList.remove('active');
             transitionOverlay.offsetHeight; 
 
-            transitionOverlay.style.transition = 'transform 0.5s cubic-bezier(0.77, 0, 0.175, 1)';
+            transitionOverlay.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
             transitionOverlay.style.transform = 'translateY(0%)';
             
-            setTimeout(() => { transitionOverlay.classList.add('active'); }, 50);
+            setTimeout(() => { transitionOverlay.classList.add('active'); }, 100);
 
             setTimeout(() => {
                 window.scrollTo({
                     top: targetElement.offsetTop - (window.innerWidth < 768 ? 70 : 100),
                     behavior: 'auto'
                 });
-                transitionOverlay.classList.remove('active');
+                
                 setTimeout(() => {
+                    transitionOverlay.classList.remove('active');
                     transitionOverlay.style.transform = 'translateY(-100%)';
-                }, 200);
-            }, 700);
+                }, 400);
+            }, 800);
         }
 
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -405,16 +1751,8 @@
             });
         });
 
-        // Scroll Reveal Logic
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { 
-                    entry.target.classList.add('active'); 
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        // Initialize on load
+        selectSegment('cars');
     </script>
 </body>
 </html>
