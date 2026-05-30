@@ -248,14 +248,6 @@
         .reveal.active .w-cca-amaron { width: 88%; }
         .reveal.active .w-cca-conv { width: 60%; }
 
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.6);
-        }
-
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -696,7 +688,11 @@
 
         <!-- Hero / Header Section -->
         <header id="home" class="w-full h-screen relative overflow-hidden bg-black flex items-center">
-            <div class="hero-bg" style="background-image: url('images/Battery1.png');"></div>
+            <!-- Dynamic Aspect-Ratio Fitting Picture Element for Perfectly fluid device presentation -->
+            <picture class="absolute inset-0 z-0 select-none pointer-events-none">
+                <source srcset="images/Battery1pot.png" media="(max-width: 768px)">
+                <img src="images/Battery1.png" alt="Amaron Engine Panel" class="w-full h-full object-cover object-center filter brightness-[0.6] transition-all duration-300">
+            </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
             <div class="relative z-20 px-8 md:px-12 w-full">
                 <div class="flex flex-col max-w-4xl">
@@ -1066,15 +1062,6 @@
                                         </form>
                                     </div>
 
-                                    <!-- Technical Note Info box -->
-                                    <div id="help-box" class="bg-[#6FA219]/5 border border-[#6FA219]/10 rounded-2xl p-4 flex gap-3 items-start transition-all duration-300">
-                                        <i class="fa-solid fa-microchip text-[#7BB21E] text-sm mt-0.5 animate-pulse"></i>
-                                        <div>
-                                            <h4 class="text-xs font-bold text-[#7BB21E] uppercase tracking-wider mb-0.5">Zero-Knowledge Diagnostic Assistance</h4>
-                                            <p id="help-text" class="text-[11px] text-slate-400 leading-normal">For Passenger vehicles, standard petrol models require compact terminal layouts (35AH-40AH), while advanced direct-injection turbo diesel setups require premium heavy cold-cranking output configurations (60AH-65AH).</p>
-                                        </div>
-                                    </div>
-
                                     <div class="flex gap-4">
                                         <button onclick="resetPortal()" class="flex-1 py-3 border border-white/5 hover:border-white/10 rounded-xl text-xs font-bold text-slate-400 hover:text-white uppercase tracking-wider transition-all">
                                             Clear Portal Config
@@ -1252,7 +1239,7 @@
                 { id: "citroen-c5-petrol-2001-2022", make: "Citroen", model: "C5", sub: "Petrol", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "DIN68-DIN72 replacement class; suited to automatic/heavy-engine applications." },
                 { id: "citroen-c5-diesel-2001-2022", make: "Citroen", model: "C5", sub: "Diesel", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "DIN74 minimum recommendation for higher cranking requirement." },
                 { id: "daewoo-cielo-petrol-1994-2002", make: "Daewoo", model: "Cielo", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact JIS B20 left-layout class used across older small petrol sedans." },
-                { id: "daewoo-matiz-petrol-1998-2004", make: "Daewoo", model: "Matiz", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact hatch fitment in B20 left-layout format." },
+                { id: "daewoo-matiz-petrol-1998-2004", make: "Daewoo", model: "Matiz", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact hatchback layout format." },
                 { id: "datsun-go-petrol-2014-2022", make: "Datsun", model: "GO", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Small hatchback JIS B20 left-layout battery class." },
                 { id: "datsun-go-plus-petrol-2014-2022", make: "Datsun", model: "GO+", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Compact MPV/hatch platform commonly using B20L battery tray." },
                 { id: "fiat-punto-petrol-2009-2018", make: "Fiat", model: "Punto", sub: "Petrol", capacity: "60 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "DIN60/DIN66 class, left layout, 278x175x190 mm." },
@@ -1346,7 +1333,7 @@
                 { id: "skoda-rapid-diesel-2011-2023", make: "Skoda", model: "Rapid", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Rapid 1.6 Diesel fitment." },
                 { id: "skoda-superb-petrol-2009-2026", make: "Skoda", model: "Superb", sub: "Petrol", capacity: "60 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss Superb 1.8 petrol page shows FLO DIN66 / DIN60 566112060." },
                 { id: "skoda-yeti-diesel-2010-2017", make: "Skoda", model: "Yeti", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "BatteryBoss explicit Yeti 2.0 Diesel fitment on DIN66." },
-                { id: "ssangyong-rexton-diesel-2012-2019", make: "SsangYong", model: "Rexton", sub: "Diesel", capacity: "80 AH", series: "AMARON FLO", part: "AAM-FL-580112073", warranty: "24 + 36 Months", notes: "Large diesel SUV class requiring higher CCA DIN battery." },
+                { id: "ssangyong-rexton-diesel-2012-2019", make: "SSangYong", model: "Rexton", sub: "Diesel", capacity: "80 AH", series: "AMARON FLO", part: "AAM-FL-580112073", warranty: "24 + 36 Months", notes: "Large diesel SUV class requiring higher CCA DIN battery." },
                 { id: "subaru-forester-petrol-1998-2026", make: "Subaru", model: "Forester", sub: "Petrol", capacity: "74 AH", series: "AMARON PRO", part: "AAM-PR-574102069", warranty: "36 + 36 Months", notes: "AWD/heavier-engine fitment aligned to DIN74 replacement class." },
                 { id: "suzuki-swift-petrol-2005-2026", make: "Suzuki", model: "Swift", sub: "Petrol", capacity: "35 AH", series: "AMARON FLO", part: "AAM-FLO-40B20L", warranty: "24 + 24 Months", notes: "Global small-hatch JIS B20 left-layout class analogous to Maruti Swift family." },
                 { id: "tata-indica-diesel-1999-2018", make: "Tata", model: "Indica", sub: "Diesel", capacity: "66 AH", series: "AMARON FLO", part: "AAM-FL-566112060", warranty: "30 + 30 Months", notes: "Legacy diesel hatchback aligned to DIN66 left-layout case." },
@@ -1496,27 +1483,9 @@
                 subLabel.innerText = 'Fuel / Engine Type';
             }
 
-            updateHelpText(segment);
             populateBrands();
             resetDropdowns(true);
             hideResult();
-        }
-
-        function updateHelpText(segment) {
-            const helpText = document.getElementById('help-text');
-            if (segment === 'cars') {
-                helpText.innerText = "For Passenger vehicles, standard petrol models require compact terminal layouts (35AH-40AH), while advanced direct-injection turbo diesel setups require premium heavy cold-cranking output configurations (60AH-65AH).";
-            } else if (segment === 'bikes') {
-                helpText.innerText = "Modern motorcycles (like KTM, Yamaha, Royal Enfield) utilize maintenance-free VRLA cells. They feature sealed leakproof construction to prevent spills during aggressive sports riding.";
-            } else if (segment === 'trucks') {
-                helpText.innerText = "Commercial trucks and heavy buses operate under prolonged heavy loads. They rely on high capacity commercial batteries (120AH-180AH) equipped with thick active grids.";
-            } else if (segment === 'rickshaws') {
-                helpText.innerText = "Three-Wheelers demand continuous stop-and-start operations. Specialized Amaron Rickshaw batteries feature high charge acceptance ratios to handle low idle charges.";
-            } else if (segment === 'tractors') {
-                helpText.innerText = "Agricultural tractors operating in harsh terrains require heavy-duty grid alloys designed specifically to buffer severe mechanical field shocks and vibrations.";
-            } else if (segment === 'inverters') {
-                helpText.innerText = "Home backup & solar systems utilize deep-cycle tall tubular technology designed to release low amps over extended hours rather than sudden high bursts of starting energy.";
-            }
         }
 
         function populateBrands() {
@@ -1923,6 +1892,16 @@
                 requestView.classList.add('hidden');
                 reqTrigger.style.display = 'block';
             }
+        }
+
+        // Clear dynamic configuration
+        function resetPortal() {
+            document.getElementById('select-brand').value = "";
+            document.getElementById('select-fuel').innerHTML = '<option value="">Select Engine/Fuel</option>';
+            resetDropdowns();
+            document.getElementById('live-search-input').value = "";
+            hideResult();
+            showNotification("Portal layout cleared.");
         }
 
         function toggleBatteryDetails() {
