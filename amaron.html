@@ -42,6 +42,26 @@
     </script>
 
     <style>
+        /* --- DYNAMIC TRANSITION SPEED VARIABLES (MOBILE-FIRST OPTIMIZATION) --- */
+        :root {
+            --transition-duration: 0.6s;
+            --bar-duration: 1.5s;
+            --cluster-duration: 3s;
+            --reveal-duration: 1s;
+            --stagger-delay: 0.2s;
+        }
+
+        /* Accelerated animation profiles for mobile viewports */
+        @media (max-width: 768px) {
+            :root {
+                --transition-duration: 0.3s;
+                --bar-duration: 0.7s;
+                --cluster-duration: 1.5s;
+                --reveal-duration: 0.4s;
+                --stagger-delay: 0.05s;
+            }
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
@@ -51,6 +71,7 @@
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(111, 162, 25, 0.05) 0%, transparent 45%),
                 radial-gradient(circle at 90% 80%, rgba(111, 162, 25, 0.03) 0%, transparent 50%);
+            -webkit-tap-highlight-color: transparent; /* Clean touch feedback on mobile */
         }
 
         /* --- ENHANCED TRANSITION OVERLAY --- */
@@ -67,6 +88,7 @@
             justify-content: center;
             text-align: center;
             overflow: hidden;
+            will-change: transform;
         }
 
         #nav-transition::before {
@@ -92,7 +114,7 @@
             text-transform: uppercase;
             opacity: 0;
             transform: skewX(-10deg) translateY(40px);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all var(--transition-duration) cubic-bezier(0.16, 1, 0.3, 1);
             line-height: 0.8;
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
         }
@@ -105,7 +127,7 @@
             text-transform: uppercase;
             opacity: 0;
             transform: translateY(20px);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+            transition: all var(--transition-duration) cubic-bezier(0.16, 1, 0.3, 1) var(--stagger-delay);
             margin-top: 1.5rem;
             background: rgba(0,0,0,0.05);
             padding: 0.5rem 1.5rem;
@@ -171,11 +193,12 @@
             width: 0%;
             height: 100%;
             position: relative;
-            transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: width var(--bar-duration) cubic-bezier(0.25, 1, 0.5, 1);
             display: flex;
             align-items: center;
             padding: 0 16px;
             white-space: nowrap; /* Prevent ugly squished multi-line wraps */
+            will-change: width;
         }
 
         .bar-fill-amaron {
@@ -213,10 +236,10 @@
 
         .bar-label { position: relative; z-index: 10; }
 
-        .reveal.active .delay-1 { transition-delay: 0.1s; }
-        .reveal.active .delay-2 { transition-delay: 0.2s; }
-        .reveal.active .delay-3 { transition-delay: 0.3s; }
-        .reveal.active .delay-4 { transition-delay: 0.4s; }
+        .reveal.active .delay-1 { transition-delay: calc(var(--stagger-delay) * 1); }
+        .reveal.active .delay-2 { transition-delay: calc(var(--stagger-delay) * 2); }
+        .reveal.active .delay-3 { transition-delay: calc(var(--stagger-delay) * 3); }
+        .reveal.active .delay-4 { transition-delay: calc(var(--stagger-delay) * 4); }
 
         .reveal.active .w-lifespan-amaron { width: 92%; }
         .reveal.active .w-lifespan-conv { width: 45%; }
@@ -277,7 +300,7 @@
         .reveal {
             opacity: 1; /* Always show, avoiding iframe blank viewport states */
             transform: translateY(0);
-            transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: opacity var(--reveal-duration) cubic-bezier(0.22, 1, 0.36, 1), transform var(--reveal-duration) cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .menu-toggle span {
@@ -462,12 +485,12 @@
         }
         .odo-highlight { color: #6FA219; }
 
-        /* --- ANIMATION SEQUENCES (REALISTIC REV UP AND DOWN) --- */
+        /* --- ANIMATION SEQUENCES (DYNAMIC DURATIONS IN ACCORDANCE WITH DEVICE CAPABILITY) --- */
         .booting #needle-speed {
-            animation: sweepSpeed 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: sweepSpeed var(--cluster-duration) cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
         .booting #main-sweep {
-            animation: glowSpeed 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: glowSpeed var(--cluster-duration) cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
         @keyframes sweepSpeed {
@@ -484,10 +507,10 @@
         }
 
         .booting #needle-rpm {
-            animation: sweepRPM 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: sweepRPM var(--cluster-duration) cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
         .booting #left-sweep {
-            animation: glowRPM 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: glowRPM var(--cluster-duration) cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
         @keyframes sweepRPM {
@@ -504,10 +527,10 @@
         }
 
         .booting #needle-fuel {
-            animation: sweepFuel 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: sweepFuel var(--cluster-duration) cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
         .booting #right-sweep {
-            animation: glowFuel 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: glowFuel var(--cluster-duration) cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
         @keyframes sweepFuel {
@@ -527,7 +550,7 @@
         #inventory-grid {
             display: none;
             opacity: 0;
-            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity var(--transition-duration) cubic-bezier(0.16, 1, 0.3, 1);
         }
         #inventory-grid.visible {
             display: block;
@@ -595,7 +618,7 @@
         .cell-bar {
             height: 100%;
             background: linear-gradient(90deg, #3a5a0a 0%, #6FA219 70%, #a4ff00 100%);
-            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: width var(--bar-duration) cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
         }
         .cell-bar::after {
@@ -1709,6 +1732,8 @@
             const grid = document.getElementById('inventory-grid');
             const odoVal = document.getElementById('odo-val');
 
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
             startBtn.style.display = 'none';
             clusterWrapper.classList.add('active');
 
@@ -1722,15 +1747,21 @@
                     // Odometer rolling numbers effect
                     const targetOdo = 58428;
                     let currentOdo = 58420;
+                    
+                    // Accelerate odometer ticking on mobile
+                    const odoTickDelay = isMobile ? 120 : 350;
+                    
                     const odoInterval = setInterval(() => {
                         currentOdo += 1;
                         odoVal.innerText = currentOdo.toString().padStart(6, '0');
                         if (currentOdo >= targetOdo) {
                             clearInterval(odoInterval);
                         }
-                    }, 350);
+                    }, odoTickDelay);
 
-                    // After gauges sweep and return to normal, fade and transition to Portal
+                    // Accelerate overall boot sequence timeline on mobile to preserve UX speed
+                    const totalBootTime = isMobile ? 1600 : 3300;
+
                     setTimeout(() => {
                         clusterWrapper.style.opacity = '0';
                         clusterWrapper.style.transform = 'scale(1.1) translateY(-20px)';
@@ -1740,8 +1771,8 @@
                             grid.classList.add('visible');
                             window.scrollBy({ top: 120, behavior: 'smooth' });
                             populateBrands();
-                        }, 800);
-                    }, 3300);
+                        }, 400); // reduced from 800 for instant snappy feel
+                    }, totalBootTime);
 
                 }, 100);
             }, 50);
@@ -1803,27 +1834,34 @@
             const targetElement = document.querySelector(targetId);
             if (!targetElement) return;
 
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
             transitionOverlay.style.transition = 'none';
             transitionOverlay.style.transform = 'translateY(100%)';
             transitionOverlay.classList.remove('active');
             transitionOverlay.offsetHeight; 
 
-            transitionOverlay.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+            // Fast transit duration overrides for mobile devices
+            const overlayInSpeed = isMobile ? '0.3s' : '0.6s';
+            transitionOverlay.style.transition = `transform ${overlayInSpeed} cubic-bezier(0.16, 1, 0.3, 1)`;
             transitionOverlay.style.transform = 'translateY(0%)';
             
-            setTimeout(() => { transitionOverlay.classList.add('active'); }, 100);
+            setTimeout(() => { transitionOverlay.classList.add('active'); }, 50);
+
+            const scrollDelay = isMobile ? 350 : 800;
+            const overlayOutDelay = isMobile ? 200 : 400;
 
             setTimeout(() => {
                 window.scrollTo({
-                    top: targetElement.offsetTop - (window.innerWidth < 768 ? 70 : 100),
+                    top: targetElement.offsetTop - (isMobile ? 70 : 100),
                     behavior: 'auto'
                 });
                 
                 setTimeout(() => {
                     transitionOverlay.classList.remove('active');
                     transitionOverlay.style.transform = 'translateY(-100%)';
-                }, 400);
-            }, 800);
+                }, overlayOutDelay);
+            }, scrollDelay);
         }
 
         document.querySelectorAll('.nav-link').forEach(link => {
