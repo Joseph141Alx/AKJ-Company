@@ -1,0 +1,3622 @@
+{
+  "project": "KOCHUMAGIQUE",
+  "asset_name": "Brookies 144-Frame Cinematic Sequence",
+  "version": "2.0.0",
+  "frame_count": 144,
+  "fps": 24,
+  "duration_seconds": 6.0,
+  "aspect_ratio": "16:9",
+  "contact_sheet": "assets/brookies-v2/contact-sheet.jpg",
+  "summary": {
+    "original_total_bytes": 246572547,
+    "original_total_mb": 235.15,
+    "desktop_total_bytes": 13095214,
+    "desktop_total_mb": 12.49,
+    "desktop_reduction_pct": 94.69,
+    "mobile_total_bytes": 6453960,
+    "mobile_total_mb": 6.15,
+    "mobile_reduction_pct": 97.38
+  },
+  "frames": [
+    {
+      "frame_index": 1,
+      "source_filename": "frame_001.png",
+      "source_size_bytes": 91093,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-001.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-001.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 7564,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-001.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-001.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 2542,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 2,
+      "source_filename": "frame_002.png",
+      "source_size_bytes": 122479,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-002.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-002.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 7608,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-002.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-002.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 2704,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 3,
+      "source_filename": "frame_003.png",
+      "source_size_bytes": 156314,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-003.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-003.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 8742,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-003.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-003.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 2984,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 4,
+      "source_filename": "frame_004.png",
+      "source_size_bytes": 147753,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-004.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-004.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 9314,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-004.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-004.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 3254,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 5,
+      "source_filename": "frame_005.png",
+      "source_size_bytes": 208697,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-005.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-005.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 9780,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-005.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-005.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 3470,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 6,
+      "source_filename": "frame_006.png",
+      "source_size_bytes": 216198,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-006.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-006.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 9878,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-006.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-006.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 3616,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 7,
+      "source_filename": "frame_007.png",
+      "source_size_bytes": 238123,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-007.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-007.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 10284,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-007.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-007.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 3784,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 8,
+      "source_filename": "frame_008.png",
+      "source_size_bytes": 210345,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-008.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-008.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 10806,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-008.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-008.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 3838,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 9,
+      "source_filename": "frame_009.png",
+      "source_size_bytes": 378554,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-009.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-009.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 13108,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-009.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-009.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 4682,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 10,
+      "source_filename": "frame_010.png",
+      "source_size_bytes": 423678,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-010.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-010.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 14402,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-010.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-010.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 5294,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 11,
+      "source_filename": "frame_011.png",
+      "source_size_bytes": 472088,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-011.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-011.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 15756,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-011.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-011.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 5958,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 12,
+      "source_filename": "frame_012.png",
+      "source_size_bytes": 448602,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-012.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-012.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 17032,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-012.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-012.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 6348,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 13,
+      "source_filename": "frame_013.png",
+      "source_size_bytes": 530805,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-013.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-013.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 17710,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-013.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-013.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 7058,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 14,
+      "source_filename": "frame_014.png",
+      "source_size_bytes": 548172,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-014.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-014.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 18790,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-014.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-014.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 7662,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 15,
+      "source_filename": "frame_015.png",
+      "source_size_bytes": 595506,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-015.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-015.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 19780,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-015.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-015.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 8330,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 16,
+      "source_filename": "frame_016.png",
+      "source_size_bytes": 580033,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-016.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-016.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 21244,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-016.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-016.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 8866,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 17,
+      "source_filename": "frame_017.png",
+      "source_size_bytes": 725593,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-017.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-017.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 23626,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-017.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-017.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 10134,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 18,
+      "source_filename": "frame_018.png",
+      "source_size_bytes": 760121,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-018.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-018.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 25588,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-018.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-018.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 10738,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 19,
+      "source_filename": "frame_019.png",
+      "source_size_bytes": 819802,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-019.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-019.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 27330,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-019.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-019.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 11594,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 20,
+      "source_filename": "frame_020.png",
+      "source_size_bytes": 789071,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-020.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-020.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 29946,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-020.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-020.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 12866,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 21,
+      "source_filename": "frame_021.png",
+      "source_size_bytes": 869803,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-021.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-021.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 30524,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-021.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-021.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 13398,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 22,
+      "source_filename": "frame_022.png",
+      "source_size_bytes": 922894,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-022.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-022.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 32592,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-022.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-022.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 14250,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 23,
+      "source_filename": "frame_023.png",
+      "source_size_bytes": 910172,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-023.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-023.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 35154,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-023.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-023.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 15266,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 24,
+      "source_filename": "frame_024.png",
+      "source_size_bytes": 976611,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-024.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-024.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 35282,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-024.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-024.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 15668,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 25,
+      "source_filename": "frame_025.png",
+      "source_size_bytes": 1002154,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-025.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-025.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 37332,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-025.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-025.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 16260,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 26,
+      "source_filename": "frame_026.png",
+      "source_size_bytes": 1037803,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-026.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-026.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 38476,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-026.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-026.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 17128,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 27,
+      "source_filename": "frame_027.png",
+      "source_size_bytes": 1003631,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-027.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-027.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 41380,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-027.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-027.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 18132,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 28,
+      "source_filename": "frame_028.png",
+      "source_size_bytes": 1081446,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-028.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-028.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 42468,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-028.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-028.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 19110,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 29,
+      "source_filename": "frame_029.png",
+      "source_size_bytes": 1126833,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-029.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-029.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 46172,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-029.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-029.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 20818,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 30,
+      "source_filename": "frame_030.png",
+      "source_size_bytes": 1175402,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-030.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-030.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 48432,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-030.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-030.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 21780,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 31,
+      "source_filename": "frame_031.png",
+      "source_size_bytes": 1181238,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-031.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-031.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 53010,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-031.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-031.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 23662,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 32,
+      "source_filename": "frame_032.png",
+      "source_size_bytes": 1243976,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-032.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-032.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 52590,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-032.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-032.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 23674,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 33,
+      "source_filename": "frame_033.png",
+      "source_size_bytes": 1285496,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-033.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-033.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 55226,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-033.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-033.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 25108,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 34,
+      "source_filename": "frame_034.png",
+      "source_size_bytes": 1319957,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-034.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-034.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 57004,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-034.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-034.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 25972,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 35,
+      "source_filename": "frame_035.png",
+      "source_size_bytes": 1314396,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-035.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-035.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 60892,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-035.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-035.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 27194,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 36,
+      "source_filename": "frame_036.png",
+      "source_size_bytes": 1385413,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-036.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-036.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 61448,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-036.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-036.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 28694,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 37,
+      "source_filename": "frame_037.png",
+      "source_size_bytes": 1389679,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-037.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-037.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 65110,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-037.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-037.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 30300,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 38,
+      "source_filename": "frame_038.png",
+      "source_size_bytes": 1456570,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-038.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-038.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 65810,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-038.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-038.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 30328,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 39,
+      "source_filename": "frame_039.png",
+      "source_size_bytes": 1480171,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-039.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-039.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 69816,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-039.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-039.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 31750,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 40,
+      "source_filename": "frame_040.png",
+      "source_size_bytes": 1524940,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-040.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-040.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 69244,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-040.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-040.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 32022,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 41,
+      "source_filename": "frame_041.png",
+      "source_size_bytes": 1526496,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-041.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-041.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 73922,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-041.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-041.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 33632,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 42,
+      "source_filename": "frame_042.png",
+      "source_size_bytes": 1566662,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-042.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-042.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 73440,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-042.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-042.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 34052,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 43,
+      "source_filename": "frame_043.png",
+      "source_size_bytes": 1583398,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-043.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-043.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 73374,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-043.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-043.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 35440,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 44,
+      "source_filename": "frame_044.png",
+      "source_size_bytes": 1616077,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-044.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-044.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 76396,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-044.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-044.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 36976,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 45,
+      "source_filename": "frame_045.png",
+      "source_size_bytes": 1627562,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-045.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-045.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 81262,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-045.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-045.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39054,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 46,
+      "source_filename": "frame_046.png",
+      "source_size_bytes": 1677710,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-046.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-046.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 79546,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-046.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-046.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39642,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 47,
+      "source_filename": "frame_047.png",
+      "source_size_bytes": 1705603,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-047.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-047.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 81592,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-047.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-047.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40858,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 48,
+      "source_filename": "frame_048.png",
+      "source_size_bytes": 1700091,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-048.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-048.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 85968,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-048.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-048.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 42208,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 49,
+      "source_filename": "frame_049.png",
+      "source_size_bytes": 1773943,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-049.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-049.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 86738,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-049.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-049.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 42474,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 50,
+      "source_filename": "frame_050.png",
+      "source_size_bytes": 1791204,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-050.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-050.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 87964,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-050.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-050.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 44434,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 51,
+      "source_filename": "frame_051.png",
+      "source_size_bytes": 1820212,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-051.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-051.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 89724,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-051.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-051.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 45624,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 52,
+      "source_filename": "frame_052.png",
+      "source_size_bytes": 1818236,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-052.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-052.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 95672,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-052.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-052.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 47290,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 53,
+      "source_filename": "frame_053.png",
+      "source_size_bytes": 1883836,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-053.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-053.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 96500,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-053.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-053.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 48928,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 54,
+      "source_filename": "frame_054.png",
+      "source_size_bytes": 1906387,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-054.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-054.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 101310,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-054.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-054.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50018,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 55,
+      "source_filename": "frame_055.png",
+      "source_size_bytes": 1904079,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-055.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-055.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 99914,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-055.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-055.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50134,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 56,
+      "source_filename": "frame_056.png",
+      "source_size_bytes": 1886870,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-056.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-056.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 102770,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-056.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-056.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50620,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 57,
+      "source_filename": "frame_057.png",
+      "source_size_bytes": 1930852,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-057.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-057.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 101450,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-057.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-057.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50676,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 58,
+      "source_filename": "frame_058.png",
+      "source_size_bytes": 1943169,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-058.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-058.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 102860,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-058.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-058.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 51158,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 59,
+      "source_filename": "frame_059.png",
+      "source_size_bytes": 1947673,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-059.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-059.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 103164,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-059.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-059.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 51578,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 60,
+      "source_filename": "frame_060.png",
+      "source_size_bytes": 1941847,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-060.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-060.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 105488,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-060.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-060.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 52362,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 61,
+      "source_filename": "frame_061.png",
+      "source_size_bytes": 1961420,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-061.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-061.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 102492,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-061.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-061.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 52132,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 62,
+      "source_filename": "frame_062.png",
+      "source_size_bytes": 1962258,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-062.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-062.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 103616,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-062.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-062.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 52328,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 63,
+      "source_filename": "frame_063.png",
+      "source_size_bytes": 1968802,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-063.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-063.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 104560,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-063.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-063.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 52870,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 64,
+      "source_filename": "frame_064.png",
+      "source_size_bytes": 1958921,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-064.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-064.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 106952,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-064.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-064.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 52900,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 65,
+      "source_filename": "frame_065.png",
+      "source_size_bytes": 2034238,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-065.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-065.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 108084,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-065.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-065.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53908,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 66,
+      "source_filename": "frame_066.png",
+      "source_size_bytes": 2044176,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-066.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-066.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109468,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-066.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-066.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54880,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 67,
+      "source_filename": "frame_067.png",
+      "source_size_bytes": 2042182,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-067.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-067.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109062,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-067.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-067.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54930,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 68,
+      "source_filename": "frame_068.png",
+      "source_size_bytes": 2024501,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-068.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-068.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111996,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-068.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-068.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55326,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 69,
+      "source_filename": "frame_069.png",
+      "source_size_bytes": 2055461,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-069.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-069.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 110182,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-069.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-069.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54900,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 70,
+      "source_filename": "frame_070.png",
+      "source_size_bytes": 2057051,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-070.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-070.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 110108,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-070.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-070.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54850,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 71,
+      "source_filename": "frame_071.png",
+      "source_size_bytes": 2058480,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-071.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-071.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 110776,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-071.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-071.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54998,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 72,
+      "source_filename": "frame_072.png",
+      "source_size_bytes": 2051589,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-072.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-072.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 112202,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-072.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-072.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55392,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 73,
+      "source_filename": "frame_073.png",
+      "source_size_bytes": 2084278,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-073.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-073.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109906,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-073.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-073.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54662,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 74,
+      "source_filename": "frame_074.png",
+      "source_size_bytes": 2089354,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-074.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-074.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111108,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-074.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-074.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55070,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 75,
+      "source_filename": "frame_075.png",
+      "source_size_bytes": 2086617,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-075.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-075.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109930,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-075.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-075.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54376,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 76,
+      "source_filename": "frame_076.png",
+      "source_size_bytes": 2069593,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-076.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-076.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111942,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-076.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-076.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55046,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 77,
+      "source_filename": "frame_077.png",
+      "source_size_bytes": 2089360,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-077.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-077.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 108668,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-077.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-077.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54856,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 78,
+      "source_filename": "frame_078.png",
+      "source_size_bytes": 2086142,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-078.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-078.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 110108,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-078.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-078.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54990,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 79,
+      "source_filename": "frame_079.png",
+      "source_size_bytes": 2083156,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-079.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-079.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109712,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-079.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-079.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54812,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 80,
+      "source_filename": "frame_080.png",
+      "source_size_bytes": 2068099,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-080.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-080.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 110010,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-080.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-080.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55092,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 81,
+      "source_filename": "frame_081.png",
+      "source_size_bytes": 2098567,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-081.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-081.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109944,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-081.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-081.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54868,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 82,
+      "source_filename": "frame_082.png",
+      "source_size_bytes": 2106323,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-082.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-082.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111496,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-082.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-082.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55470,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 83,
+      "source_filename": "frame_083.png",
+      "source_size_bytes": 2104202,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-083.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-083.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111440,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-083.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-083.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 56220,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 84,
+      "source_filename": "frame_084.png",
+      "source_size_bytes": 2076393,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-084.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-084.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 112424,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-084.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-084.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 56526,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 85,
+      "source_filename": "frame_085.png",
+      "source_size_bytes": 2108152,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-085.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-085.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111048,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-085.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-085.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 56572,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 86,
+      "source_filename": "frame_086.png",
+      "source_size_bytes": 2110279,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-086.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-086.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111496,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-086.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-086.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55842,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 87,
+      "source_filename": "frame_087.png",
+      "source_size_bytes": 2105128,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-087.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-087.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111048,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-087.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-087.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 57094,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 88,
+      "source_filename": "frame_088.png",
+      "source_size_bytes": 2086223,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-088.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-088.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111582,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-088.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-088.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 56620,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 89,
+      "source_filename": "frame_089.png",
+      "source_size_bytes": 2113149,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-089.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-089.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 110262,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-089.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-089.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55962,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 90,
+      "source_filename": "frame_090.png",
+      "source_size_bytes": 2120227,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-090.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-090.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 113082,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-090.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-090.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 56542,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 91,
+      "source_filename": "frame_091.png",
+      "source_size_bytes": 2116188,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-091.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-091.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111238,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-091.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-091.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 56444,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 92,
+      "source_filename": "frame_092.png",
+      "source_size_bytes": 2094950,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-092.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-092.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 115146,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-092.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-092.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 57462,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 93,
+      "source_filename": "frame_093.png",
+      "source_size_bytes": 2115766,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-093.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-093.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111254,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-093.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-093.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 57290,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 94,
+      "source_filename": "frame_094.png",
+      "source_size_bytes": 2118701,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-094.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-094.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 112166,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-094.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-094.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 56924,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 95,
+      "source_filename": "frame_095.png",
+      "source_size_bytes": 2115746,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-095.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-095.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111046,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-095.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-095.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 56908,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 96,
+      "source_filename": "frame_096.png",
+      "source_size_bytes": 2099911,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-096.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-096.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 112314,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-096.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-096.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 57644,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 97,
+      "source_filename": "frame_097.png",
+      "source_size_bytes": 2137158,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-097.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-097.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111148,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-097.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-097.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 56854,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 98,
+      "source_filename": "frame_098.png",
+      "source_size_bytes": 2141213,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-098.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-098.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 113728,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-098.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-098.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 57722,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 99,
+      "source_filename": "frame_099.png",
+      "source_size_bytes": 2131775,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-099.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-099.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 112200,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-099.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-099.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 57328,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 100,
+      "source_filename": "frame_100.png",
+      "source_size_bytes": 2101368,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-100.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-100.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 114706,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-100.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-100.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 58336,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 101,
+      "source_filename": "frame_101.png",
+      "source_size_bytes": 2122958,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-101.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-101.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 113022,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-101.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-101.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 58078,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 102,
+      "source_filename": "frame_102.png",
+      "source_size_bytes": 2129536,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-102.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-102.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 114774,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-102.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-102.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 58656,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 103,
+      "source_filename": "frame_103.png",
+      "source_size_bytes": 2126394,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-103.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-103.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 114358,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-103.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-103.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 58582,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 104,
+      "source_filename": "frame_104.png",
+      "source_size_bytes": 2100688,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-104.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-104.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 115430,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-104.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-104.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 59308,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 105,
+      "source_filename": "frame_105.png",
+      "source_size_bytes": 2125198,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-105.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-105.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 114910,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-105.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-105.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 59012,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 106,
+      "source_filename": "frame_106.png",
+      "source_size_bytes": 2125912,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-106.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-106.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 116766,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-106.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-106.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 59450,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 107,
+      "source_filename": "frame_107.png",
+      "source_size_bytes": 2127572,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-107.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-107.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 116974,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-107.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-107.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 59744,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 108,
+      "source_filename": "frame_108.png",
+      "source_size_bytes": 2109440,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-108.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-108.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 121188,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-108.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-108.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 60938,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 109,
+      "source_filename": "frame_109.png",
+      "source_size_bytes": 2131076,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-109.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-109.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 118694,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-109.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-109.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 60854,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 110,
+      "source_filename": "frame_110.png",
+      "source_size_bytes": 2138705,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-110.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-110.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 121468,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-110.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-110.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 60916,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 111,
+      "source_filename": "frame_111.png",
+      "source_size_bytes": 2134132,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-111.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-111.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 119416,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-111.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-111.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 60628,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 112,
+      "source_filename": "frame_112.png",
+      "source_size_bytes": 2122850,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-112.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-112.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 123314,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-112.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-112.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 61162,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 113,
+      "source_filename": "frame_113.png",
+      "source_size_bytes": 2142757,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-113.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-113.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 119978,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-113.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-113.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 61066,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 114,
+      "source_filename": "frame_114.png",
+      "source_size_bytes": 2146408,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-114.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-114.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 122710,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-114.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-114.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 61764,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 115,
+      "source_filename": "frame_115.png",
+      "source_size_bytes": 2147603,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-115.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-115.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 124066,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-115.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-115.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 61646,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 116,
+      "source_filename": "frame_116.png",
+      "source_size_bytes": 2137460,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-116.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-116.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 127494,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-116.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-116.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 62596,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 117,
+      "source_filename": "frame_117.png",
+      "source_size_bytes": 2155778,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-117.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-117.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 125536,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-117.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-117.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 62794,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 118,
+      "source_filename": "frame_118.png",
+      "source_size_bytes": 2160806,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-118.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-118.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 126222,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-118.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-118.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 62804,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 119,
+      "source_filename": "frame_119.png",
+      "source_size_bytes": 2159770,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-119.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-119.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 125220,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-119.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-119.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 62348,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 120,
+      "source_filename": "frame_120.png",
+      "source_size_bytes": 2147341,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-120.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-120.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 128642,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-120.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-120.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 63170,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 121,
+      "source_filename": "frame_121.png",
+      "source_size_bytes": 2164187,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-121.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-121.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 123950,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-121.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-121.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 62562,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 122,
+      "source_filename": "frame_122.png",
+      "source_size_bytes": 2170735,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-122.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-122.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 126810,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-122.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-122.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 63064,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 123,
+      "source_filename": "frame_123.png",
+      "source_size_bytes": 2171869,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-123.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-123.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 126070,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-123.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-123.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 62950,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 124,
+      "source_filename": "frame_124.png",
+      "source_size_bytes": 2177067,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-124.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-124.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 132868,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-124.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-124.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 64218,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 125,
+      "source_filename": "frame_125.png",
+      "source_size_bytes": 2187037,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-125.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-125.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 130414,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-125.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-125.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 63752,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 126,
+      "source_filename": "frame_126.png",
+      "source_size_bytes": 2192398,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-126.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-126.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 130946,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-126.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-126.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 63684,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 127,
+      "source_filename": "frame_127.png",
+      "source_size_bytes": 2189801,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-127.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-127.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 129030,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-127.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-127.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 63262,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 128,
+      "source_filename": "frame_128.png",
+      "source_size_bytes": 2182279,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-128.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-128.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 131840,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-128.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-128.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 63562,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 129,
+      "source_filename": "frame_129.png",
+      "source_size_bytes": 2215657,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-129.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-129.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 128198,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-129.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-129.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 64818,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 130,
+      "source_filename": "frame_130.png",
+      "source_size_bytes": 2224626,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-130.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-130.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 131594,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-130.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-130.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65280,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 131,
+      "source_filename": "frame_131.png",
+      "source_size_bytes": 2219343,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-131.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-131.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 131116,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-131.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-131.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65374,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 132,
+      "source_filename": "frame_132.png",
+      "source_size_bytes": 2226056,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-132.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-132.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 133350,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-132.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-132.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65994,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 133,
+      "source_filename": "frame_133.png",
+      "source_size_bytes": 2220838,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-133.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-133.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 135120,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-133.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-133.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65840,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 134,
+      "source_filename": "frame_134.png",
+      "source_size_bytes": 2219887,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-134.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-134.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 130248,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-134.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-134.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65162,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 135,
+      "source_filename": "frame_135.png",
+      "source_size_bytes": 2225005,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-135.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-135.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 134360,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-135.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-135.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65638,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 136,
+      "source_filename": "frame_136.png",
+      "source_size_bytes": 2234404,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-136.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-136.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 130528,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-136.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-136.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65460,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 137,
+      "source_filename": "frame_137.png",
+      "source_size_bytes": 2225059,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-137.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-137.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 129776,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-137.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-137.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 64942,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 138,
+      "source_filename": "frame_138.png",
+      "source_size_bytes": 2240142,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-138.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-138.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 131560,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-138.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-138.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65468,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 139,
+      "source_filename": "frame_139.png",
+      "source_size_bytes": 2230925,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-139.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-139.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 134518,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-139.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-139.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65254,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 140,
+      "source_filename": "frame_140.png",
+      "source_size_bytes": 2247760,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-140.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-140.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 130090,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-140.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-140.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65690,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 141,
+      "source_filename": "frame_141.png",
+      "source_size_bytes": 2232285,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-141.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-141.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 134354,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-141.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-141.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65160,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 142,
+      "source_filename": "frame_142.png",
+      "source_size_bytes": 2231635,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-142.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-142.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 133712,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-142.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-142.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 64864,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 143,
+      "source_filename": "frame_143.png",
+      "source_size_bytes": 2228119,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-143.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-143.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 133386,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-143.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-143.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 64640,
+        "quality": 80
+      }
+    },
+    {
+      "frame_index": 144,
+      "source_filename": "frame_144.png",
+      "source_size_bytes": 2242433,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-144.webp",
+        "relative_path": "assets/brookies-v2/desktop/frame-144.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 136240,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-144.webp",
+        "relative_path": "assets/brookies-v2/mobile/frame-144.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 65466,
+        "quality": 80
+      }
+    }
+  ]
+}

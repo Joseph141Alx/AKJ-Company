@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.tailwindcss.com; object-src 'none'; base-uri 'self';" />
+  <title>Kochumagique — Handmade • Heartfelt • Honest</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Cormorant Garamond, Inter, Pinyon Script & Alex Brush -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'magique-cream': '#F6F3E9',
+            'magique-green': '#405751',
+            'magique-gold': '#C5A059',
+            'magique-dark': '#162420',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'sans-serif'],
+            'serif': ['Cormorant Garamond', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Component Stylesheets -->
+  <link rel="stylesheet" href="css/cinematic.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/stitching.css">
+
+  <style>
+    body {
+      background-color: #F6F3E9;
+      overflow-x: hidden;
+      color: #405751;
+    }
+
+    .fade-in {
+      animation: fadeIn 1.8s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Origami & Line Animations */
+    .line-grow {
+      transform-origin: center;
+      animation: lineGrow 2.5s ease-out infinite alternate;
+    }
+
+    @keyframes lineGrow {
+      0% {
+        transform: scaleX(0.8);
+        opacity: 0.2;
+      }
+      100% {
+        transform: scaleX(1.2);
+        opacity: 0.5;
+      }
+    }
+
+    .origami-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-10px) rotate(2deg);
+      }
+    }
+
+    .logo-ring {
+      animation: pulse-ring 4s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.2;
+      }
+      100% {
+        transform: scale(0.95);
+        opacity: 0.5;
+      }
+    }
+
+    .origami-bg {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.04;
+      z-index: 0;
+    }
+
+    iframe {
+      border: none;
+      overflow: hidden;
+    }
+
+    /* Editorial Footer Tagline Scroll Reveal */
+    .footer-tagline {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .footer-tagline.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .footer-tagline {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-sans min-h-screen relative selection:bg-magique-gold selection:text-white">
+
+  <!-- ==========================================================================
+       Preloader Screen (Priority Frame Streaming)
+       ========================================================================== -->
+  <div id="preloader" class="preloader">
+    <svg class="preloader-emblem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" stroke-linejoin="round"/>
+    </svg>
+    <div class="preloader-title">Kochumagique</div>
+    <div class="preloader-subtitle">Curating the Experience</div>
+    <div class="preloader-track">
+      <div id="preloader-bar" class="preloader-bar"></div>
+    </div>
+    <div id="preloader-percent" class="preloader-percent">0%</div>
+  </div>
+
+  <!-- ==========================================================================
+       Floating Vertical Navigation (Left Desktop Capsule / Mobile Bottom Dock)
+       ========================================================================== -->
+  <nav id="magique-nav" class="magique-nav theme-dark" role="navigation" aria-label="Main Navigation">
+    <div class="nav-capsule">
+      <ul class="nav-list" role="menubar">
+
+        <!-- 1. Home Destination -->
+        <li class="nav-item" role="none">
+          <a href="#home" class="nav-link active" role="menuitem" data-section="home" aria-label="Home" aria-current="page">
+            <span class="nav-icon-box" aria-hidden="true">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 9.5L12 3l9 6.5V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9.5z" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="9 22 9 12 15 12 15 22" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="nav-label">Home</span>
+            <span class="nav-indicator-dot" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <!-- 2. Baking Destination -->
+        <li class="nav-item" role="none">
+          <a href="#baking" class="nav-link" role="menuitem" data-section="baking" aria-label="Baking Showcase">
+            <span class="nav-icon-box" aria-hidden="true">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 16s4-1 8-1 8 1 8 1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 21h20" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 8v3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 5v6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 8v3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="nav-label">Baking</span>
+            <span class="nav-indicator-dot" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <!-- 3. Stitching Destination -->
+        <li class="nav-item" role="none">
+          <a href="#stitching" class="nav-link" role="menuitem" data-section="stitching" aria-label="Stitching Showcase">
+            <span class="nav-icon-box" aria-hidden="true">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M14.5 3a2 2 0 0 1 2.8 0l1.2 1.2a2 2 0 0 1 0 2.8L9 16.5l-4.5 1 1-4.5L14.5 3z" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="16.5" cy="5.5" r="1" fill="currentColor"/>
+                <path d="M4.5 21c3-1 6-4 6-7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="nav-label">Stitching</span>
+            <span class="nav-indicator-dot" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <!-- 4. Our Story Destination -->
+        <li class="nav-item" role="none">
+          <a href="#our-story" class="nav-link" role="menuitem" data-section="our-story" aria-label="Our Story">
+            <span class="nav-icon-box" aria-hidden="true">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="nav-label">Our Story</span>
+            <span class="nav-indicator-dot" aria-hidden="true"></span>
+          </a>
+        </li>
+
+        <!-- 5. Return / Go To Main Portal Destination -->
+        <li class="nav-item" role="none">
+          <a href="../index.html" class="nav-link" role="menuitem" aria-label="Go to AKJ Company Main Portal">
+            <span class="nav-icon-box" aria-hidden="true">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="nav-label">Go to Hub</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       Fixed Top-Right "Go to AKJ Company" Portal Pill
+       ========================================================================== -->
+  <a href="../index.html" id="goto-portal-pill" class="goto-portal-pill theme-dark group" aria-label="Go to AKJ Company Main Portal">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="hidden sm:inline">Go to AKJ Company</span>
+    <span class="sm:hidden">Go to AKJ</span>
+  </a>
+
+  <!-- ==========================================================================
+       SECTION 1: CHEF REVEAL — THE ARTISAN'S AWAKENING (#home)
+       Scroll-driven 136-Frame Canvas Sequence: Hip -> Chest -> Face -> Smile
+       Grand Typography Climax: "Kochumagique" Calligraphy Reveal in Last 20 Frames
+       ========================================================================== -->
+  <section id="home" data-nav-section data-theme="dark" class="hero-scroll-container">
+    <div class="hero-pinned-viewport">
+
+      <!-- Top-Left Brand Element: Compact Horizontal Glass Pill -->
+      <a href="#home" id="brand-pill-top" class="brand-pill-top" aria-label="Kochumagique — Return to top">
+        <span class="brand-avatar-box">
+          <img src="images/logo6.jpg" alt="Kochumagique Logo" class="brand-avatar-img">
+        </span>
+        <span class="brand-name">Kochumagique</span>
+      </a>
+
+      <!-- Bottom-Left Brand Element: Editorial Tagline Glass Pill -->
+      <div id="brand-pill-bottom" class="brand-pill-bottom" aria-hidden="true">
+        <span class="brand-tagline">Handmade</span>
+        <span class="brand-tagline-dot">•</span>
+        <span class="brand-tagline">Heartfelt</span>
+        <span class="brand-tagline-dot">•</span>
+        <span class="brand-tagline">Honest</span>
+      </div>
+
+      <!-- High-Performance Canvas Element for Chef Sequence -->
+      <canvas id="chef-canvas" class="cinematic-canvas" aria-label="Kochumagique Founder Chef Reveal Animation"></canvas>
+
+      <!-- Atmospheric Radial Vignette Overlay -->
+      <div class="cinematic-vignette"></div>
+
+      <!-- Subtle background origami vector elements -->
+      <svg class="cinematic-origami-bg top-left" viewBox="0 0 100 100">
+        <path d="M10 50 L50 10 L90 50 L50 90 Z" fill="currentColor"/>
+      </svg>
+      <svg class="cinematic-origami-bg bottom-right" viewBox="0 0 100 100">
+        <path d="M0 20 L50 0 L100 20 L50 100 Z" fill="currentColor"/>
+      </svg>
+
+      <!-- Scroll Indicator Prompt -->
+      <div id="scroll-indicator" class="scroll-indicator">
+        <span class="scroll-text">Scroll to Reveal</span>
+        <div class="scroll-pill"></div>
+      </div>
+
+      <!-- Editorial Typography Overlays (Synchronized with Chef Frame Progress) -->
+      <div class="cinematic-overlays">
+
+        <!-- Slide 1: The Devotion (Frames 1-35 | Scroll 0% - 25%) -->
+        <div id="chef-slide-1" class="narrative-slide">
+          <span class="narrative-eyebrow">The Artisan Behind The Craft</span>
+          <h1 class="narrative-headline">Every creation begins<br>with a devotion.</h1>
+          <div class="narrative-divider">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <!-- Slide 2: The Atelier (Frames 45-80 | Scroll 35% - 60%) -->
+        <div id="chef-slide-2" class="narrative-slide">
+          <span class="narrative-eyebrow">Handmade • Heartfelt • Honest</span>
+          <h2 class="narrative-headline roman">Woven with patience.<br>Baked with soul.</h2>
+          <div class="narrative-divider">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <!-- Slide 3: The Grand Name Climax (Frames 105-136 | Scroll 75% - 100%) -->
+        <div id="chef-slide-3" class="chef-grand-reveal">
+          <div class="chef-reveal-wrapper">
+            <span class="narrative-eyebrow chef-reveal-eyebrow">Welcome to</span>
+            <h1 class="chef-cursive-brand">Kochumagique</h1>
+            <div class="chef-flourish-divider">
+              <svg class="chef-flourish-svg" viewBox="0 0 200 24" fill="none">
+                <path class="chef-flourish-path" d="M10 12 C 60 4, 80 20, 100 12 C 120 4, 140 20, 190 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="100" cy="12" r="2.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <p class="chef-cursive-sub">The Artisanal Bakehouse &amp; Embroidery Atelier</p>
+            <div class="chef-tags-pill">
+              <span>Handmade</span>
+              <span class="dot">•</span>
+              <span>Heartfelt</span>
+              <span class="dot">•</span>
+              <span>Honest</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: EDITORIAL TRANSITION INTO THE ARTISANAL WORLD
+       Smooth threshold entering the Warm Ivory Atmosphere (#F6F3E9)
+       ========================================================================== -->
+  <div class="pt-20 pb-8 text-center relative z-10 editorial-gutter">
+    <!-- Subtle Ornamental Gold Accent -->
+    <div class="flex items-center justify-center space-x-4 mb-2">
+      <div class="h-[1px] w-16 bg-magique-gold/30"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-magique-gold"></div>
+      <div class="h-[1px] w-16 bg-magique-gold/30"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SECTION 3: BAKING SHOWCASE (#baking)
+       ========================================================================== -->
+  <section id="baking" data-nav-section data-theme="light" class="pt-12 pb-16 px-6 z-10 editorial-gutter">
+    <div class="max-w-4xl w-full mx-auto text-center">
+
+      <!-- Symmetrical Line Detail with Origami Crane -->
+      <div class="flex items-center justify-center space-x-6 mb-10 overflow-hidden">
+        <div class="h-[1px] w-16 md:w-48 bg-magique-green opacity-20 line-grow"></div>
+        <div class="text-magique-gold origami-float">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="h-[1px] w-16 md:w-48 bg-magique-green opacity-20 line-grow"></div>
+      </div>
+
+      <div class="text-[10px] tracking-[0.4em] uppercase text-magique-gold font-medium mb-4">The Artisanal Bakehouse</div>
+      <h2 class="font-serif text-4xl md:text-6xl mb-8 leading-tight font-light italic text-magique-green">
+        The Alchemy of Dark Chocolate
+      </h2>
+
+      <p class="font-sans text-xs md:text-sm max-w-3xl mx-auto leading-loose opacity-85 mb-14 tracking-[0.15em] uppercase px-4 space-y-4">
+        <span class="block">Curating an alchemy of signature brownies—decadently dark and artisanally crafted.</span>
+        <span class="block text-magique-green/70">From our rich cocoa dough kneaded with patience to the slow-baked golden cookie crowns that seal each brookie's heart.</span>
+        <span class="block mt-4 text-magique-gold font-medium">Meticulously kneaded. Baked in small, quiet batches.</span>
+      </p>
+
+      <!-- Editorial Product Showcase Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto text-left">
+        <!-- Feature 1: The Signature Brookie -->
+        <div class="glass-card-white p-7 md:p-8 rounded-2xl hover:translate-y-[-2px] transition-all duration-300">
+          <div class="text-[9px] tracking-[0.3em] uppercase text-magique-gold mb-2 font-medium">Signature Creation</div>
+          <h3 class="font-serif text-2xl text-magique-green italic mb-3">The Signature Brookie</h3>
+          <p class="font-sans text-[11px] leading-relaxed text-magique-green/80 uppercase tracking-widest">
+            A harmonious meeting of two worlds: crisp golden chocolate chip cookie crust crowning a dense, melt-in-mouth dark fudge brownie core.
+          </p>
+        </div>
+
+        <!-- Feature 2: Assorted Dark Brownies -->
+        <div class="glass-card-white p-7 md:p-8 rounded-2xl hover:translate-y-[-2px] transition-all duration-300">
+          <div class="text-[9px] tracking-[0.3em] uppercase text-magique-gold mb-2 font-medium">Curated Assortment</div>
+          <h3 class="font-serif text-2xl text-magique-green italic mb-3">Assorted Brownie Boxes</h3>
+          <p class="font-sans text-[11px] leading-relaxed text-magique-green/80 uppercase tracking-widest">
+            Infused with sea salt flakes, roasted nuts, and origin chocolate notes—because one indulgence is never enough.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3A: THE BROOKIES CINEMATIC CANVAS EXPERIENCE (#brookies)
+       144-Frame Cinematic Sequence: The Dark Chocolate Alchemy in Motion
+       "as the bookie scroll is taken from dont delte or remove it i want that to come after these texts"
+       ========================================================================== -->
+  <section id="brookies" data-nav-section data-theme="dark" class="brookies-scroll-container hero-scroll-container">
+    <div class="hero-pinned-viewport">
+
+      <!-- High-Performance Canvas Element for Brookies -->
+      <canvas id="brookies-canvas" class="cinematic-canvas" aria-label="144-Frame Brookies Cinematic Sequence"></canvas>
+
+      <!-- Atmospheric Radial Vignette Overlay -->
+      <div class="cinematic-vignette"></div>
+
+      <!-- Subtle background origami vector elements -->
+      <svg class="cinematic-origami-bg top-left" viewBox="0 0 100 100">
+        <path d="M10 50 L50 10 L90 50 L50 90 Z" fill="currentColor"/>
+      </svg>
+      <svg class="cinematic-origami-bg bottom-right" viewBox="0 0 100 100">
+        <path d="M0 20 L50 0 L100 20 L50 100 Z" fill="currentColor"/>
+      </svg>
+
+      <!-- Editorial Typography Overlays (Synchronized with Brookie Frame Progress) -->
+      <div class="cinematic-overlays">
+
+        <!-- Slide 1: The Awakening (Frames 1-36 | Scroll 0% - 24%) -->
+        <div id="slide-1" class="narrative-slide">
+          <h2 class="narrative-headline">Where the heart<br>meets the loom.</h2>
+          <div class="narrative-divider">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <!-- Slide 2: The Signature Brookie (Frames 37-72 | Scroll 28% - 50%) -->
+        <div id="slide-2" class="narrative-slide">
+          <span class="narrative-eyebrow">The Signature Brookie</span>
+          <h2 class="narrative-headline roman">Decadently Dark.<br>Artisanally Crafted.</h2>
+          <div class="narrative-divider">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Two Passions (Frames 73-108 | Scroll 54% - 78%) -->
+        <div id="slide-3" class="narrative-slide">
+          <span class="narrative-eyebrow">The Alchemy of Flavor & Fiber</span>
+          <h2 class="narrative-headline">Meticulously kneaded.<br>Carefully tailored.</h2>
+          <p class="narrative-subtext">A symphony of two passions, soon coming home to you.</p>
+        </div>
+
+        <!-- Slide 4: Resting Hero Emergence (Frames 109-144 | Scroll 82% - 98%) -->
+        <div id="slide-4" class="narrative-slide">
+          <span class="narrative-eyebrow">Curated by Hand</span>
+          <h2 class="narrative-headline roman">Baked with devotion.<br>Tailored with care.</h2>
+          <div class="narrative-divider">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Discovery Divider Between Brookies and Celebrations -->
+  <div class="py-12 text-center relative z-10 editorial-gutter bg-[#F6F3E9]">
+    <a href="#celebrations" class="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-magique-gold hover:text-magique-green transition-colors duration-300 group">
+      <span>Explore Bespoke Celebration Cakes</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transform group-hover:translate-y-0.5 transition-transform duration-300">
+        <path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ==========================================================================
+       SECTION 3B: CELEBRATIONS SHOWCASE (#celebrations)
+       "The Golden Ascent" 145-Frame Cinematic Canvas Experience
+       ========================================================================== -->
+  <section id="celebrations" data-nav-section data-theme="light" class="celebrations-scroll-container relative w-full bg-[#F6F3E9]">
+    <div class="celebrations-pinned-viewport relative w-full overflow-hidden flex items-center justify-center">
+      <!-- High-Performance Canvas for 145-Frame Birthday Cake Sequence -->
+      <canvas id="cake-canvas" class="cake-canvas absolute inset-0 w-full h-full block z-0" aria-label="Bespoke Tiered Brownie Birthday Cake with Golden Ascent camera animation"></canvas>
+
+      <!-- Editorial Intro Typography (Fades out as camera ascends) -->
+      <div id="cake-intro-overlay" class="celebrations-overlay pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-start pt-20 md:pt-28 px-6 text-center">
+        <div class="cake-intro-content max-w-2xl mx-auto glass-card-white px-8 py-6 rounded-2xl">
+          <span class="text-[9px] md:text-[10px] tracking-[0.4em] uppercase text-magique-gold font-medium block mb-2">Made For Your Moments</span>
+          <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-magique-green italic font-light leading-tight mb-3">
+            A little more magic to celebrate.
+          </h2>
+          <p class="font-sans text-xs md:text-sm text-magique-green/85 uppercase tracking-[0.16em] leading-relaxed max-w-xl mx-auto">
+            Thoughtfully crafted brownie cakes, made to make your special moments sweeter.
+          </p>
+        </div>
+      </div>
+
+      <!-- Dynamic Mid-Scroll Celebratory Typography Overlay: "Celebrate Your Birthday With Us" -->
+      <div id="cake-scroll-message" class="celebrations-overlay pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center px-6 text-center opacity-0">
+        <div class="cake-scroll-card max-w-xl mx-auto glass-card-white px-8 py-7 md:px-10 md:py-8 rounded-2xl text-center">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/60 border border-white/80 mb-3 text-[9px] md:text-[10px] tracking-[0.35em] uppercase text-magique-gold font-semibold shadow-xs">
+            <span>✨</span>
+            <span>Bespoke Celebrations</span>
+            <span>✨</span>
+          </div>
+          <h3 class="font-serif text-3xl md:text-5xl lg:text-6xl text-magique-green italic font-light leading-tight mb-3">
+            Celebrate Your Birthday With Us
+          </h3>
+          <p class="font-sans text-xs md:text-sm text-magique-green/85 uppercase tracking-[0.18em] leading-relaxed max-w-md mx-auto mb-4">
+            Make every birthday wish magical with handcrafted brownie tiers, glossy Belgian ganache, and signature golden confections.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-[9px] md:text-[10px] tracking-[0.25em] uppercase text-magique-gold font-medium">
+            <span>Handcrafted Tiers</span>
+            <span class="w-1 h-1 rounded-full bg-magique-gold/50"></span>
+            <span>Custom Flavours</span>
+            <span class="w-1 h-1 rounded-full bg-magique-gold/50"></span>
+            <span>Baked With Love</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Climax Caption (Fades in when complete cake and topper are revealed) -->
+      <div id="cake-hero-overlay" class="celebrations-overlay pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-end pb-20 md:pb-24 px-6 text-center opacity-0">
+        <div class="cake-hero-content max-w-xl mx-auto glass-card-white px-8 py-5 rounded-2xl text-center">
+          <span class="text-[9px] md:text-[10px] tracking-[0.35em] uppercase text-magique-gold font-semibold block mb-1">Celebrate Your Birthday With Us</span>
+          <p class="font-serif text-xl md:text-2xl text-magique-green italic mb-2">
+            Stacked Brownie Tiers • Glossy Ganache • Golden Ferrero Rocher
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-2 pointer-events-auto">
+            <span class="font-sans text-[10px] tracking-[0.2em] uppercase text-magique-green/75">
+              Handcrafted for milestone celebrations
+            </span>
+            <span class="hidden sm:inline text-magique-gold/60">•</span>
+            <a href="#our-story" class="inline-flex items-center gap-1.5 text-[10px] tracking-[0.25em] uppercase text-magique-gold hover:text-magique-green transition-colors font-semibold border-b border-magique-gold/50 hover:border-magique-green pb-0.5">
+              <span>Enquire For Your Birthday</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtle Golden Scroll Indicator Prompt -->
+      <div id="cake-scroll-indicator" class="cake-scroll-indicator pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-80 transition-opacity duration-500">
+        <span class="font-sans text-[9px] tracking-[0.35em] uppercase text-magique-gold">Scroll to Ascend</span>
+        <div class="w-4 h-7 border border-magique-gold/40 rounded-full relative">
+          <div class="w-1 h-1.5 bg-magique-gold rounded-full absolute top-1 left-1/2 -translate-x-1/2 animate-bounce"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: STITCHING SHOWCASE (#stitching)
+       The Atelier & The Loom — Handloom Kasavu, Memory Linens & Bespoke Embroidery
+       ========================================================================== -->
+  <section id="stitching" data-nav-section data-theme="light" class="py-20 z-10 bg-[#F6F3E9] overflow-hidden">
+    
+
+  <!-- Section Header -->
+  <div class="max-w-6xl mx-auto px-6 text-center mb-14">
+    <div class="text-[10px] tracking-[0.4em] uppercase text-magique-gold font-medium mb-3">The Atelier &amp; The Loom</div>
+    <h2 class="font-serif text-4xl md:text-5xl font-light italic text-magique-green mb-4">Quiet Elegance in Every Thread</h2>
+    <p class="font-sans text-xs tracking-[0.15em] uppercase text-magique-green/70 max-w-xl mx-auto">Handcrafted linens, royal Kasavu weaves, and bespoke embroidery — woven with memory and care.</p>
+  </div>
+
+  <!-- BLOCK 1: Hero — Full-width bed sheet room photo -->
+  <div class="w-full mb-16">
+    <div class="relative overflow-hidden" style="aspect-ratio: 16/7;">
+      <img src="assets/stitching/bedsheet-suite-wide.webp" alt="Botanical Azure Bedding Suite" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+    </div>
+    <div class="max-w-6xl mx-auto px-6 mt-5 flex flex-col md:flex-row md:items-end justify-between gap-2">
+      <h3 class="font-serif text-2xl md:text-3xl italic font-light text-magique-green">Hand finished bed linen.</h3>
+      <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/60">Pure cotton · Archival lace edging · Hand-tied ribbons</p>
+    </div>
+  </div>
+
+  <!-- BLOCK 2: Detail strip — offset ribbon & lace close-up -->
+  <div class="max-w-6xl mx-auto px-6 mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <!-- image right on desktop, top on mobile -->
+      <div class="order-1 md:order-2 overflow-hidden rounded-xl" style="aspect-ratio: 4/3;">
+        <img src="assets/stitching/bedsheet-detail-tie.webp" alt="Hand-tied ribbon and lace detail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+      </div>
+      <div class="order-2 md:order-1 text-left">
+        <div class="text-[10px] tracking-[0.35em] uppercase text-magique-gold mb-3">Craftsmanship Detail</div>
+        <h3 class="font-serif text-2xl md:text-3xl italic font-light text-magique-green mb-4">Hand tied ribbon<br>and lace detail.</h3>
+        <p class="font-sans text-xs text-magique-green/70 leading-relaxed tracking-wide max-w-xs">Every pillow sham is finished by hand — cotton lace stitched along the border and soft ribbon ties knotted at each corner. The kind of quiet detail that makes an heirloom.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 3: Cushion Collection Grid -->
+  <div class="max-w-6xl mx-auto px-6 mb-20">
+    <div class="text-center mb-10">
+      <div class="text-[10px] tracking-[0.4em] uppercase text-magique-gold font-medium mb-2">Handcrafted Cushions</div>
+      <h3 class="font-serif text-3xl md:text-4xl italic font-light text-magique-green">Cushion Collection</h3>
+    </div>
+
+    <!-- Cushion Collection Grid (Peacock hero full-width top, 6 square tiles below) -->
+    <div class="cushion-grid">
+
+      <!-- Peacock Embroidery — Featured Hero Cushion (1st child: full width top) -->
+      <div class="overflow-hidden rounded-xl group cursor-pointer">
+        <div class="relative w-full h-full">
+          <img src="assets/stitching/cushion-mayilpeeli-embroidery.webp" alt="Peacock Embroidery Cushion" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p class="font-sans text-[10px] tracking-[0.2em] uppercase text-white">Peacock Embroidery</p>
+          </div>
+        </div>
+        <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Peacock Embroidery</p>
+      </div>
+
+      <!-- 2. Crimson Brocade -->
+      <div class="overflow-hidden rounded-xl group cursor-pointer">
+        <div class="w-full h-full">
+          <img src="assets/stitching/cushion-crimson-brocade.webp" alt="Crimson Brocade" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Crimson Brocade</p>
+      </div>
+
+      <!-- 3. Scalloped Lace Diptych -->
+      <div class="overflow-hidden rounded-xl group cursor-pointer">
+        <div class="w-full h-full">
+          <img src="assets/stitching/cushion-scalloped-lace-diptych.webp" alt="Scalloped Lace Diptych" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Scalloped Lace Diptych</p>
+      </div>
+
+      <!-- 4. Saffron Raw Silk -->
+      <div class="overflow-hidden rounded-xl group cursor-pointer">
+        <div class="w-full h-full">
+          <img src="assets/stitching/cushion-saffron-raw-silk.webp" alt="Saffron Raw Silk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Saffron Raw Silk</p>
+      </div>
+
+      <!-- 5. Royal Kasavu Band -->
+      <div class="overflow-hidden rounded-xl group cursor-pointer">
+        <div class="w-full h-full">
+          <img src="assets/stitching/cushion-royal-kasavu-band.webp" alt="Royal Kasavu Band" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Royal Kasavu Band</p>
+      </div>
+
+      <!-- 6. Horizontal Kasavu -->
+      <div class="overflow-hidden rounded-xl group cursor-pointer">
+        <div class="w-full h-full">
+          <img src="assets/stitching/cushion-horizontal-kasavu.webp" alt="Horizontal Kasavu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Horizontal Kasavu</p>
+      </div>
+
+      <!-- 7. Vertical Chevron Kasavu -->
+      <div class="overflow-hidden rounded-xl group cursor-pointer">
+        <div class="w-full h-full">
+          <img src="assets/stitching/cushion-vertical-chevron-kasavu.webp" alt="Vertical Chevron Kasavu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Vertical Chevron Kasavu</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOCK 4: Lifestyle banner — Armchair styled photo -->
+  <div class="w-full relative overflow-hidden" style="aspect-ratio: 16/7;">
+    <img src="assets/stitching/sofa-curated-living.webp" alt="Cushions styled on armchair" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+    <div class="absolute inset-0 bg-black/20 flex flex-col items-center justify-center text-center px-6">
+      <p class="font-serif text-2xl md:text-4xl italic font-light text-white mb-2">Mix and match for your space.</p>
+      <p class="font-sans text-[10px] tracking-[0.3em] uppercase text-white/80">Kasavu · Brocade · Embroidery · Saffron Silk</p>
+    </div>
+  </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: OUR STORY (#our-story)
+       ========================================================================== -->
+  <section id="our-story" data-nav-section data-theme="light" class="py-24 px-6 z-10 editorial-gutter">
+    <div class="max-w-3xl w-full mx-auto text-center">
+
+      <div class="text-[10px] tracking-[0.4em] uppercase text-magique-gold font-medium mb-4">Our Philosophy</div>
+      <h2 class="font-serif text-3xl md:text-5xl mb-8 leading-tight font-light italic text-magique-green">
+        Where the heart meets the loom.
+      </h2>
+
+      <div class="w-16 h-[1px] bg-magique-gold mx-auto mb-8 opacity-40"></div>
+
+      <p class="font-serif text-xl md:text-2xl leading-relaxed text-magique-green/90 italic font-light mb-8">
+        "Curating an alchemy of signature brownies—decadently dark and artisanally crafted. Beside them, the quiet elegance of heartfelt stitching, woven with memory and care."
+      </p>
+
+      <div class="font-sans text-[11px] tracking-[0.25em] uppercase text-magique-green/75 leading-loose max-w-2xl mx-auto space-y-4">
+        <p>Kochumagique was born from a singular conviction: that true luxury lies in patience, precision, and honesty of materials.</p>
+        <p class="text-magique-gold font-medium">Meticulously kneaded. Carefully tailored.</p>
+        <p class="italic text-magique-green/60 lowercase tracking-widest">— A symphony of two passions, soon coming home to you. —</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: EDITORIAL FOOTER (#footer)
+       ========================================================================== -->
+  <footer id="footer" data-nav-section data-theme="dark" class="bg-[#162420] text-[#F6F3E9] px-6 z-10 relative overflow-hidden" style="padding-top: 100px; padding-bottom: 48px;">
+    <!-- Centred Upper Content Block -->
+    <div class="max-w-2xl mx-auto text-center">
+
+      <!-- 1. Small Gold Diamond Ornament -->
+      <div class="flex justify-center mb-6" aria-hidden="true">
+        <svg width="10" height="10" viewBox="0 0 10 10" class="text-[#C5A059] fill-current">
+          <polygon points="5,0 10,5 5,10 0,5" />
+        </svg>
+      </div>
+
+      <!-- 2. Tagline (large and italic, fades in gently on scroll) -->
+      <h2 id="footer-tagline" class="footer-tagline font-serif italic font-light text-3xl sm:text-4xl md:text-5xl text-[#F6F3E9] leading-tight mb-6">
+        Made slowly. Made by hand.
+      </h2>
+
+      <!-- 3. Small Brand Note -->
+      <p class="font-sans text-xs sm:text-sm text-[#F6F3E9]/70 font-normal leading-relaxed max-w-lg mx-auto mb-8 tracking-wide">
+        Kochumagique is a small home atelier in Kerala. Dark chocolate from the bakehouse. Handloom stitching from the atelier. Every piece is made by one pair of hands.
+      </p>
+
+      <!-- 4. Navigation Links (small caps, wide letter spacing, separated by a dot) -->
+      <nav aria-label="Footer Navigation" class="mb-8">
+        <div class="font-sans text-[11px] sm:text-xs uppercase tracking-[0.25em] font-normal text-[#F6F3E9]/80 flex flex-wrap justify-center items-center gap-3 sm:gap-5">
+          <a href="#baking" class="hover:text-[#C5A059] transition-colors duration-300">Baking</a>
+          <span class="text-[#C5A059] opacity-40 select-none">·</span>
+          <a href="#stitching" class="hover:text-[#C5A059] transition-colors duration-300">Stitching</a>
+          <span class="text-[#C5A059] opacity-40 select-none">·</span>
+          <a href="#our-story" class="hover:text-[#C5A059] transition-colors duration-300">Our Story</a>
+        </div>
+      </nav>
+
+      <!-- 5. Italic Gold Line -->
+      <p class="font-serif italic font-light text-sm sm:text-base text-[#C5A059] mb-8 tracking-wide">
+        We are opening soon. For now, every order is taken by message.
+      </p>
+
+      <!-- 6. Contact (plain text links, no buttons) -->
+      <div class="font-sans text-xs text-[#F6F3E9]/70 font-normal tracking-wide flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6">
+        <span>Email: <a href="mailto:kochumagique@gmail.com" class="text-[#F6F3E9] hover:text-[#C5A059] transition-colors duration-300">kochumagique@gmail.com</a></span>
+        <span class="hidden sm:inline text-[#C5A059] opacity-30 select-none">·</span>
+        <span>Call or WhatsApp: <a href="tel:+919496245832" class="text-[#F6F3E9] hover:text-[#C5A059] transition-colors duration-300">+91 94962 45832</a></span>
+        <span class="hidden sm:inline text-[#C5A059] opacity-30 select-none">·</span>
+        <span>Instagram: <a href="https://www.instagram.com/kochumagique" target="_blank" rel="noopener noreferrer" class="text-[#F6F3E9] hover:text-[#C5A059] transition-colors duration-300">@kochumagique</a></span>
+      </div>
+
+    </div>
+
+    <!-- 7. Thin Gold Line (1px, 40% opacity) -->
+    <div class="w-full max-w-5xl mx-auto border-t border-[#C5A059]/40 mt-16 mb-8" aria-hidden="true"></div>
+
+    <!-- 8. Bottom Row (small text) -->
+    <div class="w-full max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] tracking-[0.2em] uppercase text-[#F6F3E9]/70 font-sans font-normal text-center sm:text-left">
+      <span>&copy; 2026 Kochumagique</span>
+      <span>Curated by Hand</span>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       SCRIPTS & ANIMATION LIBRARIES
+       ========================================================================== -->
+  <!-- 1. GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- 2. GSAP ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- 3. Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- 4. Cinematic Engine -->
+  <script src="js/cinematic-engine.js"></script>
+
+  <!-- 5. Floating Navigation Engine -->
+  <script src="js/navigation.js"></script>
+
+  <!-- 6. Footer Tagline Scroll Reveal -->
+  <script>
+    (function () {
+      const tagline = document.getElementById('footer-tagline');
+      if (!tagline) return;
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              tagline.classList.add('is-visible');
+              observer.unobserve(tagline);
+            }
+          });
+        }, { threshold: 0.2 });
+        observer.observe(tagline);
+      } else {
+        tagline.classList.add('is-visible');
+      }
+    })();
+  </script>
+</body>
+
+</html>

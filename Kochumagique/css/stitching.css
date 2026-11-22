@@ -1,0 +1,512 @@
+/**
+ * ==========================================================================
+ * KOCHUMAGIQUE — Atelier & Loom Stitching Showcase Styles
+ * Luxury Handloom, Memory Textiles & Bespoke Embroidery Gallery
+ * ==========================================================================
+ */
+
+.stitching-section {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #F6F3E9 0%, #EFEBE0 50%, #F6F3E9 100%);
+  overflow: hidden;
+}
+
+/* Subtle Atelier Woven Background Accents */
+.stitching-bg-thread {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.035;
+  color: var(--color-gold, #C5A059);
+}
+
+/* Filter Navigation */
+.stitching-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 3rem;
+}
+
+.stitching-filter-btn {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(22, 36, 32, 0.7);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 9999px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.stitching-filter-btn:hover {
+  color: #162420;
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(197, 160, 89, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.15);
+}
+
+.stitching-filter-btn.active {
+  color: #FFFFFF;
+  background: #162420;
+  border-color: #162420;
+  box-shadow: 0 4px 16px rgba(22, 36, 32, 0.25);
+}
+
+/* Gallery Grid */
+.stitching-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .stitching-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stitching-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
+
+/* Featured Dual Cards (Span 2 columns on tablet/desktop) */
+.stitching-card-featured {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 1024px) {
+  .stitching-card-featured {
+    grid-column: span 2;
+  }
+}
+
+/* Product Card */
+.stitching-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 20px -2px rgba(22, 36, 32, 0.05),
+    0 1px 3px 0 rgba(22, 36, 32, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.stitching-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(197, 160, 89, 0.55);
+  box-shadow: 
+    0 20px 35px -8px rgba(22, 36, 32, 0.12),
+    0 6px 15px -4px rgba(197, 160, 89, 0.2);
+}
+
+/* Image Frame */
+.stitching-media-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #EBE6D8;
+}
+
+.stitching-card-featured .stitching-media-wrapper {
+  aspect-ratio: 16 / 10;
+}
+
+@media (max-width: 639px) {
+  .stitching-card-featured .stitching-media-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.stitching-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stitching-card:hover .stitching-img {
+  transform: scale(1.06);
+}
+
+/* Floating Badges */
+.stitching-badge-top {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 5;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 8.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #162420;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.stitching-inspect-hint {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 5;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 8.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: rgba(22, 36, 32, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 5px 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stitching-card:hover .stitching-inspect-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Content */
+.stitching-card-body {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+}
+
+.stitching-card-category {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold, #C5A059);
+  margin-bottom: 6px;
+}
+
+.stitching-card-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--color-green, #162420);
+  margin-bottom: 8px;
+}
+
+.stitching-card-desc {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  color: rgba(22, 36, 32, 0.75);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.stitching-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(197, 160, 89, 0.15);
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.stitching-card-tag {
+  color: rgba(22, 36, 32, 0.6);
+}
+
+.stitching-card-link {
+  color: var(--color-gold, #C5A059);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.25s ease;
+}
+
+.stitching-card:hover .stitching-card-link {
+  transform: translateX(3px);
+  color: #162420;
+}
+
+/* Lightbox Modal */
+.stitching-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 25, 22, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.stitching-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.stitching-lightbox-container {
+  position: relative;
+  max-width: 960px;
+  width: 100%;
+  max-height: 90vh;
+  background: #F6F3E9;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+  display: grid;
+  grid-template-columns: 1fr;
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+  .stitching-lightbox-container {
+    grid-template-columns: 1.15fr 1fr;
+  }
+}
+
+.stitching-lightbox.active .stitching-lightbox-container {
+  transform: scale(1) translateY(0);
+}
+
+.stitching-lightbox-media {
+  position: relative;
+  background: #111A18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-height: 50vh;
+}
+
+@media (min-width: 768px) {
+  .stitching-lightbox-media {
+    max-height: 85vh;
+  }
+}
+
+.stitching-lightbox-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stitching-lightbox-content {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  max-height: 45vh;
+}
+
+@media (min-width: 768px) {
+  .stitching-lightbox-content {
+    padding: 44px 36px;
+    max-height: 85vh;
+  }
+}
+
+.stitching-lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(22, 36, 32, 0.85);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.stitching-lightbox-close:hover {
+  background: var(--color-gold, #C5A059);
+  transform: rotate(90deg);
+}
+
+.stitching-lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #FFFFFF;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.stitching-lightbox-nav-btn:hover {
+  background: var(--color-gold, #C5A059);
+  color: #162420;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.stitching-lightbox-prev {
+  left: 20px;
+}
+
+.stitching-lightbox-next {
+  right: 20px;
+}
+
+@media (max-width: 767px) {
+  .stitching-lightbox-nav-btn {
+    display: none;
+  }
+}
+
+/* Lightbox Specs Grid */
+.stitching-specs-list {
+  margin: 18px 0;
+  padding: 14px 0;
+  border-top: 1px solid rgba(197, 160, 89, 0.2);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+}
+
+.stitching-spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stitching-spec-label {
+  font-size: 8.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold, #C5A059);
+  margin-bottom: 2px;
+}
+
+.stitching-spec-value {
+  font-size: 11.5px;
+  color: #162420;
+  font-weight: 500;
+}
+
+/* Lightbox Action Button */
+.stitching-enquire-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 9999px;
+  background: #162420;
+  color: #F6F3E9;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 9.5px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: 1px solid #162420;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.stitching-enquire-btn:hover {
+  background: var(--color-gold, #C5A059);
+  border-color: var(--color-gold, #C5A059);
+  color: #162420;
+  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Editorial Cushion Collection Grid (Task 3: Balanced 7-Item Grid)
+   Peacock Embroidery hero tile full-width on top, 6 square tiles below
+   ========================================================================== */
+.cushion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(10px, 1.6vw, 24px);
+}
+
+.cushion-grid > :first-child {
+  grid-column: 1 / -1;
+  aspect-ratio: 4 / 3;
+}
+
+.cushion-grid > :not(:first-child) {
+  aspect-ratio: 1 / 1;
+}
+
+.cushion-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .cushion-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cushion-grid > :first-child {
+    aspect-ratio: 16 / 9;
+  }
+}

@@ -1,0 +1,46 @@
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# Dependency directories
+node_modules/
+
+# Backup and Temporary Files
+*.backup*
+*_backup*
+*.bak
+*.tmp
+*.log
+
+# OS Metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Source maps
+*.map
+
+# Editor directories
+.vscode/
+.idea/
+
+# Large raw video frame sources & uncompressed captures (production uses assets/*.webp)
+Kochumagique/Birthaday Cake  Frames/
+Kochumagique/Brookies Frame/
+Kochumagique/Brookies Frame 130 backup/
+Kochumagique/Chef Reveal/
+Kochumagique/frame_*.png
+Kochumagique/Bed Sheet One (*).png
+Kochumagique/Small Pillow  (*).jpg
+Kochumagique/Sofa.jpg
+Kochumagique/contact_sheet.jpg
+Kochumagique/face_crop_test.jpg
+
+# Development prototypes & internal audit reports
+Kochumagique/liquid glass/
+Kochumagique/cinematic-prototype/
+Kochumagique/navigation-prototype/
+Kochumagique/test.html
+Kochumagique/*_REPORT.md
+Kochumagique/CINEMATIC_HOMEPAGE_PLAN.md

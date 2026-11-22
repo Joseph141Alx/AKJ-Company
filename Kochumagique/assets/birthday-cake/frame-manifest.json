@@ -1,0 +1,3656 @@
+{
+  "project": "KOCHUMAGIQUE",
+  "asset_name": "Birthday Cake Cinematic Sequence (The Golden Ascent)",
+  "version": "1.0.0",
+  "frame_count": 145,
+  "aspect_ratio": "16:9",
+  "contact_sheet": "assets/birthday-cake/contact-sheet.jpg",
+  "source_analysis": {
+    "source_folder": "Birthaday Cake  Frames",
+    "source_frame_count": 145,
+    "source_filename_range": "frame_001.png to frame_148.png",
+    "source_missing_original_numbers": [
+      137,
+      138,
+      139
+    ],
+    "note": "The 145 authentic source frames are indexed sequentially as frame-001.webp through frame-145.webp with no gaps."
+  },
+  "summary": {
+    "original_total_bytes": 324347530,
+    "original_total_mb": 309.32,
+    "desktop_total_bytes": 13303314,
+    "desktop_total_mb": 12.69,
+    "desktop_reduction_pct": 95.9,
+    "mobile_total_bytes": 6627914,
+    "mobile_total_mb": 6.32,
+    "mobile_reduction_pct": 97.96
+  },
+  "frames": [
+    {
+      "sequence_index": 1,
+      "source_filename": "frame_001.png",
+      "source_size_bytes": 2046011,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-001.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-001.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 93460,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-001.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-001.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 46140,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 2,
+      "source_filename": "frame_002.png",
+      "source_size_bytes": 2200709,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-002.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-002.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 91136,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-002.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-002.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 46136,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 3,
+      "source_filename": "frame_003.png",
+      "source_size_bytes": 2235379,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-003.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-003.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 93324,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-003.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-003.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 46724,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 4,
+      "source_filename": "frame_004.png",
+      "source_size_bytes": 2274677,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-004.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-004.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 91322,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-004.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-004.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 46946,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 5,
+      "source_filename": "frame_005.png",
+      "source_size_bytes": 2267275,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-005.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-005.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 97400,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-005.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-005.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 48652,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 6,
+      "source_filename": "frame_006.png",
+      "source_size_bytes": 2323765,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-006.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-006.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 94242,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-006.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-006.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 47874,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 7,
+      "source_filename": "frame_007.png",
+      "source_size_bytes": 2345328,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-007.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-007.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 94434,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-007.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-007.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 48196,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 8,
+      "source_filename": "frame_008.png",
+      "source_size_bytes": 2361378,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-008.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-008.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 93514,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-008.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-008.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 47784,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 9,
+      "source_filename": "frame_009.png",
+      "source_size_bytes": 2360994,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-009.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-009.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 98352,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-009.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-009.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 48822,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 10,
+      "source_filename": "frame_010.png",
+      "source_size_bytes": 2396721,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-010.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-010.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 95700,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-010.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-010.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 48368,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 11,
+      "source_filename": "frame_011.png",
+      "source_size_bytes": 2417294,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-011.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-011.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 97178,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-011.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-011.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 49048,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 12,
+      "source_filename": "frame_012.png",
+      "source_size_bytes": 2429629,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-012.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-012.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 97496,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-012.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-012.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 49022,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 13,
+      "source_filename": "frame_013.png",
+      "source_size_bytes": 2450553,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-013.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-013.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 103504,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-013.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-013.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50726,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 14,
+      "source_filename": "frame_014.png",
+      "source_size_bytes": 2466677,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-014.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-014.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 96512,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-014.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-014.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 49944,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 15,
+      "source_filename": "frame_015.png",
+      "source_size_bytes": 2483686,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-015.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-015.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 98260,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-015.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-015.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50670,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 16,
+      "source_filename": "frame_016.png",
+      "source_size_bytes": 2487337,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-016.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-016.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 97356,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-016.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-016.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50140,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 17,
+      "source_filename": "frame_017.png",
+      "source_size_bytes": 2491939,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-017.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-017.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 99600,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-017.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-017.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50962,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 18,
+      "source_filename": "frame_018.png",
+      "source_size_bytes": 2499693,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-018.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-018.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 99598,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-018.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-018.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50694,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 19,
+      "source_filename": "frame_019.png",
+      "source_size_bytes": 2520137,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-019.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-019.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 98518,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-019.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-019.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50954,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 20,
+      "source_filename": "frame_020.png",
+      "source_size_bytes": 2522132,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-020.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-020.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 99296,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-020.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-020.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 51530,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 21,
+      "source_filename": "frame_021.png",
+      "source_size_bytes": 2555987,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-021.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-021.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 104408,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-021.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-021.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53580,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 22,
+      "source_filename": "frame_022.png",
+      "source_size_bytes": 2548494,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-022.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-022.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 101400,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-022.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-022.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 51838,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 23,
+      "source_filename": "frame_023.png",
+      "source_size_bytes": 2568439,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-023.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-023.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 102778,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-023.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-023.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 52260,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 24,
+      "source_filename": "frame_024.png",
+      "source_size_bytes": 2562324,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-024.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-024.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 102798,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-024.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-024.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 52100,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 25,
+      "source_filename": "frame_025.png",
+      "source_size_bytes": 2563474,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-025.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-025.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 104464,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-025.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-025.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53160,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 26,
+      "source_filename": "frame_026.png",
+      "source_size_bytes": 2566438,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-026.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-026.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 100840,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-026.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-026.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 51826,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 27,
+      "source_filename": "frame_027.png",
+      "source_size_bytes": 2584040,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-027.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-027.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 101430,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-027.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-027.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53002,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 28,
+      "source_filename": "frame_028.png",
+      "source_size_bytes": 2581309,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-028.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-028.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 101860,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-028.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-028.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 52842,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 29,
+      "source_filename": "frame_029.png",
+      "source_size_bytes": 2609331,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-029.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-029.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 108140,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-029.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-029.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55192,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 30,
+      "source_filename": "frame_030.png",
+      "source_size_bytes": 2602573,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-030.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-030.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 103944,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-030.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-030.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53254,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 31,
+      "source_filename": "frame_031.png",
+      "source_size_bytes": 2622910,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-031.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-031.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 106784,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-031.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-031.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54510,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 32,
+      "source_filename": "frame_032.png",
+      "source_size_bytes": 2623279,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-032.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-032.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 106132,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-032.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-032.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54620,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 33,
+      "source_filename": "frame_033.png",
+      "source_size_bytes": 2619221,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-033.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-033.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 108600,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-033.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-033.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54634,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 34,
+      "source_filename": "frame_034.png",
+      "source_size_bytes": 2628763,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-034.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-034.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 104968,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-034.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-034.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53806,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 35,
+      "source_filename": "frame_035.png",
+      "source_size_bytes": 2649601,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-035.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-035.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 106046,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-035.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-035.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53444,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 36,
+      "source_filename": "frame_036.png",
+      "source_size_bytes": 2647861,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-036.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-036.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 105028,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-036.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-036.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53910,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 37,
+      "source_filename": "frame_037.png",
+      "source_size_bytes": 2684858,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-037.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-037.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 112932,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-037.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-037.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 56732,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 38,
+      "source_filename": "frame_038.png",
+      "source_size_bytes": 2669068,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-038.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-038.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 107538,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-038.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-038.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55188,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 39,
+      "source_filename": "frame_039.png",
+      "source_size_bytes": 2692596,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-039.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-039.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 110096,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-039.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-039.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54994,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 40,
+      "source_filename": "frame_040.png",
+      "source_size_bytes": 2679731,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-040.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-040.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109538,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-040.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-040.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54750,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 41,
+      "source_filename": "frame_041.png",
+      "source_size_bytes": 2686805,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-041.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-041.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 113744,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-041.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-041.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55900,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 42,
+      "source_filename": "frame_042.png",
+      "source_size_bytes": 2671689,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-042.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-042.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109172,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-042.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-042.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54720,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 43,
+      "source_filename": "frame_043.png",
+      "source_size_bytes": 2682770,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-043.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-043.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 111614,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-043.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-043.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55100,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 44,
+      "source_filename": "frame_044.png",
+      "source_size_bytes": 2670036,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-044.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-044.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109144,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-044.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-044.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55294,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 45,
+      "source_filename": "frame_045.png",
+      "source_size_bytes": 2701102,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-045.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-045.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 115852,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-045.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-045.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 57730,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 46,
+      "source_filename": "frame_046.png",
+      "source_size_bytes": 2673443,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-046.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-046.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 110834,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-046.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-046.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54624,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 47,
+      "source_filename": "frame_047.png",
+      "source_size_bytes": 2685492,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-047.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-047.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 112346,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-047.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-047.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55154,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 48,
+      "source_filename": "frame_048.png",
+      "source_size_bytes": 2664410,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-048.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-048.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 110278,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-048.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-048.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54546,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 49,
+      "source_filename": "frame_049.png",
+      "source_size_bytes": 2657554,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-049.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-049.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 112288,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-049.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-049.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 54202,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 50,
+      "source_filename": "frame_050.png",
+      "source_size_bytes": 2646485,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-050.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-050.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 107986,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-050.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-050.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53640,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 51,
+      "source_filename": "frame_051.png",
+      "source_size_bytes": 2654844,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-051.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-051.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109102,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-051.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-051.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 52934,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 52,
+      "source_filename": "frame_052.png",
+      "source_size_bytes": 2634870,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-052.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-052.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109286,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-052.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-052.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53318,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 53,
+      "source_filename": "frame_053.png",
+      "source_size_bytes": 2663327,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-053.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-053.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 113554,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-053.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-053.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 55220,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 54,
+      "source_filename": "frame_054.png",
+      "source_size_bytes": 2638930,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-054.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-054.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 108820,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-054.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-054.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53936,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 55,
+      "source_filename": "frame_055.png",
+      "source_size_bytes": 2645689,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-055.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-055.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 109738,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-055.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-055.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 53504,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 56,
+      "source_filename": "frame_056.png",
+      "source_size_bytes": 2615351,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-056.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-056.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 106692,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-056.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-056.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 52186,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 57,
+      "source_filename": "frame_057.png",
+      "source_size_bytes": 2576738,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-057.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-057.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 105744,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-057.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-057.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50764,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 58,
+      "source_filename": "frame_058.png",
+      "source_size_bytes": 2572829,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-058.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-058.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 102098,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-058.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-058.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50454,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 59,
+      "source_filename": "frame_059.png",
+      "source_size_bytes": 2573295,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-059.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-059.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 103628,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-059.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-059.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 49596,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 60,
+      "source_filename": "frame_060.png",
+      "source_size_bytes": 2554524,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-060.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-060.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 101226,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-060.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-060.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 49514,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 61,
+      "source_filename": "frame_061.png",
+      "source_size_bytes": 2563031,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-061.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-061.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 105330,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-061.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-061.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50432,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 62,
+      "source_filename": "frame_062.png",
+      "source_size_bytes": 2543989,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-062.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-062.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 101792,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-062.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-062.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 49434,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 63,
+      "source_filename": "frame_063.png",
+      "source_size_bytes": 2546178,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-063.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-063.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 102932,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-063.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-063.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 50190,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 64,
+      "source_filename": "frame_064.png",
+      "source_size_bytes": 2522634,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-064.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-064.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 99276,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-064.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-064.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 48644,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 65,
+      "source_filename": "frame_065.png",
+      "source_size_bytes": 2501749,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-065.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-065.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 101332,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-065.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-065.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 49796,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 66,
+      "source_filename": "frame_066.png",
+      "source_size_bytes": 2512674,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-066.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-066.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 99082,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-066.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-066.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 48294,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 67,
+      "source_filename": "frame_067.png",
+      "source_size_bytes": 2514822,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-067.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-067.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 100484,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-067.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-067.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 48462,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 68,
+      "source_filename": "frame_068.png",
+      "source_size_bytes": 2494576,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-068.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-068.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 98480,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-068.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-068.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 49508,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 69,
+      "source_filename": "frame_069.png",
+      "source_size_bytes": 2495749,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-069.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-069.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 101992,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-069.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-069.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 49874,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 70,
+      "source_filename": "frame_070.png",
+      "source_size_bytes": 2469582,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-070.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-070.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 98102,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-070.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-070.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 49052,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 71,
+      "source_filename": "frame_071.png",
+      "source_size_bytes": 2462043,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-071.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-071.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 98436,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-071.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-071.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 47834,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 72,
+      "source_filename": "frame_072.png",
+      "source_size_bytes": 2427123,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-072.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-072.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 94894,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-072.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-072.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 45762,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 73,
+      "source_filename": "frame_073.png",
+      "source_size_bytes": 2372236,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-073.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-073.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 95718,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-073.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-073.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 45284,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 74,
+      "source_filename": "frame_074.png",
+      "source_size_bytes": 2377998,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-074.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-074.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 92168,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-074.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-074.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 46128,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 75,
+      "source_filename": "frame_075.png",
+      "source_size_bytes": 2365169,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-075.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-075.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 92978,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-075.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-075.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 44868,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 76,
+      "source_filename": "frame_076.png",
+      "source_size_bytes": 2332154,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-076.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-076.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 90388,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-076.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-076.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 45604,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 77,
+      "source_filename": "frame_077.png",
+      "source_size_bytes": 2306106,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-077.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-077.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 92968,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-077.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-077.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 44686,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 78,
+      "source_filename": "frame_078.png",
+      "source_size_bytes": 2288201,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-078.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-078.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 89372,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-078.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-078.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 43192,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 79,
+      "source_filename": "frame_079.png",
+      "source_size_bytes": 2284044,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-079.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-079.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 89714,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-079.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-079.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 44322,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 80,
+      "source_filename": "frame_080.png",
+      "source_size_bytes": 2255333,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-080.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-080.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 87244,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-080.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-080.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 41842,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 81,
+      "source_filename": "frame_081.png",
+      "source_size_bytes": 2190258,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-081.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-081.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 87340,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-081.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-081.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 41478,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 82,
+      "source_filename": "frame_082.png",
+      "source_size_bytes": 2214812,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-082.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-082.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 85368,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-082.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-082.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 41114,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 83,
+      "source_filename": "frame_083.png",
+      "source_size_bytes": 2206579,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-083.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-083.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 86246,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-083.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-083.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 41314,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 84,
+      "source_filename": "frame_084.png",
+      "source_size_bytes": 2179605,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-084.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-084.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 83932,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-084.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-084.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40428,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 85,
+      "source_filename": "frame_085.png",
+      "source_size_bytes": 2147784,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-085.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-085.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 85836,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-085.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-085.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40926,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 86,
+      "source_filename": "frame_086.png",
+      "source_size_bytes": 2150882,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-086.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-086.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 82810,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-086.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-086.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40004,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 87,
+      "source_filename": "frame_087.png",
+      "source_size_bytes": 2133727,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-087.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-087.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 83634,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-087.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-087.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40134,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 88,
+      "source_filename": "frame_088.png",
+      "source_size_bytes": 2115521,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-088.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-088.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 81256,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-088.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-088.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39350,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 89,
+      "source_filename": "frame_089.png",
+      "source_size_bytes": 2045784,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-089.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-089.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 80866,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-089.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-089.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38750,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 90,
+      "source_filename": "frame_090.png",
+      "source_size_bytes": 2080774,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-090.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-090.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 80660,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-090.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-090.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38862,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 91,
+      "source_filename": "frame_091.png",
+      "source_size_bytes": 2062074,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-091.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-091.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 81096,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-091.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-091.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39010,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 92,
+      "source_filename": "frame_092.png",
+      "source_size_bytes": 2057690,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-092.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-092.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 80464,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-092.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-092.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38332,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 93,
+      "source_filename": "frame_093.png",
+      "source_size_bytes": 2026197,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-093.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-093.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 82614,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-093.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-093.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40210,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 94,
+      "source_filename": "frame_094.png",
+      "source_size_bytes": 2059489,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-094.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-094.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 80764,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-094.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-094.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40272,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 95,
+      "source_filename": "frame_095.png",
+      "source_size_bytes": 2054451,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-095.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-095.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 81964,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-095.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-095.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39434,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 96,
+      "source_filename": "frame_096.png",
+      "source_size_bytes": 2055592,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-096.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-096.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 80718,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-096.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-096.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39080,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 97,
+      "source_filename": "frame_097.png",
+      "source_size_bytes": 1985062,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-097.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-097.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 81950,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-097.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-097.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39036,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 98,
+      "source_filename": "frame_098.png",
+      "source_size_bytes": 2029689,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-098.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-098.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 80454,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-098.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-098.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38790,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 99,
+      "source_filename": "frame_099.png",
+      "source_size_bytes": 2011310,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-099.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-099.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 81038,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-099.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-099.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39198,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 100,
+      "source_filename": "frame_100.png",
+      "source_size_bytes": 2012765,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-100.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-100.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 80390,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-100.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-100.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38962,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 101,
+      "source_filename": "frame_101.png",
+      "source_size_bytes": 1973867,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-101.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-101.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 83512,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-101.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-101.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39724,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 102,
+      "source_filename": "frame_102.png",
+      "source_size_bytes": 2004357,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-102.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-102.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 81334,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-102.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-102.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39562,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 103,
+      "source_filename": "frame_103.png",
+      "source_size_bytes": 1995597,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-103.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-103.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 82164,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-103.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-103.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39296,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 104,
+      "source_filename": "frame_104.png",
+      "source_size_bytes": 1997045,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-104.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-104.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 81122,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-104.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-104.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39212,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 105,
+      "source_filename": "frame_105.png",
+      "source_size_bytes": 1936321,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-105.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-105.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 81630,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-105.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-105.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39286,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 106,
+      "source_filename": "frame_106.png",
+      "source_size_bytes": 1973447,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-106.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-106.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 80220,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-106.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-106.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39476,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 107,
+      "source_filename": "frame_107.png",
+      "source_size_bytes": 1947498,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-107.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-107.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 79998,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-107.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-107.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38752,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 108,
+      "source_filename": "frame_108.png",
+      "source_size_bytes": 1941042,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-108.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-108.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 78294,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-108.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-108.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38632,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 109,
+      "source_filename": "frame_109.png",
+      "source_size_bytes": 1899223,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-109.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-109.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 80640,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-109.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-109.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39868,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 110,
+      "source_filename": "frame_110.png",
+      "source_size_bytes": 1916174,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-110.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-110.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77168,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-110.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-110.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38560,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 111,
+      "source_filename": "frame_111.png",
+      "source_size_bytes": 1901878,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-111.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-111.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 76488,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-111.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-111.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38620,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 112,
+      "source_filename": "frame_112.png",
+      "source_size_bytes": 1902899,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-112.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-112.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 75076,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-112.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-112.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38026,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 113,
+      "source_filename": "frame_113.png",
+      "source_size_bytes": 1854902,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-113.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-113.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 78792,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-113.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-113.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38350,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 114,
+      "source_filename": "frame_114.png",
+      "source_size_bytes": 1870592,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-114.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-114.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 76982,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-114.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-114.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 37916,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 115,
+      "source_filename": "frame_115.png",
+      "source_size_bytes": 1855199,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-115.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-115.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77292,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-115.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-115.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38202,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 116,
+      "source_filename": "frame_116.png",
+      "source_size_bytes": 1862168,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-116.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-116.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77414,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-116.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-116.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38378,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 117,
+      "source_filename": "frame_117.png",
+      "source_size_bytes": 1827266,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-117.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-117.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77198,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-117.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-117.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38774,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 118,
+      "source_filename": "frame_118.png",
+      "source_size_bytes": 1841391,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-118.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-118.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 76970,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-118.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-118.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 37976,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 119,
+      "source_filename": "frame_119.png",
+      "source_size_bytes": 1828884,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-119.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-119.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77222,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-119.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-119.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 37796,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 120,
+      "source_filename": "frame_120.png",
+      "source_size_bytes": 1828658,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-120.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-120.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77006,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-120.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-120.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 37676,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 121,
+      "source_filename": "frame_121.png",
+      "source_size_bytes": 1782752,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-121.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-121.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77694,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-121.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-121.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 37946,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 122,
+      "source_filename": "frame_122.png",
+      "source_size_bytes": 1801235,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-122.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-122.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 75914,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-122.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-122.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 37762,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 123,
+      "source_filename": "frame_123.png",
+      "source_size_bytes": 1784765,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-123.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-123.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77362,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-123.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-123.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 37910,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 124,
+      "source_filename": "frame_124.png",
+      "source_size_bytes": 1785673,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-124.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-124.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 75616,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-124.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-124.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38502,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 125,
+      "source_filename": "frame_125.png",
+      "source_size_bytes": 1760026,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-125.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-125.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77192,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-125.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-125.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39174,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 126,
+      "source_filename": "frame_126.png",
+      "source_size_bytes": 1772750,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-126.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-126.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 76982,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-126.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-126.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38622,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 127,
+      "source_filename": "frame_127.png",
+      "source_size_bytes": 1763814,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-127.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-127.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 76012,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-127.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-127.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38576,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 128,
+      "source_filename": "frame_128.png",
+      "source_size_bytes": 1762483,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-128.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-128.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77318,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-128.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-128.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 38640,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 129,
+      "source_filename": "frame_129.png",
+      "source_size_bytes": 1680220,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-129.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-129.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 79506,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-129.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-129.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40720,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 130,
+      "source_filename": "frame_130.png",
+      "source_size_bytes": 1724712,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-130.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-130.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77060,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-130.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-130.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40218,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 131,
+      "source_filename": "frame_131.png",
+      "source_size_bytes": 1716810,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-131.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-131.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77722,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-131.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-131.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40700,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 132,
+      "source_filename": "frame_132.png",
+      "source_size_bytes": 1725224,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-132.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-132.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77302,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-132.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-132.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40626,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 133,
+      "source_filename": "frame_133.png",
+      "source_size_bytes": 1688746,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-133.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-133.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 79644,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-133.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-133.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40990,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 134,
+      "source_filename": "frame_134.png",
+      "source_size_bytes": 1709757,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-134.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-134.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 76684,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-134.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-134.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40194,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 135,
+      "source_filename": "frame_135.png",
+      "source_size_bytes": 1707445,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-135.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-135.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77440,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-135.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-135.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40408,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 136,
+      "source_filename": "frame_136.png",
+      "source_size_bytes": 1709660,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-136.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-136.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 76574,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-136.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-136.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40054,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 137,
+      "source_filename": "frame_140.png",
+      "source_size_bytes": 1690191,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-137.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-137.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 76124,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-137.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-137.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39824,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 138,
+      "source_filename": "frame_141.png",
+      "source_size_bytes": 1680338,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-138.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-138.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 78264,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-138.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-138.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40460,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 139,
+      "source_filename": "frame_142.png",
+      "source_size_bytes": 1687562,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-139.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-139.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 75744,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-139.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-139.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39664,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 140,
+      "source_filename": "frame_143.png",
+      "source_size_bytes": 1685146,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-140.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-140.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 75426,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-140.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-140.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39714,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 141,
+      "source_filename": "frame_144.png",
+      "source_size_bytes": 1682317,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-141.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-141.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 75648,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-141.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-141.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39370,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 142,
+      "source_filename": "frame_145.png",
+      "source_size_bytes": 1674022,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-142.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-142.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 77796,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-142.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-142.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39578,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 143,
+      "source_filename": "frame_146.png",
+      "source_size_bytes": 1680788,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-143.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-143.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 75468,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-143.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-143.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39306,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 144,
+      "source_filename": "frame_147.png",
+      "source_size_bytes": 1683043,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-144.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-144.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 75586,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-144.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-144.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 39392,
+        "quality": 80
+      }
+    },
+    {
+      "sequence_index": 145,
+      "source_filename": "frame_148.png",
+      "source_size_bytes": 1682413,
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "desktop": {
+        "filename": "frame-145.webp",
+        "relative_path": "assets/birthday-cake/desktop/frame-145.webp",
+        "width": 1920,
+        "height": 1080,
+        "size_bytes": 75560,
+        "quality": 85
+      },
+      "mobile": {
+        "filename": "frame-145.webp",
+        "relative_path": "assets/birthday-cake/mobile/frame-145.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 40280,
+        "quality": 80
+      }
+    }
+  ]
+}

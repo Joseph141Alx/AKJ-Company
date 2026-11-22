@@ -1,0 +1,132 @@
+[
+  {
+    "slug": "bedsheet-suite-wide",
+    "src_name": "Bed Sheet One (1).png",
+    "dimensions": [
+      394,
+      477
+    ],
+    "webp": "assets/stitching/bedsheet-suite-wide.webp",
+    "thumb": "assets/stitching/bedsheet-suite-wide-thumb.webp",
+    "orig_size_kb": 220.0,
+    "webp_size_kb": 25.0,
+    "thumb_size_kb": 20.4
+  },
+  {
+    "slug": "bedsheet-detail-tie",
+    "src_name": "Bed Sheet One (2).png",
+    "dimensions": [
+      392,
+      524
+    ],
+    "webp": "assets/stitching/bedsheet-detail-tie.webp",
+    "thumb": "assets/stitching/bedsheet-detail-tie-thumb.webp",
+    "orig_size_kb": 267.0,
+    "webp_size_kb": 25.7,
+    "thumb_size_kb": 20.1
+  },
+  {
+    "slug": "cushion-crimson-brocade",
+    "src_name": "Small Pillow  (1).jpg",
+    "dimensions": [
+      1076,
+      1076
+    ],
+    "webp": "assets/stitching/cushion-crimson-brocade.webp",
+    "thumb": "assets/stitching/cushion-crimson-brocade-thumb.webp",
+    "orig_size_kb": 303.8,
+    "webp_size_kb": 131.1,
+    "thumb_size_kb": 46.1
+  },
+  {
+    "slug": "cushion-horizontal-kasavu",
+    "src_name": "Small Pillow  (2).jpg",
+    "dimensions": [
+      1023,
+      1043
+    ],
+    "webp": "assets/stitching/cushion-horizontal-kasavu.webp",
+    "thumb": "assets/stitching/cushion-horizontal-kasavu-thumb.webp",
+    "orig_size_kb": 190.5,
+    "webp_size_kb": 67.1,
+    "thumb_size_kb": 24.8
+  },
+  {
+    "slug": "cushion-mayilpeeli-embroidery",
+    "src_name": "Small Pillow  (3).jpg",
+    "dimensions": [
+      1018,
+      1035
+    ],
+    "webp": "assets/stitching/cushion-mayilpeeli-embroidery.webp",
+    "thumb": "assets/stitching/cushion-mayilpeeli-embroidery-thumb.webp",
+    "orig_size_kb": 212.8,
+    "webp_size_kb": 86.4,
+    "thumb_size_kb": 32.4
+  },
+  {
+    "slug": "cushion-royal-kasavu-band",
+    "src_name": "Small Pillow  (4).jpg",
+    "dimensions": [
+      1002,
+      997
+    ],
+    "webp": "assets/stitching/cushion-royal-kasavu-band.webp",
+    "thumb": "assets/stitching/cushion-royal-kasavu-band-thumb.webp",
+    "orig_size_kb": 252.8,
+    "webp_size_kb": 110.5,
+    "thumb_size_kb": 46.0
+  },
+  {
+    "slug": "cushion-scalloped-lace-diptych",
+    "src_name": "Small Pillow  (5).jpg",
+    "dimensions": [
+      1036,
+      1054
+    ],
+    "webp": "assets/stitching/cushion-scalloped-lace-diptych.webp",
+    "thumb": "assets/stitching/cushion-scalloped-lace-diptych-thumb.webp",
+    "orig_size_kb": 268.7,
+    "webp_size_kb": 120.9,
+    "thumb_size_kb": 46.3
+  },
+  {
+    "slug": "cushion-saffron-raw-silk",
+    "src_name": "Small Pillow  (6).jpg",
+    "dimensions": [
+      1080,
+      1115
+    ],
+    "webp": "assets/stitching/cushion-saffron-raw-silk.webp",
+    "thumb": "assets/stitching/cushion-saffron-raw-silk-thumb.webp",
+    "orig_size_kb": 297.4,
+    "webp_size_kb": 133.9,
+    "thumb_size_kb": 44.6
+  },
+  {
+    "slug": "cushion-vertical-chevron-kasavu",
+    "src_name": "Small Pillow  (7).jpg",
+    "dimensions": [
+      1080,
+      1073
+    ],
+    "webp": "assets/stitching/cushion-vertical-chevron-kasavu.webp",
+    "thumb": "assets/stitching/cushion-vertical-chevron-kasavu-thumb.webp",
+    "orig_size_kb": 232.2,
+    "webp_size_kb": 84.7,
+    "thumb_size_kb": 31.3
+  },
+  {
+    "slug": "sofa-curated-living",
+    "src_name": "Sofa.jpg",
+    "dimensions": [
+      531,
+      532
+    ],
+    "webp": "assets/stitching/sofa-curated-living.webp",
+    "thumb": "assets/stitching/sofa-curated-living-thumb.webp",
+    "orig_size_kb": 49.9,
+    "webp_size_kb": 41.3,
+    "thumb_size_kb": 32.7
+  }
+]

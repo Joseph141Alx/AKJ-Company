@@ -1,0 +1,2193 @@
+{
+  "total_frames": 136,
+  "source_resolution": [
+    1920,
+    1080
+  ],
+  "desktop_resolution": [
+    1920,
+    1080
+  ],
+  "mobile_resolution": [
+    1280,
+    720
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "frame_number": 1,
+      "desktop": {
+        "file": "frame-001.webp",
+        "bytes": 38358,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-001.webp",
+        "bytes": 18762,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 1,
+      "frame_number": 2,
+      "desktop": {
+        "file": "frame-002.webp",
+        "bytes": 38192,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-002.webp",
+        "bytes": 18890,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 2,
+      "frame_number": 3,
+      "desktop": {
+        "file": "frame-003.webp",
+        "bytes": 38566,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-003.webp",
+        "bytes": 18950,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 3,
+      "frame_number": 4,
+      "desktop": {
+        "file": "frame-004.webp",
+        "bytes": 38730,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-004.webp",
+        "bytes": 18974,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 4,
+      "frame_number": 5,
+      "desktop": {
+        "file": "frame-005.webp",
+        "bytes": 39034,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-005.webp",
+        "bytes": 19144,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 5,
+      "frame_number": 6,
+      "desktop": {
+        "file": "frame-006.webp",
+        "bytes": 38902,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-006.webp",
+        "bytes": 19126,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 6,
+      "frame_number": 7,
+      "desktop": {
+        "file": "frame-007.webp",
+        "bytes": 38978,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-007.webp",
+        "bytes": 19254,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 7,
+      "frame_number": 8,
+      "desktop": {
+        "file": "frame-008.webp",
+        "bytes": 39206,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-008.webp",
+        "bytes": 19432,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 8,
+      "frame_number": 9,
+      "desktop": {
+        "file": "frame-009.webp",
+        "bytes": 39198,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-009.webp",
+        "bytes": 19340,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 9,
+      "frame_number": 10,
+      "desktop": {
+        "file": "frame-010.webp",
+        "bytes": 39178,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-010.webp",
+        "bytes": 19100,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 10,
+      "frame_number": 11,
+      "desktop": {
+        "file": "frame-011.webp",
+        "bytes": 38966,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-011.webp",
+        "bytes": 19254,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 11,
+      "frame_number": 12,
+      "desktop": {
+        "file": "frame-012.webp",
+        "bytes": 38814,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-012.webp",
+        "bytes": 19054,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 12,
+      "frame_number": 13,
+      "desktop": {
+        "file": "frame-013.webp",
+        "bytes": 38750,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-013.webp",
+        "bytes": 19166,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 13,
+      "frame_number": 14,
+      "desktop": {
+        "file": "frame-014.webp",
+        "bytes": 38572,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-014.webp",
+        "bytes": 18846,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 14,
+      "frame_number": 15,
+      "desktop": {
+        "file": "frame-015.webp",
+        "bytes": 38690,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-015.webp",
+        "bytes": 19194,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 15,
+      "frame_number": 16,
+      "desktop": {
+        "file": "frame-016.webp",
+        "bytes": 38534,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-016.webp",
+        "bytes": 19072,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 16,
+      "frame_number": 17,
+      "desktop": {
+        "file": "frame-017.webp",
+        "bytes": 39050,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-017.webp",
+        "bytes": 19006,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 17,
+      "frame_number": 18,
+      "desktop": {
+        "file": "frame-018.webp",
+        "bytes": 38506,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-018.webp",
+        "bytes": 18996,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 18,
+      "frame_number": 19,
+      "desktop": {
+        "file": "frame-019.webp",
+        "bytes": 38816,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-019.webp",
+        "bytes": 18936,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 19,
+      "frame_number": 20,
+      "desktop": {
+        "file": "frame-020.webp",
+        "bytes": 38546,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-020.webp",
+        "bytes": 19082,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 20,
+      "frame_number": 21,
+      "desktop": {
+        "file": "frame-021.webp",
+        "bytes": 39778,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-021.webp",
+        "bytes": 19446,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 21,
+      "frame_number": 22,
+      "desktop": {
+        "file": "frame-022.webp",
+        "bytes": 39428,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-022.webp",
+        "bytes": 19234,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 22,
+      "frame_number": 23,
+      "desktop": {
+        "file": "frame-023.webp",
+        "bytes": 39470,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-023.webp",
+        "bytes": 19420,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 23,
+      "frame_number": 24,
+      "desktop": {
+        "file": "frame-024.webp",
+        "bytes": 39596,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-024.webp",
+        "bytes": 19394,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 24,
+      "frame_number": 25,
+      "desktop": {
+        "file": "frame-025.webp",
+        "bytes": 39950,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-025.webp",
+        "bytes": 19550,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 25,
+      "frame_number": 26,
+      "desktop": {
+        "file": "frame-026.webp",
+        "bytes": 39080,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-026.webp",
+        "bytes": 19328,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 26,
+      "frame_number": 27,
+      "desktop": {
+        "file": "frame-027.webp",
+        "bytes": 39384,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-027.webp",
+        "bytes": 19204,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 27,
+      "frame_number": 28,
+      "desktop": {
+        "file": "frame-028.webp",
+        "bytes": 38892,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-028.webp",
+        "bytes": 19184,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 28,
+      "frame_number": 29,
+      "desktop": {
+        "file": "frame-029.webp",
+        "bytes": 39538,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-029.webp",
+        "bytes": 19224,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 29,
+      "frame_number": 30,
+      "desktop": {
+        "file": "frame-030.webp",
+        "bytes": 38906,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-030.webp",
+        "bytes": 19236,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 30,
+      "frame_number": 31,
+      "desktop": {
+        "file": "frame-031.webp",
+        "bytes": 39402,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-031.webp",
+        "bytes": 19300,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 31,
+      "frame_number": 32,
+      "desktop": {
+        "file": "frame-032.webp",
+        "bytes": 39030,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-032.webp",
+        "bytes": 19246,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 32,
+      "frame_number": 33,
+      "desktop": {
+        "file": "frame-033.webp",
+        "bytes": 39444,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-033.webp",
+        "bytes": 19170,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 33,
+      "frame_number": 34,
+      "desktop": {
+        "file": "frame-034.webp",
+        "bytes": 38916,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-034.webp",
+        "bytes": 19214,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 34,
+      "frame_number": 35,
+      "desktop": {
+        "file": "frame-035.webp",
+        "bytes": 39182,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-035.webp",
+        "bytes": 19048,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 35,
+      "frame_number": 36,
+      "desktop": {
+        "file": "frame-036.webp",
+        "bytes": 38828,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-036.webp",
+        "bytes": 19060,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 36,
+      "frame_number": 37,
+      "desktop": {
+        "file": "frame-037.webp",
+        "bytes": 39384,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-037.webp",
+        "bytes": 19238,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 37,
+      "frame_number": 38,
+      "desktop": {
+        "file": "frame-038.webp",
+        "bytes": 38756,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-038.webp",
+        "bytes": 19188,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 38,
+      "frame_number": 39,
+      "desktop": {
+        "file": "frame-039.webp",
+        "bytes": 39168,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-039.webp",
+        "bytes": 18918,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 39,
+      "frame_number": 40,
+      "desktop": {
+        "file": "frame-040.webp",
+        "bytes": 39040,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-040.webp",
+        "bytes": 19026,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 40,
+      "frame_number": 41,
+      "desktop": {
+        "file": "frame-041.webp",
+        "bytes": 39448,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-041.webp",
+        "bytes": 19220,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 41,
+      "frame_number": 42,
+      "desktop": {
+        "file": "frame-042.webp",
+        "bytes": 38608,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-042.webp",
+        "bytes": 18956,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 42,
+      "frame_number": 43,
+      "desktop": {
+        "file": "frame-043.webp",
+        "bytes": 39134,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-043.webp",
+        "bytes": 18776,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 43,
+      "frame_number": 44,
+      "desktop": {
+        "file": "frame-044.webp",
+        "bytes": 38306,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-044.webp",
+        "bytes": 18708,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 44,
+      "frame_number": 45,
+      "desktop": {
+        "file": "frame-045.webp",
+        "bytes": 38380,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-045.webp",
+        "bytes": 18870,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 45,
+      "frame_number": 46,
+      "desktop": {
+        "file": "frame-046.webp",
+        "bytes": 38086,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-046.webp",
+        "bytes": 18978,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 46,
+      "frame_number": 47,
+      "desktop": {
+        "file": "frame-047.webp",
+        "bytes": 38486,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-047.webp",
+        "bytes": 18764,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 47,
+      "frame_number": 48,
+      "desktop": {
+        "file": "frame-048.webp",
+        "bytes": 38440,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-048.webp",
+        "bytes": 18674,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 48,
+      "frame_number": 49,
+      "desktop": {
+        "file": "frame-049.webp",
+        "bytes": 39354,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-049.webp",
+        "bytes": 19158,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 49,
+      "frame_number": 50,
+      "desktop": {
+        "file": "frame-050.webp",
+        "bytes": 38304,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-050.webp",
+        "bytes": 18728,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 50,
+      "frame_number": 51,
+      "desktop": {
+        "file": "frame-051.webp",
+        "bytes": 38772,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-051.webp",
+        "bytes": 18700,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 51,
+      "frame_number": 52,
+      "desktop": {
+        "file": "frame-052.webp",
+        "bytes": 38498,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-052.webp",
+        "bytes": 18784,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 52,
+      "frame_number": 53,
+      "desktop": {
+        "file": "frame-053.webp",
+        "bytes": 39638,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-053.webp",
+        "bytes": 18884,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 53,
+      "frame_number": 54,
+      "desktop": {
+        "file": "frame-054.webp",
+        "bytes": 38586,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-054.webp",
+        "bytes": 18702,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 54,
+      "frame_number": 55,
+      "desktop": {
+        "file": "frame-055.webp",
+        "bytes": 38694,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-055.webp",
+        "bytes": 18750,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 55,
+      "frame_number": 56,
+      "desktop": {
+        "file": "frame-056.webp",
+        "bytes": 38226,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-056.webp",
+        "bytes": 18386,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 56,
+      "frame_number": 57,
+      "desktop": {
+        "file": "frame-057.webp",
+        "bytes": 38922,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-057.webp",
+        "bytes": 18726,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 57,
+      "frame_number": 58,
+      "desktop": {
+        "file": "frame-058.webp",
+        "bytes": 38044,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-058.webp",
+        "bytes": 18390,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 58,
+      "frame_number": 59,
+      "desktop": {
+        "file": "frame-059.webp",
+        "bytes": 38546,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-059.webp",
+        "bytes": 18604,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 59,
+      "frame_number": 60,
+      "desktop": {
+        "file": "frame-060.webp",
+        "bytes": 38234,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-060.webp",
+        "bytes": 18512,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 60,
+      "frame_number": 61,
+      "desktop": {
+        "file": "frame-061.webp",
+        "bytes": 38090,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-061.webp",
+        "bytes": 18564,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 61,
+      "frame_number": 62,
+      "desktop": {
+        "file": "frame-062.webp",
+        "bytes": 38632,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-062.webp",
+        "bytes": 18588,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 62,
+      "frame_number": 63,
+      "desktop": {
+        "file": "frame-063.webp",
+        "bytes": 39006,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-063.webp",
+        "bytes": 18584,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 63,
+      "frame_number": 64,
+      "desktop": {
+        "file": "frame-064.webp",
+        "bytes": 38972,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-064.webp",
+        "bytes": 18638,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 64,
+      "frame_number": 65,
+      "desktop": {
+        "file": "frame-065.webp",
+        "bytes": 40540,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-065.webp",
+        "bytes": 19320,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 65,
+      "frame_number": 66,
+      "desktop": {
+        "file": "frame-066.webp",
+        "bytes": 40504,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-066.webp",
+        "bytes": 19484,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 66,
+      "frame_number": 67,
+      "desktop": {
+        "file": "frame-067.webp",
+        "bytes": 40866,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-067.webp",
+        "bytes": 19608,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 67,
+      "frame_number": 68,
+      "desktop": {
+        "file": "frame-068.webp",
+        "bytes": 40874,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-068.webp",
+        "bytes": 19564,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 68,
+      "frame_number": 69,
+      "desktop": {
+        "file": "frame-069.webp",
+        "bytes": 40678,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-069.webp",
+        "bytes": 19740,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 69,
+      "frame_number": 70,
+      "desktop": {
+        "file": "frame-070.webp",
+        "bytes": 40572,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-070.webp",
+        "bytes": 19444,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 70,
+      "frame_number": 71,
+      "desktop": {
+        "file": "frame-071.webp",
+        "bytes": 40658,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-071.webp",
+        "bytes": 19540,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 71,
+      "frame_number": 72,
+      "desktop": {
+        "file": "frame-072.webp",
+        "bytes": 39246,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-072.webp",
+        "bytes": 19254,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 72,
+      "frame_number": 73,
+      "desktop": {
+        "file": "frame-073.webp",
+        "bytes": 40222,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-073.webp",
+        "bytes": 19498,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 73,
+      "frame_number": 74,
+      "desktop": {
+        "file": "frame-074.webp",
+        "bytes": 39048,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-074.webp",
+        "bytes": 19160,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 74,
+      "frame_number": 75,
+      "desktop": {
+        "file": "frame-075.webp",
+        "bytes": 39350,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-075.webp",
+        "bytes": 19436,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 75,
+      "frame_number": 76,
+      "desktop": {
+        "file": "frame-076.webp",
+        "bytes": 39600,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-076.webp",
+        "bytes": 19366,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 76,
+      "frame_number": 77,
+      "desktop": {
+        "file": "frame-077.webp",
+        "bytes": 42110,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-077.webp",
+        "bytes": 20098,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 77,
+      "frame_number": 78,
+      "desktop": {
+        "file": "frame-078.webp",
+        "bytes": 40054,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-078.webp",
+        "bytes": 19894,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 78,
+      "frame_number": 79,
+      "desktop": {
+        "file": "frame-079.webp",
+        "bytes": 41132,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-079.webp",
+        "bytes": 19976,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 79,
+      "frame_number": 80,
+      "desktop": {
+        "file": "frame-080.webp",
+        "bytes": 40694,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-080.webp",
+        "bytes": 19982,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 80,
+      "frame_number": 81,
+      "desktop": {
+        "file": "frame-081.webp",
+        "bytes": 42758,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-081.webp",
+        "bytes": 20330,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 81,
+      "frame_number": 82,
+      "desktop": {
+        "file": "frame-082.webp",
+        "bytes": 41430,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-082.webp",
+        "bytes": 20534,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 82,
+      "frame_number": 83,
+      "desktop": {
+        "file": "frame-083.webp",
+        "bytes": 43248,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-083.webp",
+        "bytes": 20502,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 83,
+      "frame_number": 84,
+      "desktop": {
+        "file": "frame-084.webp",
+        "bytes": 43142,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-084.webp",
+        "bytes": 20810,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 84,
+      "frame_number": 85,
+      "desktop": {
+        "file": "frame-085.webp",
+        "bytes": 45400,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-085.webp",
+        "bytes": 21278,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 85,
+      "frame_number": 86,
+      "desktop": {
+        "file": "frame-086.webp",
+        "bytes": 43878,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-086.webp",
+        "bytes": 21046,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 86,
+      "frame_number": 87,
+      "desktop": {
+        "file": "frame-087.webp",
+        "bytes": 43906,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-087.webp",
+        "bytes": 21106,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 87,
+      "frame_number": 88,
+      "desktop": {
+        "file": "frame-088.webp",
+        "bytes": 44016,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-088.webp",
+        "bytes": 21322,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 88,
+      "frame_number": 89,
+      "desktop": {
+        "file": "frame-089.webp",
+        "bytes": 44688,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-089.webp",
+        "bytes": 21430,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 89,
+      "frame_number": 90,
+      "desktop": {
+        "file": "frame-090.webp",
+        "bytes": 43400,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-090.webp",
+        "bytes": 21424,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 90,
+      "frame_number": 91,
+      "desktop": {
+        "file": "frame-091.webp",
+        "bytes": 45318,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-091.webp",
+        "bytes": 21352,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 91,
+      "frame_number": 92,
+      "desktop": {
+        "file": "frame-092.webp",
+        "bytes": 45284,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-092.webp",
+        "bytes": 21430,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 92,
+      "frame_number": 93,
+      "desktop": {
+        "file": "frame-093.webp",
+        "bytes": 46926,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-093.webp",
+        "bytes": 22130,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 93,
+      "frame_number": 94,
+      "desktop": {
+        "file": "frame-094.webp",
+        "bytes": 45706,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-094.webp",
+        "bytes": 21502,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 94,
+      "frame_number": 95,
+      "desktop": {
+        "file": "frame-095.webp",
+        "bytes": 46178,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-095.webp",
+        "bytes": 21778,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 95,
+      "frame_number": 96,
+      "desktop": {
+        "file": "frame-096.webp",
+        "bytes": 45814,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-096.webp",
+        "bytes": 21868,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 96,
+      "frame_number": 97,
+      "desktop": {
+        "file": "frame-097.webp",
+        "bytes": 47564,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-097.webp",
+        "bytes": 21982,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 97,
+      "frame_number": 98,
+      "desktop": {
+        "file": "frame-098.webp",
+        "bytes": 46260,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-098.webp",
+        "bytes": 21868,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 98,
+      "frame_number": 99,
+      "desktop": {
+        "file": "frame-099.webp",
+        "bytes": 47028,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-099.webp",
+        "bytes": 22146,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 99,
+      "frame_number": 100,
+      "desktop": {
+        "file": "frame-100.webp",
+        "bytes": 47082,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-100.webp",
+        "bytes": 22460,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 100,
+      "frame_number": 101,
+      "desktop": {
+        "file": "frame-101.webp",
+        "bytes": 48570,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-101.webp",
+        "bytes": 22884,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 101,
+      "frame_number": 102,
+      "desktop": {
+        "file": "frame-102.webp",
+        "bytes": 47026,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-102.webp",
+        "bytes": 22586,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 102,
+      "frame_number": 103,
+      "desktop": {
+        "file": "frame-103.webp",
+        "bytes": 48178,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-103.webp",
+        "bytes": 22480,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 103,
+      "frame_number": 104,
+      "desktop": {
+        "file": "frame-104.webp",
+        "bytes": 47264,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-104.webp",
+        "bytes": 22394,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 104,
+      "frame_number": 105,
+      "desktop": {
+        "file": "frame-105.webp",
+        "bytes": 48970,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-105.webp",
+        "bytes": 22776,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 105,
+      "frame_number": 106,
+      "desktop": {
+        "file": "frame-106.webp",
+        "bytes": 47538,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-106.webp",
+        "bytes": 22614,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 106,
+      "frame_number": 107,
+      "desktop": {
+        "file": "frame-107.webp",
+        "bytes": 47936,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-107.webp",
+        "bytes": 22738,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 107,
+      "frame_number": 108,
+      "desktop": {
+        "file": "frame-108.webp",
+        "bytes": 48084,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-108.webp",
+        "bytes": 23148,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 108,
+      "frame_number": 109,
+      "desktop": {
+        "file": "frame-109.webp",
+        "bytes": 49690,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-109.webp",
+        "bytes": 23360,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 109,
+      "frame_number": 110,
+      "desktop": {
+        "file": "frame-110.webp",
+        "bytes": 47820,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-110.webp",
+        "bytes": 23172,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 110,
+      "frame_number": 111,
+      "desktop": {
+        "file": "frame-111.webp",
+        "bytes": 47908,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-111.webp",
+        "bytes": 23008,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 111,
+      "frame_number": 112,
+      "desktop": {
+        "file": "frame-112.webp",
+        "bytes": 47380,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-112.webp",
+        "bytes": 22924,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 112,
+      "frame_number": 113,
+      "desktop": {
+        "file": "frame-113.webp",
+        "bytes": 47932,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-113.webp",
+        "bytes": 22992,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 113,
+      "frame_number": 114,
+      "desktop": {
+        "file": "frame-114.webp",
+        "bytes": 46402,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-114.webp",
+        "bytes": 22636,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 114,
+      "frame_number": 115,
+      "desktop": {
+        "file": "frame-115.webp",
+        "bytes": 46956,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-115.webp",
+        "bytes": 22212,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 115,
+      "frame_number": 116,
+      "desktop": {
+        "file": "frame-116.webp",
+        "bytes": 46768,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-116.webp",
+        "bytes": 22112,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 116,
+      "frame_number": 117,
+      "desktop": {
+        "file": "frame-117.webp",
+        "bytes": 47694,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-117.webp",
+        "bytes": 22306,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 117,
+      "frame_number": 118,
+      "desktop": {
+        "file": "frame-118.webp",
+        "bytes": 45208,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-118.webp",
+        "bytes": 21974,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 118,
+      "frame_number": 119,
+      "desktop": {
+        "file": "frame-119.webp",
+        "bytes": 44876,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-119.webp",
+        "bytes": 21576,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 119,
+      "frame_number": 120,
+      "desktop": {
+        "file": "frame-120.webp",
+        "bytes": 44032,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-120.webp",
+        "bytes": 21814,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 120,
+      "frame_number": 121,
+      "desktop": {
+        "file": "frame-121.webp",
+        "bytes": 45740,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-121.webp",
+        "bytes": 21772,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 121,
+      "frame_number": 122,
+      "desktop": {
+        "file": "frame-122.webp",
+        "bytes": 44340,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-122.webp",
+        "bytes": 21450,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 122,
+      "frame_number": 123,
+      "desktop": {
+        "file": "frame-123.webp",
+        "bytes": 46522,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-123.webp",
+        "bytes": 21570,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 123,
+      "frame_number": 124,
+      "desktop": {
+        "file": "frame-124.webp",
+        "bytes": 46614,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-124.webp",
+        "bytes": 22232,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 124,
+      "frame_number": 125,
+      "desktop": {
+        "file": "frame-125.webp",
+        "bytes": 47888,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-125.webp",
+        "bytes": 22420,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 125,
+      "frame_number": 126,
+      "desktop": {
+        "file": "frame-126.webp",
+        "bytes": 45528,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-126.webp",
+        "bytes": 22168,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 126,
+      "frame_number": 127,
+      "desktop": {
+        "file": "frame-127.webp",
+        "bytes": 47720,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-127.webp",
+        "bytes": 22050,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 127,
+      "frame_number": 128,
+      "desktop": {
+        "file": "frame-128.webp",
+        "bytes": 46712,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-128.webp",
+        "bytes": 21738,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 128,
+      "frame_number": 129,
+      "desktop": {
+        "file": "frame-129.webp",
+        "bytes": 48964,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-129.webp",
+        "bytes": 23106,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 129,
+      "frame_number": 130,
+      "desktop": {
+        "file": "frame-130.webp",
+        "bytes": 47446,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-130.webp",
+        "bytes": 22532,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 130,
+      "frame_number": 131,
+      "desktop": {
+        "file": "frame-131.webp",
+        "bytes": 48328,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-131.webp",
+        "bytes": 22836,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 131,
+      "frame_number": 132,
+      "desktop": {
+        "file": "frame-132.webp",
+        "bytes": 47298,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-132.webp",
+        "bytes": 22898,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 132,
+      "frame_number": 133,
+      "desktop": {
+        "file": "frame-133.webp",
+        "bytes": 47810,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-133.webp",
+        "bytes": 23142,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 133,
+      "frame_number": 134,
+      "desktop": {
+        "file": "frame-134.webp",
+        "bytes": 46762,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-134.webp",
+        "bytes": 22952,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 134,
+      "frame_number": 135,
+      "desktop": {
+        "file": "frame-135.webp",
+        "bytes": 46564,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-135.webp",
+        "bytes": 22972,
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "index": 135,
+      "frame_number": 136,
+      "desktop": {
+        "file": "frame-136.webp",
+        "bytes": 46680,
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
+        "file": "frame-136.webp",
+        "bytes": 22782,
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ]
+}

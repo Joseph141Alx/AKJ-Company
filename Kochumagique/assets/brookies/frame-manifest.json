@@ -1,0 +1,531 @@
+{
+  "project": "KOCHUMAGIQUE",
+  "asset_name": "Brookies Cinematic Sequence",
+  "version": "1.0.0",
+  "frame_count": 16,
+  "contact_sheet": "assets/brookies/contact-sheet.jpg",
+  "summary": {
+    "original_total_bytes": 408183754,
+    "original_total_mb": 389.27,
+    "desktop_total_bytes": 1227678,
+    "desktop_total_mb": 1.17,
+    "desktop_total_reduction_pct": 99.7,
+    "mobile_total_bytes": 417834,
+    "mobile_total_mb": 0.4,
+    "mobile_total_reduction_pct": 99.9
+  },
+  "frames": [
+    {
+      "frame_index": 1,
+      "original_filename": "ezgif-frame-001.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-001.png",
+      "original_size_bytes": 2316235,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-001.webp",
+        "relative_path": "assets/brookies/desktop/frame-001.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 10152,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.56
+      },
+      "mobile": {
+        "filename": "frame-001.webp",
+        "relative_path": "assets/brookies/mobile/frame-001.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 2592,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.89
+      },
+      "visual_notes": "Opening keyframe: Pure darkness / black void. Subtle ambient baseline."
+    },
+    {
+      "frame_index": 2,
+      "original_filename": "ezgif-frame-002.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-002.png",
+      "original_size_bytes": 4810554,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-002.webp",
+        "relative_path": "assets/brookies/desktop/frame-002.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 11680,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.76
+      },
+      "mobile": {
+        "filename": "frame-002.webp",
+        "relative_path": "assets/brookies/mobile/frame-002.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 3156,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.93
+      },
+      "visual_notes": "Dark silhouette emerges: Very faint outline of the brookie stack against shadow."
+    },
+    {
+      "frame_index": 3,
+      "original_filename": "ezgif-frame-003.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-003.png",
+      "original_size_bytes": 15790583,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-003.webp",
+        "relative_path": "assets/brookies/desktop/frame-003.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 25256,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.84
+      },
+      "mobile": {
+        "filename": "frame-003.webp",
+        "relative_path": "assets/brookies/mobile/frame-003.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 8038,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.95
+      },
+      "visual_notes": "Emerging rim-light: Subtle warm illumination grazes the top cookie crust. Micro-crumbs appear."
+    },
+    {
+      "frame_index": 4,
+      "original_filename": "ezgif-frame-004.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-004.png",
+      "original_size_bytes": 22056249,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-004.webp",
+        "relative_path": "assets/brookies/desktop/frame-004.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 41738,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.81
+      },
+      "mobile": {
+        "filename": "frame-004.webp",
+        "relative_path": "assets/brookies/mobile/frame-004.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 14198,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.94
+      },
+      "visual_notes": "Texture revelation: Highlights appear across the cookie cracks. Ambient golden particles drift."
+    },
+    {
+      "frame_index": 5,
+      "original_filename": "ezgif-frame-005.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-005.png",
+      "original_size_bytes": 24677007,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-005.webp",
+        "relative_path": "assets/brookies/desktop/frame-005.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 55022,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.78
+      },
+      "mobile": {
+        "filename": "frame-005.webp",
+        "relative_path": "assets/brookies/mobile/frame-005.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 19460,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.92
+      },
+      "visual_notes": "Crust definition: Warm studio key light brightens the brookie stack; bite marks visible on top layer."
+    },
+    {
+      "frame_index": 6,
+      "original_filename": "ezgif-frame-006.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-006.png",
+      "original_size_bytes": 26549017,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-006.webp",
+        "relative_path": "assets/brookies/desktop/frame-006.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 66738,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.75
+      },
+      "mobile": {
+        "filename": "frame-006.webp",
+        "relative_path": "assets/brookies/mobile/frame-006.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 24302,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.91
+      },
+      "visual_notes": "Mid-light progression: Golden cookie top and deep dark brownie crumb achieve balanced contrast."
+    },
+    {
+      "frame_index": 7,
+      "original_filename": "ezgif-frame-007.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-007.png",
+      "original_size_bytes": 28285492,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-007.webp",
+        "relative_path": "assets/brookies/desktop/frame-007.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 77020,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.73
+      },
+      "mobile": {
+        "filename": "frame-007.webp",
+        "relative_path": "assets/brookies/mobile/frame-007.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 27778,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.9
+      },
+      "visual_notes": "Key illumination: Warm golden highlights intensify across all three stacked brookie tiers."
+    },
+    {
+      "frame_index": 8,
+      "original_filename": "ezgif-frame-008.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-008.png",
+      "original_size_bytes": 29761730,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-008.webp",
+        "relative_path": "assets/brookies/desktop/frame-008.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 88612,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.7
+      },
+      "mobile": {
+        "filename": "frame-008.webp",
+        "relative_path": "assets/brookies/mobile/frame-008.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 31670,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.89
+      },
+      "visual_notes": "Macro particulate drift: Golden crumbs and chocolate flecks drift weightlessly across the frame."
+    },
+    {
+      "frame_index": 9,
+      "original_filename": "ezgif-frame-009.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-009.png",
+      "original_size_bytes": 30827454,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-009.webp",
+        "relative_path": "assets/brookies/desktop/frame-009.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 95122,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.69
+      },
+      "mobile": {
+        "filename": "frame-009.webp",
+        "relative_path": "assets/brookies/mobile/frame-009.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 34062,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.89
+      },
+      "visual_notes": "Contrast peak: Heroic macro focus; rich golden cookie hue and deep fudgy chocolate core established."
+    },
+    {
+      "frame_index": 10,
+      "original_filename": "ezgif-frame-010.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-010.png",
+      "original_size_bytes": 31255880,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-010.webp",
+        "relative_path": "assets/brookies/desktop/frame-010.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 99934,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.68
+      },
+      "mobile": {
+        "filename": "frame-010.webp",
+        "relative_path": "assets/brookies/mobile/frame-010.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 35650,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.89
+      },
+      "visual_notes": "Peak radiance: Brightest illumination frame. The moist bite mark and chocolate chips glow warmly."
+    },
+    {
+      "frame_index": 11,
+      "original_filename": "ezgif-frame-011.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-011.png",
+      "original_size_bytes": 31623963,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-011.webp",
+        "relative_path": "assets/brookies/desktop/frame-011.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 102252,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.68
+      },
+      "mobile": {
+        "filename": "frame-011.webp",
+        "relative_path": "assets/brookies/mobile/frame-011.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 35942,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.89
+      },
+      "visual_notes": "Atmospheric depth: Studio background resolves into deep muted forest teal (#192825 / #233a35)."
+    },
+    {
+      "frame_index": 12,
+      "original_filename": "ezgif-frame-012.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-012.png",
+      "original_size_bytes": 31880411,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-012.webp",
+        "relative_path": "assets/brookies/desktop/frame-012.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 107712,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.66
+      },
+      "mobile": {
+        "filename": "frame-012.webp",
+        "relative_path": "assets/brookies/mobile/frame-012.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 37280,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.88
+      },
+      "visual_notes": "Base illumination: Lower brookie slice and surface texture come into sharp focus."
+    },
+    {
+      "frame_index": 13,
+      "original_filename": "ezgif-frame-013.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-013.png",
+      "original_size_bytes": 32381668,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-013.webp",
+        "relative_path": "assets/brookies/desktop/frame-013.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 113960,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.65
+      },
+      "mobile": {
+        "filename": "frame-013.webp",
+        "relative_path": "assets/brookies/mobile/frame-013.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 36972,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.89
+      },
+      "visual_notes": "Counter scattering: Fallen chocolate chips on the surface become crisp and distinct."
+    },
+    {
+      "frame_index": 14,
+      "original_filename": "ezgif-frame-014.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-014.png",
+      "original_size_bytes": 32303288,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-014.webp",
+        "relative_path": "assets/brookies/desktop/frame-014.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 108230,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.66
+      },
+      "mobile": {
+        "filename": "frame-014.webp",
+        "relative_path": "assets/brookies/mobile/frame-014.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 35412,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.89
+      },
+      "visual_notes": "Camera settling: Micro-particulates begin settling; lighting reaches golden equilibrium."
+    },
+    {
+      "frame_index": 15,
+      "original_filename": "ezgif-frame-015.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-015.png",
+      "original_size_bytes": 31829752,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-015.webp",
+        "relative_path": "assets/brookies/desktop/frame-015.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 111160,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.65
+      },
+      "mobile": {
+        "filename": "frame-015.webp",
+        "relative_path": "assets/brookies/mobile/frame-015.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 35704,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.89
+      },
+      "visual_notes": "Deep resting focus: Brookie stack rests heroically in balanced light."
+    },
+    {
+      "frame_index": 16,
+      "original_filename": "ezgif-frame-016.png",
+      "original_relative_path": "Brookies Frame/ezgif-frame-016.png",
+      "original_size_bytes": 31834471,
+      "original_dimensions": [
+        7680,
+        4320
+      ],
+      "aspect_ratio": "16:9",
+      "desktop": {
+        "filename": "frame-016.webp",
+        "relative_path": "assets/brookies/desktop/frame-016.webp",
+        "width": 2560,
+        "height": 1440,
+        "size_bytes": 113090,
+        "format": "webp",
+        "quality": 85,
+        "reduction_percentage": 99.64
+      },
+      "mobile": {
+        "filename": "frame-016.webp",
+        "relative_path": "assets/brookies/mobile/frame-016.webp",
+        "width": 1280,
+        "height": 720,
+        "size_bytes": 35618,
+        "format": "webp",
+        "quality": 80,
+        "reduction_percentage": 99.89
+      },
+      "visual_notes": "Final resting hero pose: Camera movement resolves into steady resting pose with atmospheric dust."
+    }
+  ]
+}
