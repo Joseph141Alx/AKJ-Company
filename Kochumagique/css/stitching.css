@@ -475,38 +475,3 @@
   box-shadow: 0 8px 24px rgba(197, 160, 89, 0.35);
   transform: translateY(-1px);
 }
-
-/* ==========================================================================
-   Editorial Cushion Collection Grid (Task 3: Balanced 7-Item Grid)
-   Peacock Embroidery hero tile full-width on top, 6 square tiles below
-   ========================================================================== */
-.cushion-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(10px, 1.6vw, 24px);
-}
-
-.cushion-grid > :first-child {
-  grid-column: 1 / -1;
-  aspect-ratio: 4 / 3;
-}
-
-.cushion-grid > :not(:first-child) {
-  aspect-ratio: 1 / 1;
-}
-
-.cushion-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@media (min-width: 768px) {
-  .cushion-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .cushion-grid > :first-child {
-    aspect-ratio: 16 / 9;
-  }
-}

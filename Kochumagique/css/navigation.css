@@ -17,11 +17,11 @@
 }
 
 /* ==========================================================================
-   Desktop Slim Vertical Navigation Rail (Fixed, Stable & Compact for 1024px+)
+   Desktop Slim Vertical Navigation Rail (Fixed, Stable & Compact)
    ========================================================================== */
 .magique-nav {
   position: fixed;
-  left: max(16px, env(safe-area-inset-left, 0px));
+  left: 24px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1000;
@@ -247,23 +247,22 @@
 }
 
 /* ==========================================================================
-   Mobile & Tablet Responsive Navigation (< 1024px): Floating Bottom Dock
-   Includes iPad Portrait (768px, 810px, 820px) & Phones (360px - 430px)
+   Mobile Responsive Navigation (< 768px): Compact Floating Bottom Dock
    ========================================================================== */
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
   .magique-nav {
-    left: 50% !important;
-    top: auto !important;
-    bottom: max(12px, env(safe-area-inset-bottom, 0px)) !important;
-    transform: translateX(-50%) !important;
+    left: 50%;
+    top: auto;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%);
     width: auto;
     max-width: calc(100vw - 32px);
   }
 
   .nav-capsule {
     width: auto !important;
-    height: var(--dock-h, 64px) !important;
-    padding: 0 12px;
+    height: 50px;
+    padding: 0 10px;
     border-radius: 9999px;
     flex-direction: row;
     box-shadow: 
@@ -273,7 +272,7 @@
 
   .nav-list {
     flex-direction: row;
-    gap: 8px;
+    gap: 6px;
     align-items: center;
     justify-content: center;
   }
@@ -284,9 +283,9 @@
   }
 
   .nav-link {
-    height: 48px;
-    width: 48px;
-    min-width: 48px;
+    height: 44px;
+    width: 44px;
+    min-width: 44px;
   }
 
   .nav-icon {
@@ -294,7 +293,7 @@
     height: 20px;
   }
 
-  /* Labels hidden on compact dock */
+  /* Labels hidden on compact mobile dock */
   .nav-label {
     display: none !important;
   }
@@ -316,19 +315,6 @@
     box-shadow: 
       0 12px 30px -6px rgba(0, 0, 0, 0.5),
       inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.75);
-  }
-
-  /* Footer mobile/tablet safe area dock clearance */
-  #footer {
-    padding-bottom: calc(var(--dock-h, 64px) + env(safe-area-inset-bottom, 0px) + 32px) !important;
-  }
-}
-
-/* Content clearance for desktop at 1024px-1280px so fixed left rail never overlaps */
-@media (min-width: 1024px) and (max-width: 1366px) {
-  .editorial-gutter {
-    padding-left: max(72px, calc(var(--nav-rail-w, 48px) + 36px)) !important;
-    padding-right: 72px !important;
   }
 }
 
@@ -354,8 +340,8 @@
    ========================================================================== */
 .goto-portal-pill {
   position: fixed;
-  top: max(12px, env(safe-area-inset-top, 0px));
-  right: max(12px, env(safe-area-inset-right, 0px));
+  top: 28px;
+  right: 28px;
   z-index: 1000;
   display: inline-flex;
   align-items: center;
@@ -371,13 +357,6 @@
   backdrop-filter: blur(24px) saturate(190%) brightness(108%);
   -webkit-backdrop-filter: blur(24px) saturate(190%) brightness(108%);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (min-width: 1024px) {
-  .goto-portal-pill {
-    top: max(20px, env(safe-area-inset-top, 0px));
-    right: max(24px, env(safe-area-inset-right, 0px));
-  }
 }
 
 /* Dark Theme (Default for #home) */
@@ -438,22 +417,11 @@
 
 @media (max-width: 767px) {
   .goto-portal-pill {
-    top: max(12px, env(safe-area-inset-top, 0px));
-    right: max(12px, env(safe-area-inset-right, 0px));
+    top: calc(14px + env(safe-area-inset-top, 0px));
+    right: 14px;
     padding: 6px 12px;
     font-size: 8.5px;
     letter-spacing: 0.18em;
-  }
-}
-
-@media (max-width: 480px) {
-  .goto-portal-pill {
-    top: max(10px, env(safe-area-inset-top, 0px));
-    right: max(10px, env(safe-area-inset-right, 0px));
-    padding: 5px 10px;
-    font-size: 8px;
-    letter-spacing: 0.16em;
-    gap: 5px;
   }
 }
 

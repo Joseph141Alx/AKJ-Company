@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="is-preloading">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.tailwindcss.com; object-src 'none'; base-uri 'self';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kochumagique — Handmade • Heartfelt • Honest</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Google Fonts: Cormorant Garamond, Inter, Pinyon Script & Alex Brush -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,29 +13,17 @@
     href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap"
     rel="stylesheet">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'magique-cream': '#F6F3E9',
-            'magique-green': '#405751',
-            'magique-gold': '#C5A059',
-            'magique-dark': '#162420',
-          },
-          fontFamily: {
-            'sans': ['Inter', 'sans-serif'],
-            'serif': ['Cormorant Garamond', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Component Stylesheets -->
+  <!-- Compiled Tailwind Utilities & Component Stylesheets -->
+  <link rel="stylesheet" href="css/tailwind.min.css">
   <link rel="stylesheet" href="css/cinematic.css">
   <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/stitching.css">
+  <noscript>
+    <style>
+      #preloader { display: none !important; }
+      html.is-preloading, html.is-preloading body { overflow: auto !important; height: auto !important; touch-action: auto !important; }
+    </style>
+  </noscript>
 
   <style>
     body {
@@ -158,7 +141,7 @@
       <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" stroke-linejoin="round"/>
     </svg>
     <div class="preloader-title">Kochumagique</div>
-    <div class="preloader-subtitle">Curating the Experience</div>
+    <div id="preloader-subtitle" class="preloader-subtitle">Loading the Full Experience</div>
     <div class="preloader-track">
       <div id="preloader-bar" class="preloader-bar"></div>
     </div>
@@ -271,7 +254,7 @@
       <!-- Top-Left Brand Element: Compact Horizontal Glass Pill -->
       <a href="#home" id="brand-pill-top" class="brand-pill-top" aria-label="Kochumagique — Return to top">
         <span class="brand-avatar-box">
-          <img src="images/logo6.jpg" alt="Kochumagique Logo" class="brand-avatar-img">
+          <img src="images/logo6-avatar.webp" alt="Kochumagique Logo" class="brand-avatar-img">
         </span>
         <span class="brand-name">Kochumagique</span>
       </a>
@@ -504,7 +487,7 @@
        "The Golden Ascent" 145-Frame Cinematic Canvas Experience
        ========================================================================== -->
   <section id="celebrations" data-nav-section data-theme="light" class="celebrations-scroll-container relative w-full bg-[#F6F3E9]">
-    <div class="celebrations-pinned-viewport relative w-full overflow-hidden flex items-center justify-center">
+    <div class="celebrations-pinned-viewport relative w-full h-screen overflow-hidden flex items-center justify-center">
       <!-- High-Performance Canvas for 145-Frame Birthday Cake Sequence -->
       <canvas id="cake-canvas" class="cake-canvas absolute inset-0 w-full h-full block z-0" aria-label="Bespoke Tiered Brownie Birthday Cake with Golden Ascent camera animation"></canvas>
 
@@ -622,12 +605,12 @@
       <h3 class="font-serif text-3xl md:text-4xl italic font-light text-magique-green">Cushion Collection</h3>
     </div>
 
-    <!-- Cushion Collection Grid (Peacock hero full-width top, 6 square tiles below) -->
-    <div class="cushion-grid">
+    <!-- 3-column grid, Peacock spans 2 rows on desktop -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
 
-      <!-- Peacock Embroidery — Featured Hero Cushion (1st child: full width top) -->
-      <div class="overflow-hidden rounded-xl group cursor-pointer">
-        <div class="relative w-full h-full">
+      <!-- Peacock Embroidery — Featured (spans 2 rows on desktop) -->
+      <div class="col-span-1 md:row-span-2 overflow-hidden rounded-xl group cursor-pointer">
+        <div class="relative h-full" style="min-height: 320px;">
           <img src="assets/stitching/cushion-mayilpeeli-embroidery.webp" alt="Peacock Embroidery Cushion" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <p class="font-sans text-[10px] tracking-[0.2em] uppercase text-white">Peacock Embroidery</p>
@@ -636,49 +619,49 @@
         <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Peacock Embroidery</p>
       </div>
 
-      <!-- 2. Crimson Brocade -->
+      <!-- Row 1, Col 2 -->
       <div class="overflow-hidden rounded-xl group cursor-pointer">
-        <div class="w-full h-full">
+        <div class="aspect-square overflow-hidden">
           <img src="assets/stitching/cushion-crimson-brocade.webp" alt="Crimson Brocade" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
         </div>
         <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Crimson Brocade</p>
       </div>
 
-      <!-- 3. Scalloped Lace Diptych -->
+      <!-- Row 1, Col 3 -->
       <div class="overflow-hidden rounded-xl group cursor-pointer">
-        <div class="w-full h-full">
+        <div class="aspect-square overflow-hidden">
           <img src="assets/stitching/cushion-scalloped-lace-diptych.webp" alt="Scalloped Lace Diptych" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
         </div>
         <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Scalloped Lace Diptych</p>
       </div>
 
-      <!-- 4. Saffron Raw Silk -->
+      <!-- Row 2, Col 2 -->
       <div class="overflow-hidden rounded-xl group cursor-pointer">
-        <div class="w-full h-full">
+        <div class="aspect-square overflow-hidden">
           <img src="assets/stitching/cushion-saffron-raw-silk.webp" alt="Saffron Raw Silk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
         </div>
         <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Saffron Raw Silk</p>
       </div>
 
-      <!-- 5. Royal Kasavu Band -->
+      <!-- Row 2, Col 3 -->
       <div class="overflow-hidden rounded-xl group cursor-pointer">
-        <div class="w-full h-full">
+        <div class="aspect-square overflow-hidden">
           <img src="assets/stitching/cushion-royal-kasavu-band.webp" alt="Royal Kasavu Band" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
         </div>
         <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Royal Kasavu Band</p>
       </div>
 
-      <!-- 6. Horizontal Kasavu -->
+      <!-- Row 3, Col 1 -->
       <div class="overflow-hidden rounded-xl group cursor-pointer">
-        <div class="w-full h-full">
+        <div class="aspect-square overflow-hidden">
           <img src="assets/stitching/cushion-horizontal-kasavu.webp" alt="Horizontal Kasavu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
         </div>
         <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Horizontal Kasavu</p>
       </div>
 
-      <!-- 7. Vertical Chevron Kasavu -->
+      <!-- Row 3, Col 2 -->
       <div class="overflow-hidden rounded-xl group cursor-pointer">
-        <div class="w-full h-full">
+        <div class="aspect-square overflow-hidden">
           <img src="assets/stitching/cushion-vertical-chevron-kasavu.webp" alt="Vertical Chevron Kasavu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
         </div>
         <p class="font-sans text-[11px] tracking-[0.2em] uppercase text-magique-green/70 mt-2 text-center">Vertical Chevron Kasavu</p>
