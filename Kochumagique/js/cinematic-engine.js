@@ -7,8 +7,9 @@
  * Features:
  * - Parallel binary .pack streaming with individual WebP fallback (file://)
  * - Strict full-load entry gate (scroll locked until 100% loaded & ready)
- * - Bounded LRU ImageBitmap cache with pinned resting frames & lookahead decode
- * - Deterministic DOM-order GSAP ScrollTrigger + shared Lenis smooth scroll
+ * - Symmetrical nearest-frame lookup + pinned stride-8 anchors (zero Frame-0 flicker)
+ * - Active-sequence full frame warming + offscreen trimming + directional decode queue
+ * - Synchronous canvas draw inside GSAP ticker + crisp responsive Lenis scroll
  * ==========================================================================
  */
 
@@ -30,7 +31,7 @@
       fitMode: 'chef',
       bgColor: '#162420',
       scrollEnd: '+=300%',
-      scrub: isReducedMotion ? true : 0.35,
+      scrub: isReducedMotion ? true : 0.08,
       estimatedBytes: { desktop: 2110000, mobile: 1110000 }
     },
     brookies: {
@@ -44,7 +45,7 @@
       fitMode: 'brookies',
       bgColor: '#162420',
       scrollEnd: '+=300%',
-      scrub: isReducedMotion ? true : 0.35,
+      scrub: isReducedMotion ? true : 0.08,
       estimatedBytes: { desktop: 4100000, mobile: 2300000 }
     },
     cake: {
@@ -58,15 +59,16 @@
       fitMode: 'cake',
       bgColor: '#F6F3E9',
       scrollEnd: '+=350%',
-      scrub: isReducedMotion ? true : 0.4,
+      scrub: isReducedMotion ? true : 0.08,
       estimatedBytes: { desktop: 4370000, mobile: 2690000 }
     }
   };
 
   const PACK_MAGIC = 0x50514d4b; // 'KMQP' little-endian
-  const MAX_DECODED_CACHE = 32;
-  const LOOKAHEAD_BEHIND = 4;
-  const LOOKAHEAD_AHEAD = 10;
+  const ANCHOR_STRIDE = 8;
+  const INACTIVE_LRU_LIMIT = 20;
+  const MOBILE_ACTIVE_LRU_LIMIT = 76;
+  const MAX_CONCURRENT_DECODES = 3;
 
   let lenisInstance = null;
   let activeTier = window.innerWidth < 768 ? 'mobile' : 'desktop';
@@ -80,8 +82,7 @@
     if (typeof window.Lenis === 'undefined') return null;
 
     lenisInstance = new window.Lenis({
-      duration: 1.0,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.18,
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
@@ -198,7 +199,8 @@
   }
 
   /**
-   * Bounded LRU ImageBitmap cache for packed WebP Blobs (or legacy Image fallback).
+   * Adaptive LRU ImageBitmap cache with pinned stride-8 anchors, symmetrical
+   * nearest-frame lookup, concurrency-capped decode queue, and background warming.
    */
   class FrameCache {
     constructor(totalFrames, mode, items) {
@@ -209,11 +211,15 @@
       this.pinned = new Map();
       this.lru = new Map();
       this.inFlight = new Map();
+      this.decodeQueue = [];
+      this.activeDecodes = 0;
+      this.maxLru = INACTIVE_LRU_LIMIT;
+      this.warmingActive = false;
       this.destroyed = false;
     }
 
     isPinnedIndex(index) {
-      return index === 0 || index === this.totalFrames - 1;
+      return index === 0 || index === this.totalFrames - 1 || index % ANCHOR_STRIDE === 0;
     }
 
     getExact(index) {
@@ -224,6 +230,9 @@
       return this.pinned.get(index) || this.lru.get(index) || null;
     }
 
+    /**
+     * Searches outward symmetrically by frame distance so fallback NEVER jumps to Frame 0.
+     */
     getDrawable(index) {
       const exact = this.getExact(index);
       if (exact) {
@@ -234,75 +243,160 @@
         return { drawable: exact, isExact: true };
       }
 
-      for (let b = index - 1; b >= 0; b--) {
-        const prev = this.getExact(b);
-        if (prev) return { drawable: prev, isExact: false };
-      }
-      for (let f = index + 1; f < this.totalFrames; f++) {
-        const next = this.getExact(f);
-        if (next) return { drawable: next, isExact: false };
+      for (let offset = 1; offset < this.totalFrames; offset++) {
+        if (index - offset >= 0) {
+          const prev = this.getExact(index - offset);
+          if (prev) return { drawable: prev, isExact: false };
+        }
+        if (index + offset < this.totalFrames) {
+          const next = this.getExact(index + offset);
+          if (next) return { drawable: next, isExact: false };
+        }
       }
       return { drawable: null, isExact: false };
     }
 
-    ensureDecoded(index, onReady) {
+    trimLru() {
+      while (this.lru.size > this.maxLru) {
+        const oldestKey = this.lru.keys().next().value;
+        const oldestBmp = this.lru.get(oldestKey);
+        this.lru.delete(oldestKey);
+        if (oldestBmp && typeof oldestBmp.close === 'function') {
+          oldestBmp.close();
+        }
+      }
+    }
+
+    setActiveBudget(isActive) {
+      if (isActive) {
+        this.maxLru = activeTier === 'desktop' ? this.totalFrames : MOBILE_ACTIVE_LRU_LIMIT;
+        this.startWarming();
+      } else {
+        this.warmingActive = false;
+        this.maxLru = INACTIVE_LRU_LIMIT;
+        this.trimLru();
+      }
+    }
+
+    ensureDecoded(index, onReady, highPriority = false) {
       if (this.destroyed || index < 0 || index >= this.totalFrames) return Promise.resolve(null);
       const existing = this.getExact(index);
       if (existing) return Promise.resolve(existing);
       if (this.mode !== 'pack') return Promise.resolve(null);
 
       if (this.inFlight.has(index)) {
-        const pending = this.inFlight.get(index);
-        if (onReady) pending.then((bmp) => { if (bmp && !this.destroyed) onReady(index); });
-        return pending;
+        const existingEntry = this.inFlight.get(index);
+        if (onReady) existingEntry.callbacks.push(onReady);
+        if (highPriority) {
+          const qIdx = this.decodeQueue.indexOf(index);
+          if (qIdx > 0) {
+            this.decodeQueue.splice(qIdx, 1);
+            this.decodeQueue.unshift(index);
+          }
+        }
+        return existingEntry.promise;
       }
 
-      const blob = this.blobs[index];
-      if (!blob) return Promise.resolve(null);
+      let resolvePromise;
+      const promise = new Promise((res) => { resolvePromise = res; });
+      this.inFlight.set(index, {
+        promise,
+        resolve: resolvePromise,
+        callbacks: onReady ? [onReady] : []
+      });
 
-      const promise = createImageBitmap(blob)
-        .then((bmp) => {
-          this.inFlight.delete(index);
-          if (this.destroyed) {
-            if (typeof bmp.close === 'function') bmp.close();
-            return null;
-          }
-          if (this.isPinnedIndex(index)) {
-            this.pinned.set(index, bmp);
-          } else {
-            this.lru.set(index, bmp);
-            while (this.lru.size > MAX_DECODED_CACHE) {
-              const oldestKey = this.lru.keys().next().value;
-              const oldestBmp = this.lru.get(oldestKey);
-              this.lru.delete(oldestKey);
-              if (oldestBmp && typeof oldestBmp.close === 'function') {
-                oldestBmp.close();
-              }
-            }
-          }
-          if (onReady) onReady(index);
-          return bmp;
-        })
-        .catch(() => {
-          this.inFlight.delete(index);
-          return null;
-        });
-
-      this.inFlight.set(index, promise);
+      if (highPriority) {
+        this.decodeQueue.unshift(index);
+      } else {
+        this.decodeQueue.push(index);
+      }
+      this.pumpQueue();
       return promise;
     }
 
-    async predecodeCritical() {
-      const critical = [];
-      const initialCount = Math.min(10, this.totalFrames);
-      for (let i = 0; i < initialCount; i++) critical.push(i);
-      if (this.totalFrames > 1) critical.push(this.totalFrames - 1);
+    pumpQueue() {
+      while (!this.destroyed && this.activeDecodes < MAX_CONCURRENT_DECODES && this.decodeQueue.length > 0) {
+        const index = this.decodeQueue.shift();
+        const entry = this.inFlight.get(index);
+        if (!entry) continue;
+
+        const blob = this.blobs[index];
+        if (!blob) {
+          this.inFlight.delete(index);
+          entry.resolve(null);
+          continue;
+        }
+
+        this.activeDecodes++;
+        createImageBitmap(blob)
+          .then((bmp) => {
+            this.activeDecodes--;
+            this.inFlight.delete(index);
+            if (this.destroyed) {
+              if (typeof bmp.close === 'function') bmp.close();
+              entry.resolve(null);
+              return;
+            }
+            if (this.isPinnedIndex(index)) {
+              this.pinned.set(index, bmp);
+            } else {
+              this.lru.set(index, bmp);
+              this.trimLru();
+            }
+            entry.resolve(bmp);
+            for (let i = 0; i < entry.callbacks.length; i++) {
+              entry.callbacks[i](index);
+            }
+            this.pumpQueue();
+          })
+          .catch(() => {
+            this.activeDecodes--;
+            this.inFlight.delete(index);
+            entry.resolve(null);
+            this.pumpQueue();
+          });
+      }
+    }
+
+    async predecodeAnchors(decodeAll = false) {
+      if (decodeAll) {
+        this.maxLru = activeTier === 'desktop' ? this.totalFrames : MOBILE_ACTIVE_LRU_LIMIT;
+      }
+      const indices = [];
+      for (let i = 0; i < this.totalFrames; i++) {
+        if (decodeAll || i < 6 || this.isPinnedIndex(i)) {
+          indices.push(i);
+        }
+      }
 
       if (this.mode === 'pack') {
-        await Promise.all(critical.map((idx) => this.ensureDecoded(idx)));
+        const batchSize = 24;
+        for (let i = 0; i < indices.length; i += batchSize) {
+          const slice = indices.slice(i, i + batchSize);
+          await Promise.all(
+            slice.map((idx) => {
+              const blob = this.blobs[idx];
+              if (!blob || this.getExact(idx)) return Promise.resolve();
+              return createImageBitmap(blob)
+                .then((bmp) => {
+                  if (this.destroyed) {
+                    if (typeof bmp.close === 'function') bmp.close();
+                    return;
+                  }
+                  if (this.isPinnedIndex(idx)) {
+                    this.pinned.set(idx, bmp);
+                  } else {
+                    this.lru.set(idx, bmp);
+                  }
+                })
+                .catch(() => {});
+            })
+          );
+        }
+        this.trimLru();
       } else {
         await Promise.all(
-          critical.map((idx) => {
+          indices.map((idx) => {
             const img = this.images[idx];
             if (img && typeof img.decode === 'function') {
               return img.decode().catch(() => {});
@@ -313,19 +407,55 @@
       }
     }
 
-    lookahead(targetIndex, onReady) {
-      const start = Math.max(0, targetIndex - LOOKAHEAD_BEHIND);
-      const end = Math.min(this.totalFrames - 1, targetIndex + LOOKAHEAD_AHEAD);
-      for (let i = targetIndex; i <= end; i++) {
-        this.ensureDecoded(i, onReady);
-      }
-      for (let i = targetIndex - 1; i >= start; i--) {
-        this.ensureDecoded(i, onReady);
+    startWarming() {
+      if (this.mode !== 'pack' || this.warmingActive || this.destroyed) return;
+      if (activeTier !== 'desktop') return;
+      this.warmingActive = true;
+
+      let cursor = 0;
+      const step = () => {
+        if (!this.warmingActive || this.destroyed) return;
+        let queued = 0;
+        while (cursor < this.totalFrames && queued < 4) {
+          const idx = cursor++;
+          if (!this.getExact(idx) && !this.inFlight.has(idx)) {
+            this.ensureDecoded(idx, null, false);
+            queued++;
+          }
+        }
+        if (cursor < this.totalFrames) {
+          if (typeof window.requestIdleCallback === 'function') {
+            window.requestIdleCallback(step, { timeout: 60 });
+          } else {
+            setTimeout(step, 16);
+          }
+        } else {
+          this.warmingActive = false;
+        }
+      };
+      step();
+    }
+
+    lookahead(targetIndex, direction, onReady) {
+      if (this.mode !== 'pack') return;
+      const forwardSpan = direction >= 0 ? 6 : 3;
+      const backwardSpan = direction <= 0 ? 6 : 3;
+      for (let step = 1; step <= Math.max(forwardSpan, backwardSpan); step++) {
+        const primary = direction >= 0 ? targetIndex + step : targetIndex - step;
+        const secondary = direction >= 0 ? targetIndex - step : targetIndex + step;
+        if (step <= (direction >= 0 ? forwardSpan : backwardSpan) && primary >= 0 && primary < this.totalFrames) {
+          this.ensureDecoded(primary, onReady, false);
+        }
+        if (step <= (direction >= 0 ? backwardSpan : forwardSpan) && secondary >= 0 && secondary < this.totalFrames) {
+          this.ensureDecoded(secondary, onReady, false);
+        }
       }
     }
 
     destroy() {
       this.destroyed = true;
+      this.warmingActive = false;
+      this.decodeQueue = [];
       this.inFlight.clear();
       this.pinned.forEach((bmp) => {
         if (bmp && typeof bmp.close === 'function') bmp.close();
@@ -363,7 +493,6 @@
       }
     }
 
-    // Legacy fallback: load all individual WebP frames via Image()
     return new Promise((resolve) => {
       const basePath = `${config.legacyFolder}/${tier}/`;
       const images = new Array(config.totalFrames);
@@ -405,7 +534,6 @@
     const canvasAspect = cw / ch;
 
     if (fitMode === 'brookies' && canvasAspect < 1.0) {
-      // Mobile Portrait Brookies: full-width fit with seamless vertical gradient & soft feathering
       const scale = cw / imgW;
       const drawW = cw;
       const drawH = Math.round(imgH * scale);
@@ -461,8 +589,9 @@
     let timeline = null;
     let dpr = getDevicePixelRatio();
     let renderedExactFrame = -1;
+    let lastRequestedFrame = 0;
+    let lastDirection = 1;
     let forceRedraw = true;
-    let rafPending = false;
     let loadedTier = null;
 
     function renderFrame(frameIndex, force = false) {
@@ -475,7 +604,7 @@
           if (Math.round(anim.frame) === decodedIdx) {
             renderFrame(decodedIdx, true);
           }
-        });
+        }, true);
         return;
       }
 
@@ -488,25 +617,31 @@
           if (Math.round(anim.frame) === decodedIdx) {
             renderFrame(decodedIdx, true);
           }
+        }, true);
+      }
+    }
+
+    /**
+     * Synchronous render inside GSAP's ticker rAF (eliminates 1-frame phase lag).
+     */
+    function renderImmediate() {
+      const targetFrame = Math.min(config.totalFrames - 1, Math.max(0, Math.round(anim.frame)));
+      if (targetFrame !== lastRequestedFrame) {
+        lastDirection = targetFrame > lastRequestedFrame ? 1 : -1;
+        lastRequestedFrame = targetFrame;
+      }
+      renderFrame(targetFrame);
+      if (cache) {
+        cache.lookahead(targetFrame, lastDirection, (decodedIdx) => {
+          if (Math.round(anim.frame) === decodedIdx && renderedExactFrame !== decodedIdx) {
+            renderFrame(decodedIdx, true);
+          }
         });
       }
     }
 
-    function scheduleRender() {
-      if (rafPending) return;
-      rafPending = true;
-      requestAnimationFrame(() => {
-        rafPending = false;
-        const targetFrame = Math.min(config.totalFrames - 1, Math.max(0, Math.round(anim.frame)));
-        renderFrame(targetFrame);
-        if (cache) {
-          cache.lookahead(targetFrame, (decodedIdx) => {
-            if (Math.round(anim.frame) === decodedIdx && renderedExactFrame !== decodedIdx) {
-              renderFrame(decodedIdx, true);
-            }
-          });
-        }
-      });
+    function setActive(isActive) {
+      if (cache) cache.setActiveBudget(isActive);
     }
 
     function resizeCanvas() {
@@ -528,9 +663,9 @@
       renderFrame(Math.min(config.totalFrames - 1, Math.max(0, Math.round(anim.frame))), true);
     }
 
-    async function loadTier(tier, onProgress) {
+    async function loadTier(tier, onProgress, decodeAll = false) {
       const nextCache = await loadSequenceCache(config, tier, onProgress);
-      await nextCache.predecodeCritical();
+      await nextCache.predecodeAnchors(decodeAll && tier === 'desktop');
       if (cache) cache.destroy();
       cache = nextCache;
       loadedTier = tier;
@@ -551,14 +686,15 @@
         config,
         scrollContainer,
         anim,
-        scheduleRender
+        renderImmediate,
+        setActive
       });
     }
 
     async function switchTierIfNeeded(newTier) {
       if (newTier === loadedTier) return;
       try {
-        await loadTier(newTier, () => {});
+        await loadTier(newTier, () => {}, false);
         resizeCanvas();
       } catch (err) {
         console.warn(`[${config.label}] Background tier switch failed:`, err);
@@ -570,6 +706,7 @@
       loadTier,
       resizeCanvas,
       renderFrame,
+      setActive,
       initScrollTrigger,
       switchTierIfNeeded
     };
@@ -579,7 +716,7 @@
   // SEQUENCE TIMELINE BUILDERS
   // ==========================================================================
 
-  const chefController = createSequenceController(SEQUENCE_CONFIGS.chef, ({ config, scrollContainer, anim, scheduleRender }) => {
+  const chefController = createSequenceController(SEQUENCE_CONFIGS.chef, ({ config, scrollContainer, anim, renderImmediate, setActive }) => {
     const scrollIndicator = document.getElementById('scroll-indicator');
     const brandTop = document.getElementById('brand-pill-top');
     const brandBottom = document.getElementById('brand-pill-bottom');
@@ -603,7 +740,10 @@
         end: config.scrollEnd,
         pin: true,
         scrub: config.scrub,
-        anticipatePin: 1,
+        anticipatePin: 0,
+        invalidateOnRefresh: true,
+        onEnter: () => setActive(true),
+        onEnterBack: () => setActive(true),
         onUpdate: (self) => {
           if (scrollIndicator) {
             scrollIndicator.classList.toggle('faded', self.progress > 0.02);
@@ -616,7 +756,7 @@
       frame: config.totalFrames - 1,
       ease: 'none',
       duration: 1.0,
-      onUpdate: scheduleRender
+      onUpdate: renderImmediate
     }, 0);
 
     if (s1) {
@@ -696,7 +836,7 @@
     return tl;
   });
 
-  const brookiesController = createSequenceController(SEQUENCE_CONFIGS.brookies, ({ config, scrollContainer, anim, scheduleRender }) => {
+  const brookiesController = createSequenceController(SEQUENCE_CONFIGS.brookies, ({ config, scrollContainer, anim, renderImmediate, setActive }) => {
     const slides = [
       document.getElementById('slide-1'),
       document.getElementById('slide-2'),
@@ -715,7 +855,10 @@
         end: config.scrollEnd,
         pin: true,
         scrub: config.scrub,
-        anticipatePin: 1
+        anticipatePin: 0,
+        invalidateOnRefresh: true,
+        onEnter: () => setActive(true),
+        onEnterBack: () => setActive(true)
       }
     });
 
@@ -723,7 +866,7 @@
       frame: config.totalFrames - 1,
       ease: 'none',
       duration: 1.0,
-      onUpdate: scheduleRender
+      onUpdate: renderImmediate
     }, 0);
 
     if (slides[0]) {
@@ -757,7 +900,7 @@
     return tl;
   });
 
-  const cakeController = createSequenceController(SEQUENCE_CONFIGS.cake, ({ config, scrollContainer, anim, scheduleRender }) => {
+  const cakeController = createSequenceController(SEQUENCE_CONFIGS.cake, ({ config, scrollContainer, anim, renderImmediate, setActive }) => {
     const introOverlay = document.getElementById('cake-intro-overlay');
     const scrollMessage = document.getElementById('cake-scroll-message');
     const heroOverlay = document.getElementById('cake-hero-overlay');
@@ -770,7 +913,10 @@
         end: config.scrollEnd,
         pin: true,
         scrub: config.scrub,
-        anticipatePin: 1,
+        anticipatePin: 0,
+        invalidateOnRefresh: true,
+        onEnter: () => setActive(true),
+        onEnterBack: () => setActive(true),
         onUpdate: (self) => {
           if (scrollIndicator) {
             scrollIndicator.classList.toggle('faded', self.progress > 0.03);
@@ -783,7 +929,7 @@
       frame: config.totalFrames - 1,
       ease: 'none',
       duration: 1.0,
-      onUpdate: scheduleRender
+      onUpdate: renderImmediate
     }, 0);
 
     if (introOverlay) {
@@ -816,6 +962,26 @@
   });
 
   const allControllers = [chefController, brookiesController, cakeController];
+
+  /**
+   * Pre-warms a sequence's cache before scroll enters its viewport.
+   */
+  function setupProximityWarming() {
+    if (!('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const ctrl = allControllers.find((c) => c.config.sectionId === entry.target.id);
+          if (ctrl) ctrl.setActive(entry.isIntersecting);
+        });
+      },
+      { rootMargin: '2200px 0px 2200px 0px', threshold: 0 }
+    );
+    allControllers.forEach((ctrl) => {
+      const el = document.getElementById(ctrl.config.sectionId);
+      if (el) observer.observe(el);
+    });
+  }
 
   /**
    * Waits for all page <img> tags (logo avatar + stitching gallery) to settle.
@@ -868,7 +1034,7 @@
   /**
    * Master Full-Experience Boot Gate:
    * Blocks page interaction/scroll until all 3 sequences, DOM images, fonts,
-   * initial frames, and ScrollTriggers are 100% loaded and ready.
+   * anchor frames, and ScrollTriggers are 100% loaded and ready.
    */
   async function bootFullExperience() {
     const preloader = document.getElementById('preloader');
@@ -913,10 +1079,14 @@
     try {
       await Promise.all([
         ...allControllers.map((ctrl) =>
-          ctrl.loadTier(activeTier, (loaded, total) => {
-            progressState[ctrl.config.id].ratio = Math.min(1, loaded / Math.max(1, total));
-            updateUI();
-          })
+          ctrl.loadTier(
+            activeTier,
+            (loaded, total) => {
+              progressState[ctrl.config.id].ratio = Math.min(1, loaded / Math.max(1, total));
+              updateUI();
+            },
+            ctrl === chefController
+          )
         ),
         waitForDomImages((done, total) => {
           progressState.domImgs.loaded = done;
@@ -940,29 +1110,39 @@
       ctrl.renderFrame(0, true);
     });
 
+    // Unlock scroll before ScrollTrigger.refresh & Lenis init so Dimensions measures full scrollHeight immediately
+    hasEntered = true;
+    document.documentElement.classList.remove('is-preloading');
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'auto';
+    }
+
     // Deterministic DOM-order ScrollTrigger setup
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
       ScrollTrigger.config({ ignoreMobileResize: true });
 
       allControllers.forEach((ctrl) => ctrl.initScrollTrigger());
-      initLenis();
       ScrollTrigger.sort();
       ScrollTrigger.refresh(true);
+      initLenis();
+      if (lenisInstance && typeof lenisInstance.resize === 'function') {
+        lenisInstance.resize();
+      }
     } else {
       initLenis();
+      if (lenisInstance && typeof lenisInstance.resize === 'function') {
+        lenisInstance.resize();
+      }
     }
+
+    setupProximityWarming();
+    chefController.setActive(true);
 
     // Complete 100% progress bar and unlock user entry
     if (preloaderBar) preloaderBar.style.width = '100%';
     if (preloaderPercent) preloaderPercent.textContent = '100%';
     if (preloaderSubtitle) preloaderSubtitle.textContent = 'Welcome to Kochumagique';
-
-    hasEntered = true;
-    document.documentElement.classList.remove('is-preloading');
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'auto';
-    }
 
     const hash = window.location.hash;
     const hashTarget = hash && hash !== '#home' ? document.querySelector(hash) : null;
